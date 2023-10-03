@@ -30,6 +30,13 @@ Merch.init(
         key: "id",
       },
     },
+    artist_name: { // Should I use id instead of name?
+      type: DataTypes.STRING,
+      references: {
+        model: "artist",
+        key: "name",
+      }
+    }
   },
   {
     sequelize,
@@ -37,4 +44,6 @@ Merch.init(
     freezeTableName: true,
     modelName: "merch",
   }
-)
+);
+
+module.exports = Merch;
