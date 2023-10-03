@@ -6,11 +6,12 @@ class Album extends Model {}
 Album.init(
   {
     id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
-      type: DataTypes.INTEGER,
     },
-    artistId: {
+    artist_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
       references: {
@@ -25,7 +26,8 @@ Album.init(
   },
   {
     sequelize,
-    underscored: true,
+    timestamps: false,
+    freezeTableName: true,
     modelName: "album",
   }
 );
