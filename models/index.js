@@ -5,7 +5,6 @@ const Merch = require("./Merch");
 const MerchTag = require("./MerchTag");
 const Tag = require("./Tag");
 console.log(Category);
-console.log(___________________________________);
 // Categories have many Merch
 Category.hasMany(Merch, {
   foreignKey: "category_id",
