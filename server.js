@@ -3,6 +3,9 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const Category = require("./models/Category");
+const Merch = require("./models/Merch");
+const Artist = require("./models/Artist");
 
 const routes = require("./controllers");
 const sequelize = require("./config/connection");
@@ -33,6 +36,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
+// Change back to false before launch
+sequelize.sync({ force: true }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
