@@ -1,7 +1,9 @@
 const router = require("express").Router();
+const Album = require("../models/Album");
+const Artist = require("../models/Artist");
+const Merch = require("../models/Merch");
 
 router.get("/", async (req, res) => {
-  // TODO: pull data from models and send to view.
   res.status(200).render("homepage");
 });
 
