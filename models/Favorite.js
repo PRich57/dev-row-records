@@ -12,6 +12,14 @@ Favorite.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      references: {
+        model: "user",
+        key: "id",
+      },
+    },
     artist_id: {
       type: DataTypes.INTEGER,
       references: {
@@ -36,3 +44,4 @@ Favorite.init(
   }
 );
 
+module.exports = Favorite;
