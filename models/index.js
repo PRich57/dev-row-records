@@ -13,6 +13,7 @@ Merch.belongsTo(Category, {
 // Categories have many Merch
 Category.hasMany(Merch, {
   foreignKey: "category_id",
+  onDelete: 'CASCADE'
 });
 
 // Merch belongsToMany Tag (through MerchTag)
@@ -29,12 +30,12 @@ Tag.belongsToMany(Merch, {
 
 // Merch belongsTo Artist (because each merch item belongs to a specific artist???)(or is it ToMany??)
 Merch.belongsTo(Artist, {
-  foreignKey: "artist_name",
+  foreignKey: "artist_id",
 });
 
 // Artist hasMany Merch
 Artist.hasMany(Merch, {
-  foreignKey: "artist_name",
+  foreignKey: "artist_id",
 });
 
 // Album belongsTo Artist
