@@ -39,15 +39,15 @@
               <form>
                 <div class="mb-3">
                   <label for="message-text" class="col-form-label">Username:</label>
-                  <input type="text" class="form-control" id="recipient-name">
+                  <input type="text" class="form-control" id="loginUsernameInput">
                   <label for="message-text" class="col-form-label">Password:</label>
-                  <input type="text" class="form-control" id="recipient-name">
+                  <input type="text" class="form-control" id="loginPasswordInput">
                 </div>
               </form>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" id = "modal-login-submit-div">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-danger" id = "modal-submit" data-bs-dismiss="modal">Login</button>
+              <button type="button" class="btn btn-danger" id = "modal-login-submit" data-bs-dismiss="modal">Login</button>
             </div>
           </div>
         </div>
@@ -65,15 +65,15 @@
               <form>
                 <div class="mb-3">
                     <label for="message-text" class="col-form-label">Username:</label>
-                    <input type="text" class="form-control" id="recipient-name" placeholder = "jdoe23">
+                    <input type="text" class="form-control" id="signup-username-input" placeholder = "jdoe23">
                     <label for="message-text" class="col-form-label">Password:</label>
-                    <input type="text" class="form-control" id="recipient-name" placeholder="passw0rd_17">
+                    <input type="text" class="form-control" id="signup-password-input" placeholder="passw0rd_17">
                 </div>
               </form>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" id = "modal-signup-submit-div">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-danger" id = "modal-submit" data-bs-dismiss="modal">Start Quiz</button>
+              <button type="button" class="btn btn-danger" id = "modal-signup-submit" data-bs-dismiss="modal">Sign Up</button>
             </div>
           </div>
         </div>
@@ -86,14 +86,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+            <li class="nav-item active" id = "get-home-li">
+              <a class="nav-link" id = "get-home">Home <span class="sr-only"></span></a>
             </li>
             <li class="nav-item" id = "get-all-artists-li">
               <a class="nav-link" id = "get-all-artists" >Artists</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Albums</a>
+            <li class="nav-item" id = "get-all-music-li">
+              <a class="nav-link"  id = "get-all-music">Albums</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Store</a>
@@ -146,5 +146,6 @@
     ></script>
     <!-- personal JS script -->
     <script src="../js/nav.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 </html>

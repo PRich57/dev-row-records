@@ -1,8 +1,28 @@
 var allArtistsAnchor = $("#get-all-artists");
 var allArtistsLi = $("#get-all-artists-li");
+var getHomeLi = $("#get-home-li");
+var allMusicLi = $("#get-all-music-li");
 
 //FUNCTIONS
 //EVENT LISTENERS
+
+const getHome = async (event) => {
+    try {
+        event.preventDefault();
+        event.stopPropagation();
+        console.log("hello")
+        const response = await fetch('/', {
+            method: 'GET',
+            headers: {"Content-Type": "application/json"}
+        });
+        if(response.ok){
+            window.location.replace('/')
+        }
+    } catch (err){
+        console.log(err);
+    }
+}
+
 const getAllArtists = async (event) => {
     try {
         event.preventDefault();
@@ -20,7 +40,7 @@ const getAllArtists = async (event) => {
     }
 }
 
-const getAllAlbums = async (event) => {
+const getAllMusic = async (event) => {
     try {
         event.preventDefault();
         event.stopPropagation();
@@ -55,3 +75,5 @@ const getAllMerch = async (event) => {
 }
 //get all artists
 allArtistsLi.on('click', '#get-all-artists', getAllArtists);
+getHomeLi.on('click', '#get-home', getHome);
+allMusicLi.on('click', "#get-all-music", getAllMusic)

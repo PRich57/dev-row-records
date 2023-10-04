@@ -1,3 +1,7 @@
-h1 {
-    color: red;
+nav:a:hover {
+    cursor: pointer;
+}
+
+#get-all-artists, #get-home, #get-all-music{
+    cursor: pointer;
 }
