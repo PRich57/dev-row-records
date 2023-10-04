@@ -5,6 +5,13 @@ const Merch = require("./Merch");
 const MerchTag = require("./MerchTag");
 const Tag = require("./Tag");
 console.log(Category);
+const Category = require("./Category");
+const Artist = require("./Artist");
+const Album = require("./Album");
+const Merch = require("./Merch");
+const MerchTag = require("./MerchTag");
+const Tag = require("./Tag");
+
 // Categories have many Merch
 Category.hasMany(Merch, {
   foreignKey: "category_id",
