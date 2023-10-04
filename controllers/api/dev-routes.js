@@ -24,11 +24,11 @@ router.post("/artist", async (req, res) => {
 
 router.post("/album", async (req, res) => {
   // get artist id from artist name
-  const artist_id = await findArtistIDByName(req, res);
+  const { artist_name, name } = req.body;
+  const artist_id = await findArtistIDByName(artist_name);
   console.log(artist_id);
 
   // create album with artist id
-  const { name } = req.body;
   try {
     const data = await Album.create({ artist_id, name });
     res.status(200).json({
@@ -43,12 +43,11 @@ router.post("/album", async (req, res) => {
   }
 });
 
-async function findArtistIDByName(req, res) {
-  const { artist_name } = req.body;
+async function findArtistIDByName(name) {
   try {
     const artist = await Artist.findOne({
       where: {
-        name: artist_name,
+        name,
       },
     });
     console.log(artist);
