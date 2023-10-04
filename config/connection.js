@@ -2,7 +2,7 @@ const Sequelize = require("sequelize");
 require("dotenv").config();
 
 // I don't know if there's an environment variable we'll eventually need to set this to for server-side hosting, but that would replace the "null" here
-PORT = null || 3306;
+PORT = 3306;
 
 const sequelize = new Sequelize(
   process.env.DB_NAME,
