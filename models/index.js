@@ -1,9 +1,9 @@
-const Artist = require('./Artist');
-const Album = require('./Album');
-const Category = require('./Category');
-const Merch = require('./Merch');
-const MerchTag = require('./MerchTag');
-const Tag = require('./Tag');
+const Artist = require("./Artist");
+const Album = require("./Album");
+const Category = require("./Category");
+const Merch = require("./Merch");
+const MerchTag = require("./MerchTag");
+const Tag = require("./Tag");
 
 // Merch belongsTo Category
 Merch.belongsTo(Category, {
@@ -24,7 +24,7 @@ Merch.belongsToMany(Tag, {
 // Tags belongToMany Merch (through MerchTag)
 Tag.belongsToMany(Merch, {
   through: MerchTag,
-  foreignKey: 'tag_id',
+  foreignKey: "tag_id",
 });
 
 // Merch belongsTo Artist (because each merch item belongs to a specific artist???)(or is it ToMany??)
@@ -34,7 +34,7 @@ Merch.belongsTo(Artist, {
 
 // Artist hasMany Merch
 Artist.hasMany(Merch, {
-  foreignKey: "artist_name",
+  foreignKey: "artist_id",
 });
 
 // Album belongsTo Artist
