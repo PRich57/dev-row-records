@@ -1,5 +1,8 @@
-nav:a:hover {
-    cursor: pointer;
+
+#header-ul li:hover, #footer-nav-ul li:hover {
+  cursor: pointer;
+  scale: 1.1;
+  text-decoration: underline;
 }
 
 #get-all-artists, #get-home, #get-all-music{
@@ -20,4 +23,10 @@ nav:a:hover {
   margin-top: 2.7rem !important;
 }
 
-#footer-main
+.card {
+  box-shadow: 5px 5px 10px 10px gray;
+}
+.card:hover {
+  scale: 1.1;
+  cursor: pointer
+}
