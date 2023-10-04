@@ -30,7 +30,6 @@ Merch.init(
       },
     },
     artist_id: {
-      // Replacing artist_name with artist_id
       type: DataTypes.INTEGER,
       references: {
         model: "artist",

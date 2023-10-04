@@ -1,17 +1,26 @@
+const Category = require('./Category');
 const Artist = require('./Artist');
 const Album = require('./Album');
-const Category = require('./Category');
 const Merch = require('./Merch');
 const MerchTag = require('./MerchTag');
 const Tag = require('./Tag');
+console.log(Category);
+console.log(___________________________________);
+// Categories have many Merch
+Category.hasMany(Merch, {
+  foreignKey: "category_id",
+});
+// Artist hasMany Album
+Artist.hasMany(Album, {
+  foreignKey: "artist_id",
+});
+// Artist hasMany Merch
+Artist.hasMany(Merch, {
+  foreignKey: "artist_id",
+});
 
 // Merch belongsTo Category
 Merch.belongsTo(Category, {
-  foreignKey: "category_id",
-});
-
-// Categories have many Merch
-Category.hasMany(Merch, {
   foreignKey: "category_id",
 });
 
@@ -27,25 +36,17 @@ Tag.belongsToMany(Merch, {
   foreignKey: 'tag_id',
 });
 
-// Merch belongsTo Artist (because each merch item belongs to a specific artist???)(or is it ToMany??)
+// Merch belongsTo Artist
 Merch.belongsTo(Artist, {
-  foreignKey: "artist_name",
+  foreignKey: "artist_id",
 });
 
-// Artist hasMany Merch
-Artist.hasMany(Merch, {
-  foreignKey: "artist_name",
-});
 
 // Album belongsTo Artist
 Album.belongsTo(Artist, {
   foreignKey: "artist_id",
 });
 
-// Artist hasMany Album
-Artist.hasMany(Album, {
-  foreignKey: "artist_id",
-});
 
 module.exports = {
   Artist,
