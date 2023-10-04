@@ -1,11 +1,4 @@
-const router = require("express").Router();
-const Album = require("../models/Album");
-const Artist = require("../models/Artist");
-const Category = require("../models/Category");
-const Merch = require("../models/Merch");
-const Tag = require("../models/Tag");
-const User = require("../models/User");
-const Favorites = require("../models/Favorites");
+const { Album, Artist, Category, Merch, Tag, User, Favorite }  = require("../models");
 
 const auth = require("../utils/withAuth");
 

@@ -12,10 +12,14 @@ Artist.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    artist_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    filename: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    }
   },
   {
     sequelize,
