@@ -1,5 +1,6 @@
-const router = require("express").Router();
 const { Album, Artist, Category, Merch, Tag, User, Favorite }  = require("../models");
+
+const auth = require("../utils/withAuth");
 
 router.get("/", async (req, res) => {
   res.status(200).render("homepage");
@@ -15,14 +16,37 @@ router.get("/artists", async (req, res) => {
   res.status(200).render("artists", { artists });
 });
 
+router.get("/single-artist", async (req, res) => {
+  // TODO: pull data from models and send to view.
+  res.status(200).render("singleArtist");
+});
+
 router.get("/music", async (req, res) => {
   // TODO: pull data from models and send to view.
-  res.status(200).render("albums");
+  const data = await Album.findAll();
+  const albums = data.map((value) => {
+    return value.get({ plain: true });
+  });
+  res.status(200).render("albums", { albums });
 });
 
 router.get("/merch", async (req, res) => {
   // TODO: pull data from models and send to view.
-  res.status(200).render("merch");
+  const data = await Merch.findAll();
+  const merch = data.map((value) => {
+    return value.get({ plain: true });
+  });
+  res.status(200).render("merch", { merch });
 });
+
+router.get("/favorites", auth, async (req, res) => {
+  //TODO: pull favorites for the current user and send to view
+  const viewData = {};
+  
+
+
+  res.status(200).render("favorites", viewData);
+});
+
 
 module.exports = router;

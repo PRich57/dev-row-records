@@ -8,12 +8,11 @@ var getStoreLi = $("#header-get-store-li")
 //footer
 var footerHomeLi = $("footer-get-home");
 var footerAllArtistsLi = $("#footer-get-artists-li");
-var footerAllAlbumsLi = $("#footer-get-artists-li");
+var footerAllAlbumsLi = $("#footer-get-albums-li");
 var footerStoreLi = $("#footer-get-store-li");
 
 //FUNCTIONS
-//EVENT LISTENERS
-
+//go home page (controllers/home-routes.js)
 const getHome = async (event) => {
     try {
         event.preventDefault();
@@ -31,6 +30,7 @@ const getHome = async (event) => {
     }
 }
 
+//go to artists page (controllers/home-routes.js)
 const getAllArtists = async (event) => {
     try {
         event.preventDefault();
@@ -48,6 +48,7 @@ const getAllArtists = async (event) => {
     }
 }
 
+//go to music/albums page (controllers/home-routes.js)
 const getAllMusic = async (event) => {
     try {
         event.preventDefault();
@@ -65,6 +66,7 @@ const getAllMusic = async (event) => {
     }
 }
 
+//go to store/merch page (controllers/home-routes.js)
 const getStore = async (event) => {
     try {
         event.preventDefault();
