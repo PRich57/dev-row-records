@@ -4,16 +4,17 @@ const Album = require('./Album');
 const Merch = require('./Merch');
 const MerchTag = require('./MerchTag');
 const Tag = require('./Tag');
-console.log(Category);
-console.log(___________________________________);
+
 // Categories have many Merch
 Category.hasMany(Merch, {
   foreignKey: "category_id",
 });
+
 // Artist hasMany Album
 Artist.hasMany(Album, {
   foreignKey: "artist_id",
 });
+
 // Artist hasMany Merch
 Artist.hasMany(Merch, {
   foreignKey: "artist_id",
@@ -41,12 +42,10 @@ Merch.belongsTo(Artist, {
   foreignKey: "artist_id",
 });
 
-
 // Album belongsTo Artist
 Album.belongsTo(Artist, {
   foreignKey: "artist_id",
 });
-
 
 module.exports = {
   Artist,
