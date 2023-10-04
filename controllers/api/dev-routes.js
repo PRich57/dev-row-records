@@ -27,13 +27,12 @@ router.post("/artist", async (req, res) => {
 
 router.post("/album", async (req, res) => {
   // get artist id from artist name
-  const { artist_name, name } = req.body;
+  const { artist_name, album_name } = req.body;
   const artist_id = await findArtistIDByName(artist_name);
-  console.log(artist_id);
 
   // create album with artist id
   try {
-    const data = await Album.create({ artist_id, name });
+    const data = await Album.create({ artist_id, album_name });
     res.status(200).json({
       message: "Successfully created album:",
       data,
@@ -41,6 +40,29 @@ router.post("/album", async (req, res) => {
   } catch (err) {
     res.status(500).json({
       message: "Internal error while creating album:",
+      err,
+    });
+  }
+});
+
+router.post("/merch", async (req, res) => {
+  const { artist_name, merch_name, category_id, price } = req.body;
+  const artist_id = await findArtistIDByName(artist_name);
+
+  try {
+    const data = await Merch.create({
+      artist_id,
+      merch_name,
+      category_id,
+      price,
+    });
+    res.status(200).json({
+      message: "Successfully created merch item:",
+      data,
+    });
+  } catch (err) {
+    res.status(500).json({
+      message: "Internal error while creating merch item:",
       err,
     });
   }
