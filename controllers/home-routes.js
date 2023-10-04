@@ -31,7 +31,7 @@ router.get("/artists/:id", async (req, res) => {
     }
   });
   const artist = data.get({plain: true});
-  res.status(200).render("singleArtist", {artist});
+  res.status(200).render("singleArtist", { artist });
 });
 
 router.get("/music", async (req, res) => {
@@ -43,6 +43,17 @@ router.get("/music", async (req, res) => {
   res.status(200).render("albums", { albums });
 });
 
+router.get("/music/:id", async (req, res) => {
+  // TODO: pull data from models and send to view.
+  const data = await Album.findOne({
+    where: {
+      id: req.params.id,
+    }
+  });
+  const album = data.get({plain: true});
+  res.status(200).render("singleArtist", { album });
+});
+
 router.get("/merch", async (req, res) => {
   // TODO: pull data from models and send to view.
   const data = await Merch.findAll();
@@ -50,6 +61,17 @@ router.get("/merch", async (req, res) => {
     return value.get({ plain: true });
   });
   res.status(200).render("merch", { merch });
+});
+
+router.get("/merch/:id", async (req, res) => {
+  // TODO: pull data from models and send to view.
+  const data = await Merch.findOne({
+    where: {
+      id: req.params.id,
+    }
+  });
+  const merch = data.get({plain: true});
+  res.status(200).render("singleArtist", { merch });
 });
 
 router.get("/favorites", auth, async (req, res) => {
