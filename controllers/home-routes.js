@@ -23,9 +23,15 @@ router.get("/artists", async (req, res) => {
   res.status(200).render("artists", { artists });
 });
 
-router.get("/single-artist", async (req, res) => {
+router.get("/artists/:id", async (req, res) => {
   // TODO: pull data from models and send to view.
-  res.status(200).render("singleArtist");
+  const data = await Artist.findOne({
+    where: {
+      id: req.params.id,
+    }
+  });
+  const artist = data.get({plain: true});
+  res.status(200).render("singleArtist", {artist});
 });
 
 router.get("/music", async (req, res) => {
@@ -48,9 +54,39 @@ router.get("/merch", async (req, res) => {
 
 router.get("/favorites", auth, async (req, res) => {
   //TODO: pull favorites for the current user and send to view
-  const viewData = {};
-  
+  const viewData = {
+    artists: [],
+    albums: [],
+    merch: [],
+  };
+  const { user_id } = req.session.cookie
 
+  try {
+    const data = Favorites.findAll({
+      where: {
+        user_id,
+      }
+    });
+    const favorites = data.map((value) => {
+      return value.get({ plain: true })
+    });
+    favorites.forEach((value) => {
+      if (value.artist_id) {
+        viewData.artists.push(value);
+      } else if (value.album_id) {
+        viewData.albums.push(value);
+      } else if (value.merch_id) {
+        viewData.merch.push(value);
+      } else {
+        console.warn(`No associated data for ${value}`);
+      }
+    });
+  } catch (err) {
+    res.status(500).json({
+      message: "Bad things happen to good people",
+      err,
+    })
+  }
 
   res.status(200).render("favorites", viewData);
 });
