@@ -1,7 +1,15 @@
+//VARIABLES
+//header
 var allArtistsAnchor = $("#get-all-artists");
 var allArtistsLi = $("#get-all-artists-li");
 var getHomeLi = $("#get-home-li");
 var allMusicLi = $("#get-all-music-li");
+var getStoreLi = $("#header-get-store-li")
+//footer
+var footerHomeLi = $("footer-get-home");
+var footerAllArtistsLi = $("#footer-get-artists-li");
+var footerAllAlbumsLi = $("#footer-get-artists-li");
+var footerStoreLi = $("#footer-get-store-li");
 
 //FUNCTIONS
 //EVENT LISTENERS
@@ -57,7 +65,7 @@ const getAllMusic = async (event) => {
     }
 }
 
-const getAllMerch = async (event) => {
+const getStore = async (event) => {
     try {
         event.preventDefault();
         event.stopPropagation();
@@ -73,7 +81,16 @@ const getAllMerch = async (event) => {
         console.log(err);
     }
 }
-//get all artists
+
+//EVENT LISTENERS
+//header event listeners
 allArtistsLi.on('click', '#get-all-artists', getAllArtists);
 getHomeLi.on('click', '#get-home', getHome);
 allMusicLi.on('click', "#get-all-music", getAllMusic)
+getStoreLi.on('click',"#header-get-store", getStore)
+
+//footer event listeners
+footerHomeLi.on('click','#footer-get-home', getHome);
+footerAllArtistsLi.on('click','#footer-get-artists', getAllArtists);
+footerAllAlbumsLi.on('click','#footer-get-albums', getAllMusic);
+footerStoreLi.on('click','#footer-get-store', getStore);
