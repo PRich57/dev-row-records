@@ -1,11 +1,10 @@
-const Category = require('./Category');
-const Artist = require('./Artist');
-const Album = require('./Album');
-const Merch = require('./Merch');
-const MerchTag = require('./MerchTag');
-const Tag = require('./Tag');
-console.log(Category);
-console.log(___________________________________);
+const Category = require("./Category");
+const Artist = require("./Artist");
+const Album = require("./Album");
+const Merch = require("./Merch");
+const MerchTag = require("./MerchTag");
+const Tag = require("./Tag");
+
 // Categories have many Merch
 Category.hasMany(Merch, {
   foreignKey: "category_id",
@@ -33,7 +32,7 @@ Merch.belongsToMany(Tag, {
 // Tags belongToMany Merch (through MerchTag)
 Tag.belongsToMany(Merch, {
   through: MerchTag,
-  foreignKey: 'tag_id',
+  foreignKey: "tag_id",
 });
 
 // Merch belongsTo Artist
@@ -41,12 +40,10 @@ Merch.belongsTo(Artist, {
   foreignKey: "artist_id",
 });
 
-
 // Album belongsTo Artist
 Album.belongsTo(Artist, {
   foreignKey: "artist_id",
 });
-
 
 module.exports = {
   Artist,
