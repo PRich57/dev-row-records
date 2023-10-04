@@ -19,7 +19,7 @@ Album.init(
         key: "id",
       },
     },
-    name: {
+    album_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
