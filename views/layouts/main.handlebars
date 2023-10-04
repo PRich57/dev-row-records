@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Favicon -->
-    <link rel="icon" type="icon" href="#">
+    <link rel="icon" type="icon" href="../Assets/DH.png">
     <!-- Reset CSS -->
-    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
     <!-- jquery UI LINK -->
     <link
       rel="stylesheet"
@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Merienda:wght@300&display=swap" rel="stylesheet">
 <!-- personal CSS -->
-<link rel="stylesheet" href="/style.css" />
+<link rel="stylesheet" href="../css/style.css" />
     <title>Dev Row Records</title>
 </head>
 <body>
@@ -39,15 +39,15 @@
               <form>
                 <div class="mb-3">
                   <label for="message-text" class="col-form-label">Username:</label>
-                  <textarea class="form-control" id="message-text" placeholder="in seconds..." ></textarea>
+                  <input type="text" class="form-control" id="loginUsernameInput">
                   <label for="message-text" class="col-form-label">Password:</label>
-                  <textarea class="form-control" id="message-text" placeholder="in seconds..." ></textarea>
+                  <input type="text" class="form-control" id="loginPasswordInput">
                 </div>
               </form>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" id = "modal-login-submit-div">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-danger" id = "modal-submit" data-bs-dismiss="modal">Login</button>
+              <button type="button" class="btn btn-danger" id = "modal-login-submit" data-bs-dismiss="modal">Login</button>
             </div>
           </div>
         </div>
@@ -58,68 +58,52 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="staticBackdropLabel">Quiz Length</h1>
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Sign Up Here</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
               <form>
                 <div class="mb-3">
                     <label for="message-text" class="col-form-label">Username:</label>
-                    <textarea class="form-control" id="message-text" placeholder="in seconds..." ></textarea>
+                    <input type="text" class="form-control" id="signup-username-input" placeholder = "jdoe23">
                     <label for="message-text" class="col-form-label">Password:</label>
-                    <textarea class="form-control" id="message-text" placeholder="in seconds..." ></textarea>
+                    <input type="text" class="form-control" id="signup-password-input" placeholder="passw0rd_17">
                 </div>
               </form>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" id = "modal-signup-submit-div">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-danger" id = "modal-submit" data-bs-dismiss="modal">Sign Up</button>
+              <button type="button" class="btn btn-danger" id = "modal-signup-submit" data-bs-dismiss="modal">Sign Up</button>
             </div>
           </div>
         </div>
       </div>
       <!-- NAV BAR -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
-        <a class="navbar-brand" href="#">Dev Row Records</a>
+        <a class="navbar-brand text-uppercase" href="#" id="Main_Title">Dev Row Records</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only"></span></a>
+          <ul class="navbar-nav" id = "header-ul">
+            <li class="nav-item active" id = "get-home-li">
+              <a class="nav-link Home_Link text-uppercase" id = "get-home">Home <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item" id = "get-all-artists-li">
+              <a class="nav-link Home_Link text-uppercase" id = "get-all-artists" >Artists</a>
+            </li>
+            <li class="nav-item" id = "get-all-music-li">
+              <a class="nav-link Home_Link text-uppercase" id = "get-all-music">Albums</a>
+            </li>
+            <li class="nav-item" id = "header-get-store-li">
+              <a class="nav-link Home_Link text-uppercase" id = "header-get-store">Store</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Artists</a>
+                <a class="nav-link Home_Link text-uppercase" data-bs-target="#login-modal" data-bs-toggle="modal">Login</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Albums</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#" data-bs-toggle="modal"
-                data-bs-target="#login-modal">Store</a>
-            </li>
-            <li class="nav-item">
-                <!-- <a class="nav-link" href="#main-quiz-div" data-bs-target = "#staticBackdrop">Login</a> -->
-                <button               
-                type="button"
-                class="btn ms-2 mb-4"
-                data-bs-toggle="modal"
-                data-bs-target="#login-modal"
-                >
-                Login
-                </button>
-              </li>
-            <li class="nav-item">
-                <!-- <a class="nav-link" href="#main-quiz-div" data-bs-target = "#staticBackdrop">Login</a> -->
-                <button               
-                type="button"
-                class="btn ms-2 mb-4"
-                data-bs-toggle="modal"
-                data-bs-target="#signup-modal"
-                >
-                Sign Up
-                </button>
+                <a class="nav-link Home_Link text-uppercase" data-bs-target="#signup-modal" data-bs-toggle="modal">Sign-Up</a>
+                
             </li>  
            
         </ul>
@@ -129,9 +113,29 @@
 
     <main>{{{body}}}</main>
 
-
+<!-- FOOTER -->
+    <div class="container">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2023 Dev Row Records, Inc</p>
+    
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <img class = "bi me-2" src="../Assets/DH.png" alt="band-logo" width="40" height="32">
+          <!-- <svg class="bi me-2" width="40" height="32"></svg> -->
+        </a>
+    
+        <ul class="nav col-md-4 justify-content-end" id = "footer-nav-ul">
+          <li id = "footer-get-home-li" class="nav-item"><a id = "footer-get-home" class="nav-link px-2 text-muted">Home</a></li>
+          <li id = "footer-get-artists-li" class="nav-item"><a id = "footer-get-artists"  class="nav-link px-2 text-muted">Artists</a></li>
+          <li id = "footer-get-albums-li"class="nav-item"><a id = "footer-get-albums" class="nav-link px-2 text-muted">Albums</a></li>
+          <li id = "footer-get-store-li"class="nav-item"><a id = "footer-get-store" class="nav-link px-2 text-muted">Store</a></li>
+          <li class="nav-item"><a  class="nav-link px-2 text-muted" data-bs-target="#login-modal" data-bs-toggle="modal">Login</a></li>
+          <li class="nav-item"><a  class="nav-link px-2 text-muted" data-bs-target="#signup-modal" data-bs-toggle="modal">Sign-Up</a></li>
+        </ul>
+      </footer>
+    </div>
     <!-- jQuery script -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+   
     <!-- jquery UI script -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <!-- bootstrap script -->
@@ -141,6 +145,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- personal JS script -->
-    <script src="/public/js/index.js"></script>
+    <script src="../js/nav.js"></script>
+    <script src="../js/login.js"></script>
 </body>
 </html>
