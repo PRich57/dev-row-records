@@ -1,6 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-
-const sequelize = require('../config/connection.js');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Merch extends Model {}
 
@@ -35,8 +34,8 @@ Merch.init(
       references: {
         model: "artist",
         key: "id",
-      }
-    }
+      },
+    },
   },
   {
     sequelize,
