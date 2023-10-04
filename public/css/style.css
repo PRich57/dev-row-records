@@ -1,3 +1,18 @@
+/* Features Section */
 h1 {
-    color: red;
+  color: red;
+}
+
+/* DEV ROW RECORDS in navr bar*/
+#Main_Title {
+  font-weight: 900;
+  font-size: 5rem;
+  margin-left: 0.8rem;
+}
+
+/* all links in nav bar*/
+.Home_Link {
+  color: black !important;
+  font-weight: 800 !important;
+  margin-top: 2.7rem !important;
 }
