@@ -30,8 +30,8 @@ Merch.init(
         key: "id",
       },
     },
-    artist_id: { // Should I use id instead of name?
-      type: DataTypes.STRING,
+    artist_id: {
+      type: DataTypes.INTEGER,
       references: {
         model: "artist",
         key: "id",
