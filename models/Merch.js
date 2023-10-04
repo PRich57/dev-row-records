@@ -1,6 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Merch extends Model {}
 
@@ -30,13 +29,14 @@ Merch.init(
         key: "id",
       },
     },
-    artist_name: { // Should I use id instead of name?
-      type: DataTypes.STRING,
+    artist_id: {
+      // Replacing artist_name with artist_id
+      type: DataTypes.INTEGER,
       references: {
         model: "artist",
-        key: "name",
-      }
-    }
+        key: "id",
+      },
+    },
   },
   {
     sequelize,
