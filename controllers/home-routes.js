@@ -25,12 +25,20 @@ router.get("/artists", async (req, res) => {
 
 router.get("/music", async (req, res) => {
   // TODO: pull data from models and send to view.
-  res.status(200).render("albums");
+  const data = await Album.findAll();
+  const albums = data.map((value) => {
+    return value.get({ plain: true });
+  });
+  res.status(200).render("albums", { albums });
 });
 
 router.get("/merch", async (req, res) => {
   // TODO: pull data from models and send to view.
-  res.status(200).render("merch");
+  const data = await Merch.findAll();
+  const merch = data.map((value) => {
+    return value.get({ plain: true });
+  });
+  res.status(200).render("merch", { merch });
 });
 
 router.get("/favorites", auth, async (req, res) => {
