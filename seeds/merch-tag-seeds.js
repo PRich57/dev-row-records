@@ -2,16 +2,28 @@ const { MerchTag } = require("../models");
 
 const merchTagData = [
   {
-    category_name: "Merch",
+    merch_id: 1,
+    tag_id: 4,
   },
   {
-    category_name: "Songs",
+    merch_id: 1,
+    tag_id: 3,
   },
   {
-    category_name: "Albums",
+    merch_id: 1,
+    tag_id: 2,
   },
   {
-    category_name: "Artists",
+    merch_id: 2,
+    tag_id: 5,
+  },
+  {
+    merch_id: 3,
+    tag_id: 1,
+  },
+  {
+    merch_id: 3,
+    tag_id: 2
   },
 ];
 
