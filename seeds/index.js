@@ -4,8 +4,8 @@ const seedCategory = require("./category-seeds");
 const seedMerch = require("./merch-seeds");
 const seedTag = require("./tag-seeds");
 const seedMerchTag = require("./merch-tag-seeds");
-require("dotenv").config();
 
+require("dotenv").config();
 
 const sequelize = require("../config/connection");
 
@@ -16,23 +16,21 @@ const seedAll = async () => {
   await seedCategory();
   console.log("\n----- CATEGORIES SEEDED -----\n");
 
-  
-
   await seedTag();
   console.log("\n----- TAGS SEEDED -----\n");
-
+  
   await seedArtist();
   console.log("\n----- ARTISTS SEEDED -----\n");
-
+  
   await seedAlbum();
   console.log("\n----- ALBUMS SEEDED -----\n");
-
+  
   await seedMerch();
   console.log("\n----- MERCH SEEDED -----\n");
-
+  
   await seedMerchTag();
   console.log("\n----- MERCH TAGS SEEDED -----\n");
-
+  
   process.exit(0);
 };
 

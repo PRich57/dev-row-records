@@ -1,8 +1,9 @@
 const {
-  Album,
   Artist,
+  Album,
   Category,
   Merch,
+  MerchTag,
   Tag,
   User,
   Favorite,
