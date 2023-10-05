@@ -6,6 +6,7 @@ const {
   Tag,
   User,
   Favorite,
+  MerchTag,
 } = require("../models");
 const router = require("express").Router();
 const auth = require("../utils/withAuth");
@@ -37,6 +38,7 @@ router.get("/artists/:id", async (req, res) => {
     },
   });
   const artist = data.get({ plain: true });
+  // console.log(artist)
   res.status(200).render("singleArtist", { artist });
 });
 

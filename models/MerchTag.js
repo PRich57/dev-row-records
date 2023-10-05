@@ -31,7 +31,7 @@ MerchTag.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    modelName: 'product_tag',
+    modelName: 'merch_tag',
   }
 );
 
