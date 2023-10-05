@@ -78,7 +78,7 @@ router.get("/favorites", auth, async (req, res) => {
   const { user_id } = req.session.cookie
 
   try {
-    const data = Favorites.findAll({
+    const data = Favorite.findAll({
       where: {
         user_id,
       }
