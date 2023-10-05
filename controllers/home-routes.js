@@ -32,13 +32,18 @@ router.get("/artists", async (req, res) => {
 
 router.get("/artists/:id", async (req, res) => {
   // TODO: pull data from models and send to view.
-  const data = await Artist.findOne({
-    where: {
-      id: req.params.id,
-    },
-  });
-  const artist = data.get({ plain: true });
-  res.status(200).render("singleArtist", { artist });
+    try {
+      const data = await Artist.findOne({
+        where: {
+          id: req.params.id,
+        },
+      });
+      const artist = data.get({ plain: true });
+      res.status(200).render("singleArtist", artist);
+    } catch (err) {
+      console.warn(err);
+      res.status(500).json(err);
+    }
 });
 
 router.get("/music", async (req, res) => {
@@ -57,13 +62,18 @@ router.get("/music", async (req, res) => {
 
 router.get("/music/:id", async (req, res) => {
   // TODO: pull data from models and send to view.
-  const data = await Album.findOne({
-    where: {
-      id: req.params.id,
-    },
-  });
-  const album = data.get({ plain: true });
-  res.status(200).render("singleArtist", { album });
+    try {
+      const data = await Album.findOne({
+        where: {
+          id: req.params.id,
+        },
+      });
+      const album = data.get({ plain: true });
+      res.status(200).render("singleAlbum", album);
+    } catch (err) {
+      console.warn(err);
+      res.status(500).json(err);
+    }
 });
 
 //http:/website.dev/merch?tag=hoodie
@@ -104,13 +114,18 @@ router.get("/merch", async (req, res) => {
 
 router.get("/merch/:id", async (req, res) => {
   // TODO: pull data from models and send to view.
-  const data = await Merch.findOne({
-    where: {
-      id: req.params.id,
-    },
-  });
-  const merch = data.get({ plain: true });
-  res.status(200).render("singleArtist", { merch });
+    try {
+      const data = await Merch.findOne({
+        where: {
+          id: req.params.id,
+        },
+      });
+      const merch = data.get({ plain: true });
+      res.status(200).render("singleMerch", merch);
+    } catch (err) {
+      console.warn(err);
+      res.status(500).json(err);
+    }
 });
 
 router.get("/favorites", auth, async (req, res) => {
