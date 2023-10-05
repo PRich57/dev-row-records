@@ -41,6 +41,9 @@ Favorite.init(
         key: "id",
       },
     },
+  },
+  {
+    sequelize,
   }
 );
 
