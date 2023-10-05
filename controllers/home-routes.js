@@ -4,6 +4,7 @@ const Artist = require("../models/Artist");
 const Category = require("../models/Category");
 const Merch = require("../models/Merch");
 const Tag = require("../models/Tag");
+const MerchTag = require("../models/MerchTag");
 
 router.get("/", async (req, res) => {
   res.status(200).render("homepage");

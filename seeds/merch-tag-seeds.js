@@ -16,7 +16,7 @@ const merchTagData = [
 ];
 
 const seedMerchTag = async () => {
-  await Category.bulkCreate(merchTagData);
+  await MerchTag.bulkCreate(merchTagData);
 };
 
 module.exports = seedMerchTag;
