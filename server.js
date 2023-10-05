@@ -10,9 +10,12 @@ const sequelize = require("./config/connection");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const ONE_DAY = 24 * 60 * 60 * 1000;
 const sess = {
   secret: process.env.DB_SCRT,
-  cookie: {},
+  cookie: {
+    maxAge: ONE_DAY,
+  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
