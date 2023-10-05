@@ -5,7 +5,66 @@ const Merch = require("./Merch");
 const MerchTag = require("./MerchTag");
 const Tag = require("./Tag");
 const User = require("./User");
-const Favorite = require("./Favorite");
+// const Favorite = require("./Favorite");
+
+
+// User.hasMany(Favorite, {
+//   foreignKey: "user_id"
+// });
+
+// Favorite.belongsTo(User, {
+//   foreignKey: "user_id"
+// });
+
+// Artist.hasMany(Favorite, {
+//   foreignKey: "artist_id"
+// });
+
+// Favorite.belongsTo(Artist, {
+//   foreignKey: "artist_id"
+// });
+
+// Album.hasMany(Favorite, {
+//   foreignKey: "album_id"
+// });
+
+// Favorite.belongsTo(Album, {
+//   foreignKey: "album_id"
+// });
+// // User hasMany Album through Favorite
+// User.hasMany(Album, {
+//   through: Favorite,
+//   foreignKey: "user_id",
+// });
+
+// // User hasMany Artist through Favorite
+// User.hasMany(Artist, {
+//   through: Favorite,
+//   foreignKey: "user_id",
+// });
+
+// // User hasMany Merch through Favorite 
+// User.hasMany(Merch, {
+//   through: Favorite,
+//   foreignKey: "user_id",
+// });
+
+// // Album belongs to User
+// Album.belongsToMany(User, {
+//   through: Favorite,
+//   foreignKey: "album_id",
+// });
+
+// // Artist belongsToMany User through Favorite
+// Artist.belongsToMany(User, {
+//   through: Favorite,
+//   foreignKey: "artist_id",
+// });
+
+// Merch.belongsToMany(User, {
+//   through: Favorite,
+//   foreignKey: "merch_id",
+// });
 
 // Categories have many Merch
 Category.hasMany(Merch, {
@@ -49,12 +108,6 @@ Album.belongsTo(Artist, {
   foreignKey: "artist_id",
 });
 
-// Favorite belongs to User
-Favorite.belongsTo(User, {
-  foreignKey: "user_id",
-});
-
-// User hasMany favorites
 
 
 module.exports = {
@@ -65,5 +118,4 @@ module.exports = {
   MerchTag,
   Tag,
   User,
-  Favorite,
 };

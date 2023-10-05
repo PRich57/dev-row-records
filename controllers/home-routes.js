@@ -1,4 +1,5 @@
 const { Album, Artist, Category, Merch, Tag, User, Favorite }  = require("../models");
+const router = require("express").Router();
 
 const auth = require("../utils/withAuth");
 
