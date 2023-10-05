@@ -44,6 +44,9 @@ Favorite.init(
   },
   {
     sequelize,
+    timestamps: false,
+    freezeTableName: true,
+    modelName: "favorite",
   }
 );
 
