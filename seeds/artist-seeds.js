@@ -2,13 +2,13 @@ const { Artist } = require("../models");
 
 const artistData = [
   {
-    name: "Creek",
+    artist_name: "A Place For Owls",
   },
   {
-    name: "A Place For Owls",
+    artist_name: "Creek",
   },
   {
-    name: "Floral Patterns",
+    artist_name: "Floral Patterns",
   },
 ];
 
