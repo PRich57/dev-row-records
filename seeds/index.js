@@ -9,24 +9,24 @@ const sequelize = require('../config/connection');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
-  console.log('\n----- DATABASE SYNCED -----\n');
-  await seedAlbum();
-  console.log('\n----- ALBUMS SEEDED -----\n');
+  // console.log('\n----- DATABASE SYNCED -----\n');
+  // await seedAlbum();
+  // console.log('\n----- ALBUMS SEEDED -----\n');
 
   await seedArtist();
   console.log('\n----- ARTISTS SEEDED -----\n');
 
-  await seedCategory();
-  console.log('\n----- CATEGORIES SEEDED -----\n');
+  // await seedCategory();
+  // console.log('\n----- CATEGORIES SEEDED -----\n');
 
-  await seedMerch();
-  console.log('\n----- MERCH SEEDED -----\n');
+  // await seedMerch();
+  // console.log('\n----- MERCH SEEDED -----\n');
 
-  await seedMerchTag();
-  console.log('\n----- MERCH TAGS SEEDED -----\n');
+  // await seedMerchTag();
+  // console.log('\n----- MERCH TAGS SEEDED -----\n');
 
-  await seedTag();
-  console.log('\n----- TAGS SEEDED -----\n');
+  // await seedTag();
+  // console.log('\n----- TAGS SEEDED -----\n');
 
   process.exit(0);
 };

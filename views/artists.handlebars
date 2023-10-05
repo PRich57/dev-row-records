@@ -3,13 +3,24 @@
 
 <!-- ALL ARTISTS SECTION -->
 <div class="container-fluid mx-0" style = "border: .2rem solid red">
-    <div class = "row">
-      <h1>ARTISTS SECTION</h1>
+    <div class = "row  mt-5 mb-3">
+      <h1 class = "text-center">ARTISTS SECTION</h1>
     </div>
-    <!-- FEATURED ARTISTS -->
     
-    <div class = "row" style = "border: .2rem solid blue">
-     <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3" style = "border: .2rem solid green">
+    
+    <div class = "row" style = "border: .2rem solid blue" id = "artist-div-row">
+      {{#each artists as |artist|}}
+     <div class = "col-xl-3 col-lg-6 col-12 d-flex align-items-center justify-content-center p-3" style = "border: .2rem solid green">
+        <div class="card cardEvent" style="width: 18rem;"  id = "{{id}}">
+          <img src="{{image}}" class="card-img-top img-fluid" alt="..." style = "height: 15rem" id = "artistIndex">
+          <div class="card-body d-flex justify-content-center">
+            <h5 class="card-title">{{name}}</h5>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    
+      {{!-- <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3" style = "border: .2rem solid green">
         <div class="card" style="width: 18rem;">
           <img src="../Assets/artist-thumbnail.PNG" class="card-img-top" alt="...">
           <div class="card-body d-flex justify-content-center">
@@ -64,15 +75,7 @@
             <h5 class="card-title">Card title</h5>
           </div>
         </div>
-      </div>
-      <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3" style = "border: .2rem solid green">
-        <div class="card" style="width: 18rem;">
-          <img src="../Assets/artist-thumbnail.PNG" class="card-img-top" alt="...">
-          <div class="card-body d-flex justify-content-center">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-      </div>
+      </div> --}}
       
     </div>
 

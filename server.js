@@ -40,3 +40,9 @@ app.use(routes);
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
 });
+
+
+/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+// particlesJS.load('particles-js',parti, function() {
+//   console.log('callback - particles-js config loaded');
+// });

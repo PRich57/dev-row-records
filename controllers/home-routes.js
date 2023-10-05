@@ -16,6 +16,7 @@ router.get("/artists", async (req, res) => {
   const artists = data.map((value) => {
     return value.get({ plain: true });
   });
+  console.log(artists)
   res.status(200).render("artists", { artists });
 });
 
