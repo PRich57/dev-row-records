@@ -7,7 +7,7 @@ const {
   Tag,
   User,
   Favorite,
-  MerchTag,
+  
 } = require("../models");
 const router = require("express").Router();
 const auth = require("../utils/withAuth");
@@ -38,9 +38,9 @@ router.get("/artists/:id", async (req, res) => {
       id: req.params.id,
     },
   });
-  const artist = data.get({ plain: true });
-  // console.log(artist)
-  res.status(200).render("singleArtist", { artist });
+  const artist = await data.get({ plain: true });
+  console.log(artist)
+  res.status(200).render("singleArtist", artist );
 });
 
 router.get("/music", async (req, res) => {

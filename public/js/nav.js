@@ -95,9 +95,9 @@ const getSingleArtist = async (id) => {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
-    if (response.ok) {
-      window.location.replace(`/artists/${id}`);
-    }
+    // if (response.ok) {
+    //   window.location.replace(`/artists/${id}`);
+    // }
   } catch (err) {
     console.log(err);
   }
