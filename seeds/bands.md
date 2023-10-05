@@ -14,3 +14,9 @@
   - Millstone (Single - 2020)
   - Hindsight (Single - 2022)
   - Elegy (Single - 2023)
+- Broken Record
+  - Broken Record (EP - 2018)
+  - By My Side (EP - 2019)
+  - I Died Laughing (Album - 2020)
+  - Weightless (EP - 2022)
+  - Nothing Moves Me (Album - 2023)
