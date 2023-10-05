@@ -5,6 +5,9 @@ const seedMerch = require("./merch-seeds");
 const seedMerchTag = require("./merch-tag-seeds");
 const seedTag = require("./tag-seeds");
 
+require("dotenv").config();
+console.log(process.env);
+
 const sequelize = require("../config/connection");
 
 const seedAll = async () => {
