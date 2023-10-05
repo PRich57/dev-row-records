@@ -91,8 +91,6 @@ Album.belongsTo(Artist, {
   foreignKey: "artist_id",
 });
 
-
-
 module.exports = {
   Artist,
   Album,
