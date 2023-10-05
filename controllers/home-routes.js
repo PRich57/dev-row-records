@@ -1,5 +1,6 @@
 const { Album, Artist, Category, Merch, Tag, User, Favorite }  = require("../models");
 const router = require("express").Router();
+
 const auth = require("../utils/withAuth");
 
 router.get("/", async (req, res) => {
@@ -77,7 +78,7 @@ router.get("/favorites", auth, async (req, res) => {
   const { user_id } = req.session.cookie
 
   try {
-    const data = Favorites.findAll({
+    const data = Favorite.findAll({
       where: {
         user_id,
       }
