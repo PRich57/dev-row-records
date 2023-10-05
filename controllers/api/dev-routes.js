@@ -1,7 +1,5 @@
 const router = require("express").Router();
-const Album = require("../../models/Album");
-const Artist = require("../../models/Artist");
-const Merch = require("../../models/Merch");
+const { Album, Artist, Merch } = require("../../models");
 
 router.post("/artist", async (req, res) => {
   const { name } = await req.body;
@@ -27,12 +25,12 @@ router.post("/artist", async (req, res) => {
 
 router.post("/album", async (req, res) => {
   // get artist id from artist name
-  const { artist_name, album_name } = req.body;
+  const { artist_name, name } = req.body;
   const artist_id = await findArtistIDByName(artist_name);
 
   // create album with artist id
   try {
-    const data = await Album.create({ artist_id, album_name });
+    const data = await Album.create({ artist_id, name });
     res.status(200).json({
       message: "Successfully created album:",
       data,
@@ -46,13 +44,13 @@ router.post("/album", async (req, res) => {
 });
 
 router.post("/merch", async (req, res) => {
-  const { artist_name, merch_name, category_id, price } = req.body;
+  const { artist_name, name, category_id, price } = req.body;
   const artist_id = await findArtistIDByName(artist_name);
 
   try {
     const data = await Merch.create({
       artist_id,
-      merch_name,
+      name,
       category_id,
       price,
     });

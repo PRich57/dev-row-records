@@ -4,15 +4,61 @@ const Album = require("./Album");
 const Merch = require("./Merch");
 const MerchTag = require("./MerchTag");
 const Tag = require("./Tag");
+const User = require("./User");
+const Favorite = require("./Favorite");
+
+
+// User.hasMany(Favorite, {
+//   foreignKey: "user_id"
+// });
+
+// Favorite.belongsTo(User, {
+//   foreignKey: "user_id"
+// });
+
+// Artist.hasMany(Favorite, {
+//   foreignKey: "artist_id"
+// });
+
+// Favorite.belongsTo(Artist, {
+//   foreignKey: "artist_id"
+// });
+
+// Album.hasMany(Favorite, {
+//   foreignKey: "album_id"
+// });
+
+// Favorite.belongsTo(Album, {
+//   foreignKey: "album_id"
+// });
+
+// // Album belongs to User
+// Album.belongsToMany(User, {
+//   through: Favorite,
+//   foreignKey: "album_id",
+// });
+
+// // Artist belongsToMany User through Favorite
+// Artist.belongsToMany(User, {
+//   through: Favorite,
+//   foreignKey: "artist_id",
+// });
+
+// Merch.belongsToMany(User, {
+//   through: Favorite,
+//   foreignKey: "merch_id",
+// });
 
 // Categories have many Merch
 Category.hasMany(Merch, {
   foreignKey: "category_id",
 });
+
 // Artist hasMany Album
 Artist.hasMany(Album, {
   foreignKey: "artist_id",
 });
+
 // Artist hasMany Merch
 Artist.hasMany(Merch, {
   foreignKey: "artist_id",
@@ -45,6 +91,8 @@ Album.belongsTo(Artist, {
   foreignKey: "artist_id",
 });
 
+
+
 module.exports = {
   Artist,
   Album,
@@ -52,4 +100,6 @@ module.exports = {
   Merch,
   MerchTag,
   Tag,
+  User,
+  Favorite
 };

@@ -12,13 +12,13 @@ Artist.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    name: {
+    artist_name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    image: {
+    filename: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
     }
   },
   {
