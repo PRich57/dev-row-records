@@ -64,7 +64,17 @@ router.post("/login", async (req, res) => {
 
 // TODO: LOGOUT route
 router.post("/logout", async (req, res) => {
-
+  if (!req.session.loggedIn) {
+    res.status(404).json({
+      message: "your propensity for failure amazes me.",
+    });
+    return;
+  }
+  req.session.destroy(() => {
+    res.status(204).json({
+      message: "I'll be seeing you, my friend.",
+    });
+  });
 });
 
 module.exports = router;
