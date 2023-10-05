@@ -1,28 +1,19 @@
-const { Artist } = require('../models');
+const { Artist } = require("../models");
 
-const categoryData = [
+const artistData = [
   {
-    artist_name: 'PinkFloyd',
-    filename: '../Assets/pink-floyd.avif'
+    artist_name: "A Place For Owls",
   },
   {
-    artist_name: 'Doja Cat',
-    filename: '../Assets/single-artist.jpg'
+    artist_name: "Creek",
   },
   {
-    artist_name: 'Led Zep',
-    filename: '../Assets/led_zeppelin.png'
-  },
-  {
-    artist_name: 'Gorillaz',
-    filename: '../Assets/gorillaz.jpg'
-  },
-  {
-    artist_name: 'George Strait',
-    filename: '../Assets/george-strait.jpg'
+    artist_name: "Floral Patterns",
   },
 ];
 
-const seedCategories = () => Artist.bulkCreate(categoryData);
+const seedArtist = () => Artist.bulkCreate(artistData);
 
-module.exports = seedCategories;
+module.exports = seedArtist;
+
+// DONE //
