@@ -99,7 +99,7 @@ router.get("/favorites", auth, async (req, res) => {
     albums: [],
     merch: [],
   };
-  const { user_id } = req.session.user;
+  const { id: user_id } = req.session.user;
 
   try {
     const data = Favorite.findAll({

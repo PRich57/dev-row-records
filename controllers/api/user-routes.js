@@ -16,6 +16,7 @@ router.post("/", async (req, res) => {
     })
     req.session.save(() => {
       req.session.loggedIn = true;
+      req.session.user = user;
       res.status(200).json({
         message: "Successfully created user!",
         user,
@@ -52,6 +53,7 @@ router.post("/login", async (req, res) => {
     }
       req.session.save(() => {
         req.session.loggedIn = true;
+        req.session.user = user;
         res.status(200).json({
           message: "Successfully logged in!",
           user,
