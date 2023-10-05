@@ -79,4 +79,29 @@ router.post("/logout", async (req, res) => {
   });
 });
 
+router.delete("/user/:id", async (req, res) => {
+  try {
+    const deletedUser = await User.destroy({
+      where: {
+        id,
+      }
+    });
+    if (!deletedUser) {
+      res.status(404).json({
+        message: "Could not delete user: User not found",
+      });
+    }
+    res.status(200).json({
+      message: "User removed from database. Get owned",
+      deletedUser,
+    });
+  } catch (err) {
+    console.warn(err);
+    res.status(500).json({
+      message: "I wish I hadn't done this whole 'write messages for my errors' thing",
+      err,
+    })
+  }
+})
+
 module.exports = router;
