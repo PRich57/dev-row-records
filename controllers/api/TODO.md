@@ -3,7 +3,6 @@
 ## CREATE ITEM ROUTES
 
 - genre
-- merch
 - tag
 
 ## DELETE ITEM ROUTES

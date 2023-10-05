@@ -20,18 +20,19 @@ router.post("/", async (req, res) => {
       res.status(400).json({ message: "Failed to create artist" });
       return;
     }
+    const artist = data.get({ plain: true });
     allGenreID.forEach( async (value) => {
       const through = await ArtistGenre.create({
-        artist_id: data.id,
+        artist_id: artist.id,
         genre_id: value,
       });
       if (!through) {
-        console.warn("Failed to create ArtistGenre through-table item: ", data.id, value);
+        console.warn("Failed to create ArtistGenre through-table item: ", artist.id, value);
       }
     });
     res.status(200).json({
       message: "Successfully created artist!",
-      data,
+      artist,
     });
   } catch (err) {
     console.warn(err);
