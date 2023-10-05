@@ -2,24 +2,24 @@ const { Artist } = require('../models');
 
 const categoryData = [
   {
-    name: 'PinkFloyd',
-    image: '../Assets/pink-floyd.avif'
+    artist_name: 'PinkFloyd',
+    filename: '../Assets/pink-floyd.avif'
   },
   {
-    name: 'Doja Cat',
-    image: '../Assets/single-artist.jpg'
+    artist_name: 'Doja Cat',
+    filename: '../Assets/single-artist.jpg'
   },
   {
-    name: 'Led Zep',
-    image: '../Assets/led_zeppelin.png'
+    artist_name: 'Led Zep',
+    filename: '../Assets/led_zeppelin.png'
   },
   {
-    name: 'Gorillaz',
-    image: '../Assets/gorillaz.jpg'
+    artist_name: 'Gorillaz',
+    filename: '../Assets/gorillaz.jpg'
   },
   {
-    name: 'George Strait',
-    image: '../Assets/george-strait.jpg'
+    artist_name: 'George Strait',
+    filename: '../Assets/george-strait.jpg'
   },
 ];
 
