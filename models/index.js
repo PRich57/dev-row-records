@@ -7,47 +7,30 @@ const Tag = require("./Tag");
 const User = require("./User");
 const Favorite = require("./Favorite");
 
+// User
+User.hasMany(Favorite, {
+  foreignKey: "user_id"
+});
 
-// User.hasMany(Favorite, {
-//   foreignKey: "user_id"
-// });
+Favorite.belongsTo(User, {
+  foreignKey: "user_id"
+});
 
-// Favorite.belongsTo(User, {
-//   foreignKey: "user_id"
-// });
+Artist.hasMany(Favorite, {
+  foreignKey: "artist_id"
+});
 
-// Artist.hasMany(Favorite, {
-//   foreignKey: "artist_id"
-// });
+Favorite.belongsTo(Artist, {
+  foreignKey: "artist_id"
+});
 
-// Favorite.belongsTo(Artist, {
-//   foreignKey: "artist_id"
-// });
+Album.hasMany(Favorite, {
+  foreignKey: "album_id"
+});
 
-// Album.hasMany(Favorite, {
-//   foreignKey: "album_id"
-// });
-
-// Favorite.belongsTo(Album, {
-//   foreignKey: "album_id"
-// });
-
-// // Album belongs to User
-// Album.belongsToMany(User, {
-//   through: Favorite,
-//   foreignKey: "album_id",
-// });
-
-// // Artist belongsToMany User through Favorite
-// Artist.belongsToMany(User, {
-//   through: Favorite,
-//   foreignKey: "artist_id",
-// });
-
-// Merch.belongsToMany(User, {
-//   through: Favorite,
-//   foreignKey: "merch_id",
-// });
+Favorite.belongsTo(Album, {
+  foreignKey: "album_id"
+});
 
 // Categories have many Merch
 Category.hasMany(Merch, {
