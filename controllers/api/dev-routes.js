@@ -1,27 +1,6 @@
 const router = require("express").Router();
 const { Album, Artist, Merch } = require("../../models");
 
-router.post("/artist", async (req, res) => {
-  const { name } = await req.body;
-  try {
-    const data = await Artist.create({ name });
-    if (!data) {
-      res.status(400).json({
-        message: "Create artist failed",
-      });
-      return;
-    }
-    res.status(200).json({
-      message: "Successfully created artist:",
-      data,
-    });
-  } catch (err) {
-    res.status(500).json({
-      message: "Something went wrong:",
-      err,
-    });
-  }
-});
 
 router.post("/album", async (req, res) => {
   // get artist id from artist name
@@ -36,6 +15,7 @@ router.post("/album", async (req, res) => {
       data,
     });
   } catch (err) {
+    console.warn(err);
     res.status(500).json({
       message: "Internal error while creating album:",
       err,
@@ -59,6 +39,7 @@ router.post("/merch", async (req, res) => {
       data,
     });
   } catch (err) {
+    console.warn(err);
     res.status(500).json({
       message: "Internal error while creating merch item:",
       err,
@@ -83,6 +64,7 @@ router.delete("/user/:id", async (req, res) => {
       deletedUser,
     });
   } catch (err) {
+    console.warn(err);
     res.status(500).json({
       message: "I wish I hadn't done this whole 'write messages for my errors' thing",
       err,
@@ -100,6 +82,7 @@ async function findArtistIDByName(name) {
     console.log(artist);
     return artist.id;
   } catch (err) {
+    console.warn(err);
     throw new Error(err);
   }
 }
