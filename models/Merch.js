@@ -25,7 +25,7 @@ Merch.init(
     // filename will be the name of the associated image
     filename: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     category_id: {
       type: DataTypes.INTEGER,
