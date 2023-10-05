@@ -14,9 +14,12 @@ router.post("/", async (req, res) => {
       email,
       password,
     })
-    res.status(200).json({
-      message: "Successfully created user!",
-      user,
+    req.session.save(() => {
+      req.session.loggedIn = true;
+      res.status(200).json({
+        message: "Successfully created user!",
+        user,
+      });
     });
   } catch (err) {
     res.status(500).json({
@@ -60,6 +63,8 @@ router.post("/login", async (req, res) => {
 });
 
 // TODO: LOGOUT route
-router.post("/logout", async (req, res) => {});
+router.post("/logout", async (req, res) => {
+
+});
 
 module.exports = router;
