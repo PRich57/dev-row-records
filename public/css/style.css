@@ -71,8 +71,9 @@ canvas {
 }
 #footer-div {
   /* position: relative; */
-  border: 0.1rem solid pink;
-  background-color: white;
+  /* border: 0.1rem solid pink; */
+  /* background-color: white; */
+  background-color: rgb(31, 32, 33);
   /* z-index: 1; */
 }
 /* ---- stats.js ---- */
