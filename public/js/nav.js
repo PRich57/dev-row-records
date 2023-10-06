@@ -41,7 +41,8 @@ const getAllArtists = async (event) => {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
-    // console.log(response)
+    
+ 
     if (response.ok) {
       window.location.replace("/artists");
     }
@@ -95,9 +96,13 @@ const getSingleArtist = async (id) => {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
-    // if (response.ok) {
-    //   window.location.replace(`/artists/${id}`);
-    // }
+    console.log(response)
+    if (response.ok) {
+  
+      window.location.replace(`/artists/${id}`);
+    }
+   
+    
   } catch (err) {
     console.log(err);
   }
