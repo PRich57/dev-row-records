@@ -2,13 +2,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- importing google font Bebas Neue -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans&display=swap"
-      rel="stylesheet"
-    />
+     {{!-- particles.js --}}
+    <script src="particles.js"></script>
     <!-- Favicon -->
     <link rel="icon" type="icon" href="../Assets/DH.png" />
     <!-- Reset CSS -->
@@ -29,6 +24,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Bigelow+Rules&family=Merienda:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fira+Sans&display=swap"
       rel="stylesheet"
     />
     <!-- personal CSS -->
@@ -226,28 +225,17 @@
         </div>
       </div>
     </nav>
-
-    <div id="particles-js">
-
-      <main>{{{body}}}</main>
-    <!-- FOOTER -->
-    <div class="container-fluid">
-      <footer
-        class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top bg-dark"
-      >
-        <p class="col-md-4 mb-0 text-muted mx-auto">© 2023 Dev Row Records, Inc</p>
-
-        <a
-          href="/"
-          class="col-md-3 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
-        >
-          <img
-            class="bi me-2"
-            src="../Assets/DH.png"
-            alt="band-logo"
-            width="40"
-            height="32"
-          />
+<main style = "position: relative; height:100%; width:100%">
+<div class = "count-particles " id = "particles-js"> </div>
+      {{{body}}}
+</main> 
+<!-- FOOTER -->
+    <div class="container-fluid" id = "footer-div">
+      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2023 Dev Row Records, Inc</p>
+    
+        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+          <img class = "bi me-2" src="../Assets/DH.png" alt="band-logo" width="40" height="32">
           <!-- <svg class="bi me-2" width="40" height="32"></svg> -->
         </a>
 
@@ -294,6 +282,9 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+ 
+
     <!-- personal JS script -->
     <script src="../js/nav.js"></script>
     <script src="../js/login.js"></script>

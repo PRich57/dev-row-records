@@ -1,38 +1,3 @@
-/* ---- reset ---- */
-body {
-  margin: 0;
-  font: normal 75% Arial, Helvetica, sans-serif;
-}
-canvas {
-  display: block;
-  vertical-align: bottom;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-} /* ---- particles.js container ---- */
-#particles-js {
-  position: fixed;
-  /* position: absolute;
-  top: 0px;
-  left: 0px; */ */
-  width: 100vh;
-  height: 100vh;
-  background-color: #121212;
-  background-size: cover;
-  /* background-position: 50% 50%; */
-} /* ---- stats.js ---- */
-
-#home-container {
-  position: relative;
-}
-
-/* Custom Font*/
-body {
-  font-family: "Bebas Neue", sans-serif;
-  background-color: rgb(31, 32, 33);
-  color: white;
-}
-
 #header-ul li:hover,
 #footer-nav-ul li:hover {
   cursor: pointer;
@@ -73,4 +38,71 @@ body {
 .card:hover {
   scale: 1.1;
   cursor: pointer;
+}
+
+/* ---- reset ---- */
+body {
+  margin: 0;
+  font: normal 75% Arial, Helvetica, sans-serif;
+}
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+/* ---- particles.js container ---- */
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: .5rem solid yellow;
+  background-color: black;
+  background-image: url("");
+  background-repeat: repeat;
+  background-size: cover;
+  /* background-position: 50% 50%; */
+  z-index: -1;
+}
+#footer-div {
+  /* position: relative; */
+  border: .1rem solid pink;
+  background-color: white;
+  /* z-index: 1; */
+  
+}
+/* ---- stats.js ---- */
+/* .count-particles {
+  background: #000022;
+  position: absolute;
+  top: 48px;
+  left: 0;
+  width: 80px;
+  color: #13e8e9;
+  font-size: 0.8em;
+  text-align: left;
+  text-indent: 4px;
+  line-height: 14px;
+  padding-bottom: 2px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: bold;
+}
+.js-count-particles {
+  font-size: 1.1em;
+}
+#stats,
+.count-particles {
+  -webkit-user-select: none;
+  margin-top: 5px;
+  margin-left: 5px;
+}
+#stats {
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+.count-particles {
+  border-radius: 0 0 3px 3px;
+} */
+
+.z-class {
+
+  position: absolute;
 }

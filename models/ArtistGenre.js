@@ -2,27 +2,27 @@ const { Model, DataTypes } = require('sequelize');
 
 const sequelize = require('../config/connection.js');
 
-class MerchTag extends Model {}
+class ArtistGenre extends Model {}
 
-MerchTag.init(
+ArtistGenre.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: true,
+      allowNull: false,
       primaryKey: true,
       autoIncrement: true,
     },
-    merch_id: {
+    genre_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'merch',
+        model: 'genre',
         key: 'id',
       },
     },
-    tag_id: {
+    artist_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'tag',
+        model: 'artist',
         key: 'id',
       },
     },
@@ -31,8 +31,8 @@ MerchTag.init(
     sequelize,
     timestamps: false,
     freezeTableName: true,
-    modelName: 'merch_tag',
+    modelName: 'artist_genre',
   }
 );
 
-module.exports = MerchTag;
+module.exports = ArtistGenre;

@@ -6,48 +6,63 @@ const MerchTag = require("./MerchTag");
 const Tag = require("./Tag");
 const User = require("./User");
 const Favorite = require("./Favorite");
+const AlbumGenre = require("./AlbumGenre");
+const ArtistGenre = require("./ArtistGenre");
+const Genre = require("./Genre");
 
+// User hasMany Favorite
+User.hasMany(Favorite, {
+  foreignKey: "user_id",
+});
 
-// User.hasMany(Favorite, {
-//   foreignKey: "user_id"
-// });
+// Favorite belongsTo User
+Favorite.belongsTo(User, {
+  foreignKey: "user_id",
+});
 
-// Favorite.belongsTo(User, {
-//   foreignKey: "user_id"
-// });
+// Artist hasMany Favorite
+Artist.hasMany(Favorite, {
+  foreignKey: "artist_id",
+});
 
-// Artist.hasMany(Favorite, {
-//   foreignKey: "artist_id"
-// });
+// Favorite belongsTo Artist
+Favorite.belongsTo(Artist, {
+  foreignKey: "artist_id",
+});
 
-// Favorite.belongsTo(Artist, {
-//   foreignKey: "artist_id"
-// });
+// Genre belongsToMany Artist through ArtistGenre
+Genre.belongsToMany(Artist, {
+  through: ArtistGenre,
+  foreignKey: "artist_id",
+});
 
-// Album.hasMany(Favorite, {
-//   foreignKey: "album_id"
-// });
+// Artist belongsToMany Genre through ArtistGenre
+Artist.belongsToMany(Genre, {
+  through: ArtistGenre,
+  foreignKey: "genre_id",
+});
 
-// Favorite.belongsTo(Album, {
-//   foreignKey: "album_id"
-// });
+// Genre belongsToMany Album through AlbumGenre
+Genre.belongsToMany(Album, {
+  through: AlbumGenre,
+  foreignKey: "album_id",
+});
 
-// // Album belongs to User
-// Album.belongsToMany(User, {
-//   through: Favorite,
-//   foreignKey: "album_id",
-// });
+// Album belongsToMany Genre through AlbumGenre
+Album.belongsToMany(Genre, {
+  through: AlbumGenre,
+  foreignKey: "genre_id",
+});
 
-// // Artist belongsToMany User through Favorite
-// Artist.belongsToMany(User, {
-//   through: Favorite,
-//   foreignKey: "artist_id",
-// });
+// Album hasMany Favorite
+Album.hasMany(Favorite, {
+  foreignKey: "album_id"
+});
 
-// Merch.belongsToMany(User, {
-//   through: Favorite,
-//   foreignKey: "merch_id",
-// });
+// Favorite belongsTo Album
+Favorite.belongsTo(Album, {
+  foreignKey: "album_id"
+});
 
 // Categories have many Merch
 Category.hasMany(Merch, {
@@ -91,8 +106,6 @@ Album.belongsTo(Artist, {
   foreignKey: "artist_id",
 });
 
-
-
 module.exports = {
   Artist,
   Album,
@@ -101,5 +114,8 @@ module.exports = {
   MerchTag,
   Tag,
   User,
-  Favorite
+  Favorite,
+  Genre,
+  AlbumGenre,
+  ArtistGenre,
 };
