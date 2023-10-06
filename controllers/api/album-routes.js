@@ -21,6 +21,7 @@ router.post("/", async (req, res) => {
       res.status(400).json({ message: "Failed to create album" });
       return;
     }
+    const album = data.get({ plain: true });
     allGenreID.forEach(async (value) => {
       const through = await AlbumGenre.create({
         album_id: data.id,
@@ -29,6 +30,10 @@ router.post("/", async (req, res) => {
       if (!through) {
         console.warn("Failed to create AlbumGenre through-table item", data.id, value);
       }
+    });
+    res.status(200).json({
+      message: "Successfully created album:",
+      album,
     });
   } catch (err) {
     console.warn(err);
