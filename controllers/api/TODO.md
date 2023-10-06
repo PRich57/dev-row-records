@@ -1,9 +1,0 @@
-# API ROUTING TODOS
-
-## CREATE ITEM ROUTES
-
-
-## DELETE ITEM ROUTES
-
-- category
-
