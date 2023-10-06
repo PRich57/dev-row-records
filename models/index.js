@@ -7,19 +7,22 @@ const Tag = require("./Tag");
 const User = require("./User");
 const Favorite = require("./Favorite");
 
-// User
+// User hasMany Favorite
 User.hasMany(Favorite, {
   foreignKey: "user_id"
 });
 
+// Favorite belongsTo User
 Favorite.belongsTo(User, {
   foreignKey: "user_id"
 });
 
+// Artist hasMany Favorite
 Artist.hasMany(Favorite, {
   foreignKey: "artist_id"
 });
 
+// Favorite 
 Favorite.belongsTo(Artist, {
   foreignKey: "artist_id"
 });
