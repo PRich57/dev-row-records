@@ -1,79 +1,33 @@
 <!-- BODY -->
 
-
 <!-- ALL ALBUMS SECTION -->
-<div class="container-fluid mx-0" style = "border: .2rem solid red">
-    <div class = "row mt-5 mb-2">
-      <h1 class = "text-center">ALBUMS SECTION</h1>
-    </div>
-    
-    
-        <div class = "row" style = "border: .2rem solid blue">
-     <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3" style = "border: .2rem solid green">
-        <div class="card" style="width: 18rem;">
-          <img src="../Assets/artist-thumbnail.PNG" class="card-img-top" alt="...">
-          <div class="card-body d-flex justify-content-center">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-      </div>
-      <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3" style = "border: .2rem solid green">
-        <div class="card" style="width: 18rem;">
-          <img src="../Assets/artist-thumbnail.PNG" class="card-img-top" alt="...">
-          <div class="card-body d-flex justify-content-center">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-      </div>
-      <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3" style = "border: .2rem solid green">
-        <div class="card" style="width: 18rem;">
-          <img src="../Assets/artist-thumbnail.PNG" class="card-img-top" alt="...">
-          <div class="card-body d-flex justify-content-center">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-      </div>
-      <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3" style = "border: .2rem solid green">
-        <div class="card" style="width: 18rem;">
-          <img src="../Assets/artist-thumbnail.PNG" class="card-img-top" alt="...">
-          <div class="card-body d-flex justify-content-center">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-      </div>
-      <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3" style = "border: .2rem solid green">
-        <div class="card" style="width: 18rem;">
-          <img src="../Assets/artist-thumbnail.PNG" class="card-img-top" alt="...">
-          <div class="card-body d-flex justify-content-center">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-      </div>
-      <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3" style = "border: .2rem solid green">
-        <div class="card" style="width: 18rem;">
-          <img src="../Assets/artist-thumbnail.PNG" class="card-img-top" alt="...">
-          <div class="card-body d-flex justify-content-center">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-      </div>
-      <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3" style = "border: .2rem solid green">
-        <div class="card" style="width: 18rem;">
-          <img src="../Assets/artist-thumbnail.PNG" class="card-img-top" alt="...">
-          <div class="card-body d-flex justify-content-center">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-      </div>
-      <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3" style = "border: .2rem solid green">
-        <div class="card" style="width: 18rem;">
-          <img src="../Assets/artist-thumbnail.PNG" class="card-img-top" alt="...">
-          <div class="card-body d-flex justify-content-center">
-            <h5 class="card-title">Card title</h5>
-          </div>
-        </div>
-      </div>
-      
-    </div>
 
+<div class="container-fluid mx-0" style="border: .2rem solid red">
+  <div class="row mt-5 mb-2">
+    <h1 class="text-center">ALBUMS SECTION</h1>
+  </div>
+
+  <div class="row" style="border: .2rem solid blue">
+
+    {{#each albums as |album|}}
+      <div
+        class="col-xl-3 col-lg-6 col-12 d-flex align-items-center justify-content-center p-3"
+        style="border: .2rem solid green"
+      >
+        <div class="card cardEvent" style="width: 18rem;" id="{{id}}">
+          <img
+            src="{{filename}}"
+            class="card-img-top img-fluid"
+            alt="image of {{album_name}}"
+            style="height: 15rem"
+            id="albumIndex"
+          />
+          <div class="card-body d-flex justify-content-center">
+            <h5 class="card-title">{{album_name}}</h5>
+          </div>
+        </div>
+      </div>
+    {{/each}}
+
+  </div>
 </div>
