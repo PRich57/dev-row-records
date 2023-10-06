@@ -106,6 +106,21 @@ const getSingleArtist = async (event) => {
   }
 };
 
+const sortMerch = async (sortidLi) => {
+  try {
+    const response = await fetch(`/merch/?tag=${sortidLi}`, {
+      method: "GET",
+      headers: {"Content-Type": "application/json"}
+    });
+    if(response.ok) {
+      window.location.replace(`/merch/?tag=${sortidLi}`)
+    }
+
+  }
+  catch (err) {
+    console.log(err)
+  }
+}
 //EVENT LISTENERS
 //header event listeners
 allArtistsLi.on("click", "#get-all-artists", getAllArtists);
@@ -124,6 +139,13 @@ $(".cardEvent").click(function () {
   let id = $(this).attr("id");
   getSingleArtist(id);
 });
+
+//sorting list event listener
+$(".sort-list-link").click(function () {
+  let sortidLi = $(this).attr("id");
+  sortMerch(sortidLi);
+
+})
 
 // PARTICLES
 particlesJS("particles-js", {
