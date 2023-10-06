@@ -43,30 +43,25 @@ router.post("/", async (req, res) => {
   }
 })
 
-/*
-router.post("/artist", async (req, res) => {
-  const { name } = await req.body;
+router.delete("/:id", async (req, res) => {
+  const { id } = req.params;
   try {
-    const data = await Artist.create({ name });
+    console.info(id);
+    const data = await Artist.destroy({ where: { id } });
     if (!data) {
-      res.status(400).json({
-        message: "Create artist failed",
+      res.status(404).json({
+        message: `No artist found with id ${id}`,
       });
       return;
     }
     res.status(200).json({
-      message: "Successfully created artist:",
+      message: "Successfully destroyed artist",
       data,
     });
   } catch (err) {
-    console.warn(err);
-    res.status(500).json({
-      message: "Something went wrong:",
-      err,
-    });
+    res.status(500).json({ err, id });
   }
 });
-*/
 
 module.exports = router;
 

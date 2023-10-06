@@ -39,31 +39,25 @@ router.post("/", async (req, res) => {
 });
 
 
-/*
-router.post("/merch", async (req, res) => {
-  const { artist_name, name, category_id, price } = req.body;
-  const artist_id = await findArtistIDByName(artist_name);
-
+router.delete("/:id", async (req, res) => {
+  const { id } = req.params;
   try {
-    const data = await Merch.create({
-      artist_id,
-      name,
-      category_id,
-      price,
-    });
+    console.info(id);
+    const data = await Merch.destroy({ where: { id } });
+    if (!data) {
+      res.status(404).json({
+        message: `No Merch found with id ${id}`,
+      });
+      return;
+    }
     res.status(200).json({
-      message: "Successfully created merch item:",
+      message: "Successfully destroyed Merch",
       data,
     });
   } catch (err) {
-    console.warn(err);
-    res.status(500).json({
-      message: "Internal error while creating merch item:",
-      err,
-    });
+    res.status(500).json({ err, id });
   }
 });
-*/
 
 module.exports = router;
 

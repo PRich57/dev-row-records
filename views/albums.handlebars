@@ -9,24 +9,27 @@
 
   <div class="row" style="border: .2rem solid blue">
 
-    {{#each albums as |album|}}
+    {{#each artists as |artist|}}
+      <h2 class="text-center">{{artist_name}}</h2>
+      {{#each albums as |album|}}
       <div
         class="col-xl-3 col-lg-6 col-12 d-flex align-items-center justify-content-center p-3"
         style="border: .2rem solid green"
       >
-        <div class="card cardEvent" style="width: 18rem;" id="{{id}}">
+        <div class="card cardEvent" style="width: 18rem;" id="{{album.id}}">
           <img
-            src="{{filename}}"
+            src="{{album.filename}}"
             class="card-img-top img-fluid"
-            alt="image of {{album_name}}"
+            alt="image of {{album.album_name}}"
             style="height: 15rem"
             id="albumIndex"
           />
           <div class="card-body d-flex justify-content-center">
-            <h5 class="card-title">{{album_name}}</h5>
+            <h5 class="card-title">{{album.album_name}}</h5>
           </div>
         </div>
       </div>
+    {{/each}}
     {{/each}}
 
   </div>
