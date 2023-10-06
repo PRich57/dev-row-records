@@ -38,13 +38,22 @@ router.get("/artists/:id", async (req, res) => {
       where: {
         id: req.params.id,
       },
-      include: {
+      include: [{
         model: Album,
         attributes: [
           'filename',
           'album_name',
         ],
-      },
+        },
+        {
+         model: Merch,
+        attributes: [
+          'merch_name',
+          'price',
+          'filename'
+        ],
+        }
+  ],
     });
     const artist = await data.get({ plain: true });
     console.log(artist)
