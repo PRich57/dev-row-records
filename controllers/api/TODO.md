@@ -2,8 +2,7 @@
 
 ## CREATE ITEM ROUTES
 
-- genre
-- tag
+- category
 
 ## DELETE ITEM ROUTES
 
@@ -12,4 +11,5 @@
 - genre
 - merch
 - tag
+- category
 
