@@ -87,22 +87,20 @@ const getStore = async (event) => {
   }
 };
 
-const getSingleArtist = async (id) => {
+const getSingleArtist = async (event) => {
   try {
     // event.preventDefault();
     // event.stopPropagation();
     
-    const response = await fetch(`/artists/${id}`, {
+    const response = await fetch(`/artists/${event}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
-    console.log(response)
+    console.log(event);
     if (response.ok) {
-  
-      window.location.replace(`/artists/${id}`);
+      window.location.replace(`/artists/${event}`);
+      console.log(id);
     }
-   
-    
   } catch (err) {
     console.log(err);
   }

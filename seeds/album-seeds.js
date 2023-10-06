@@ -5,6 +5,7 @@ const albumData = [
   {
     artist_id: 1,
     album_name: "A Place For Owls (Album - 2022)",
+    filename: 'gorillaz.jpg'
   },
   {
     artist_id: 1,
