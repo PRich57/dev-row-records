@@ -31,9 +31,9 @@
 }
 
 .card {
-  box-shadow: 5px 5px 8px 8px rgb(57, 57, 57);
-  background-color: #aeb2b6;
-  color: black;
+  box-shadow: 2px 2px 4px 4px rgb(30, 30, 30);
+  background-color: rgb(44, 44, 44);
+  color: white;
 }
 .card:hover {
   scale: 1.1;
@@ -70,45 +70,35 @@ canvas {
   z-index: -1;
 }
 #footer-div {
-  /* position: relative; */
-  /* border: 0.1rem solid pink; */
-  /* background-color: white; */
   background-color: rgb(31, 32, 33);
-  /* z-index: 1; */
+  font-size: 1.2rem;
 }
-/* ---- stats.js ---- */
-/* .count-particles {
-  background: #000022;
-  position: absolute;
-  top: 48px;
-  left: 0;
-  width: 80px;
-  color: #13e8e9;
-  font-size: 0.8em;
-  text-align: left;
-  text-indent: 4px;
-  line-height: 14px;
-  padding-bottom: 2px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: bold;
-}
-.js-count-particles {
-  font-size: 1.1em;
-}
-#stats,
-.count-particles {
-  -webkit-user-select: none;
-  margin-top: 5px;
-  margin-left: 5px;
-}
-#stats {
-  border-radius: 3px 3px 0 0;
-  overflow: hidden;
-}
-.count-particles {
-  border-radius: 0 0 3px 3px;
-} */
 
+#signup-modal-content {
+  background-color: rgb(21, 21, 21) !important;
+  border-width: 1px;
+  border-color: rgb(144, 144, 144);
+}
+#login-modal-content {
+  background-color: rgb(21, 21, 21) !important;
+  border-width: 1px;
+  border-color: rgb(144, 144, 144);
+}
+
+.form-control {
+  background-color: rgb(52, 52, 52);
+  color: white;
+}
+.form-control:focus {
+  background-color: black;
+  color: white;
+}
+.modal-footer {
+  border-top: 1px solid rgb(144, 144, 144);
+}
+.modal-header {
+  border-bottom: 1px solid rgb(144, 144, 144);
+}
 .z-class {
   position: absolute;
 }

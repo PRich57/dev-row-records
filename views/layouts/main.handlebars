@@ -46,12 +46,12 @@
       aria-hidden="true"
     >
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" id="login-modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="staticBackdropLabel">Login</h1>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close btn-close-white"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
@@ -67,6 +67,7 @@
                   type="text"
                   class="form-control"
                   id="loginUsernameInput"
+                  placeholder="username"
                 />
                 <label
                   for="message-text"
@@ -76,6 +77,7 @@
                   type="text"
                   class="form-control"
                   id="loginPasswordInput"
+                  placeholder="password"
                 />
               </div>
             </form>
@@ -108,12 +110,12 @@
       aria-hidden="true"
     >
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" id="signup-modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="staticBackdropLabel">Sign Up Here</h1>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close btn-close-white"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
@@ -129,7 +131,7 @@
                   type="text"
                   class="form-control"
                   id="signup-username-input"
-                  placeholder="jdoe23"
+                  placeholder="username"
                 />
                 <label
                   for="message-text"
@@ -139,7 +141,7 @@
                   type="text"
                   class="form-control"
                   id="signup-password-input"
-                  placeholder="passw0rd_17"
+                  placeholder="password"
                 />
               </div>
             </form>
@@ -232,7 +234,7 @@
       <!-- FOOTER -->
       <div class="container-fluid" id="footer-div">
         <footer
-          class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
+          class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4"
         >
           <p class="col-md-4 mb-0 text-muted">© 2023 Dev Row Records, Inc</p>
 
