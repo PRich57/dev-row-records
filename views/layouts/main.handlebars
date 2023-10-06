@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-     {{!-- particles.js --}}
+    {{! particles.js }}
     <script src="particles.js"></script>
     <!-- Favicon -->
     <link rel="icon" type="icon" href="../Assets/DH.png" />
@@ -161,115 +161,130 @@
       </div>
     </div>
     <!-- NAV BAR -->
-    <nav
-      class="headerContainer navbar navbar-expand-lg navbar-dark bg-dark"
-      id="navbar"
-    >
-      <div class="container-fluid">
-        <a class="navbar-brand text-uppercase" href="#" id="Main_Title"><h1
-            class="display-1"
-          >DEV ROW RECORDS</h1></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+    <main style="position: relative; height:100%; width:100%">
+      <div class="count-particles" id="particles-js"> </div>
+      <nav
+        class="headerContainer navbar navbar-expand-lg navbar-dark bg-dark"
+        id="navbar"
+      >
+        <div class="container-fluid">
+          <a class="navbar-brand text-uppercase" href="#" id="Main_Title"><h1
+              class="display-1"
+            >DEV ROW RECORDS</h1></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            class="collapse navbar-collapse justify-content-end pe-2 fs-3"
+            id="navbarNav"
+          >
+            <ul class="navbar-nav" id="header-ul">
+              <li class="nav-item active" id="get-home-li">
+                <a class="nav-link Home_Link text-uppercase" id="get-home">Home
+                  <span class="sr-only"></span></a>
+              </li>
+              <li class="nav-item" id="get-all-artists-li">
+                <a
+                  class="nav-link Home_Link text-uppercase"
+                  id="get-all-artists"
+                >Artists</a>
+              </li>
+              <li class="nav-item" id="get-all-music-li">
+                <a
+                  class="nav-link Home_Link text-uppercase"
+                  id="get-all-music"
+                >Albums</a>
+              </li>
+              <li class="nav-item" id="header-get-store-li">
+                <a
+                  class="nav-link Home_Link text-uppercase"
+                  id="header-get-store"
+                >Store</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link Home_Link text-uppercase"
+                  data-bs-target="#login-modal"
+                  data-bs-toggle="modal"
+                >Login</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link Home_Link text-uppercase"
+                  data-bs-target="#signup-modal"
+                  data-bs-toggle="modal"
+                >Sign-Up</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      {{{body}}}
+      <!-- FOOTER -->
+      <div class="container-fluid" id="footer-div">
+        <footer
+          class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top"
         >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div
-          class="collapse navbar-collapse justify-content-end pe-2 fs-3"
-          id="navbarNav"
-        >
-          <ul class="navbar-nav" id="header-ul">
-            <li class="nav-item active" id="get-home-li">
-              <a class="nav-link Home_Link text-uppercase" id="get-home">Home
-                <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item" id="get-all-artists-li">
-              <a
-                class="nav-link Home_Link text-uppercase"
-                id="get-all-artists"
-              >Artists</a>
-            </li>
-            <li class="nav-item" id="get-all-music-li">
-              <a
-                class="nav-link Home_Link text-uppercase"
-                id="get-all-music"
-              >Albums</a>
-            </li>
-            <li class="nav-item" id="header-get-store-li">
-              <a
-                class="nav-link Home_Link text-uppercase"
-                id="header-get-store"
-              >Store</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link Home_Link text-uppercase"
+          <p class="col-md-4 mb-0 text-muted">© 2023 Dev Row Records, Inc</p>
+
+          <a
+            href="/"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+          >
+            <img
+              class="bi me-2"
+              src="../Assets/DH.png"
+              alt="band-logo"
+              width="40"
+              height="32"
+            />
+            <!-- <svg class="bi me-2" width="40" height="32"></svg> -->
+          </a>
+
+          <ul
+            class="nav col-md-4 justify-content-end mx-auto"
+            id="footer-nav-ul"
+          >
+            <li id="footer-get-home-li" class="nav-item"><a
+                id="footer-get-home"
+                class="nav-link px-2 text-muted"
+              >Home</a></li>
+            <li id="footer-get-artists-li" class="nav-item"><a
+                id="footer-get-artists"
+                class="nav-link px-2 text-muted"
+              >Artists</a></li>
+            <li id="footer-get-albums-li" class="nav-item"><a
+                id="footer-get-albums"
+                class="nav-link px-2 text-muted"
+              >Albums</a></li>
+            <li id="footer-get-store-li" class="nav-item"><a
+                id="footer-get-store"
+                class="nav-link px-2 text-muted"
+              >Store</a></li>
+            <li class="nav-item"><a
+                class="nav-link px-2 text-muted"
                 data-bs-target="#login-modal"
                 data-bs-toggle="modal"
-              >Login</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link Home_Link text-uppercase"
+              >Login</a></li>
+            <li class="nav-item"><a
+                class="nav-link px-2 text-muted"
                 data-bs-target="#signup-modal"
                 data-bs-toggle="modal"
-              >Sign-Up</a>
-            </li>
+              >Sign-Up</a></li>
           </ul>
-        </div>
+        </footer>
       </div>
-    </nav>
-<main style = "position: relative; height:100%; width:100%">
-<div class = "count-particles " id = "particles-js"> </div>
-      {{{body}}}
-</main> 
-<!-- FOOTER -->
-    <div class="container-fluid" id = "footer-div">
-      <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-        <p class="col-md-4 mb-0 text-muted">© 2023 Dev Row Records, Inc</p>
-    
-        <a href="/" class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
-          <img class = "bi me-2" src="../Assets/DH.png" alt="band-logo" width="40" height="32">
-          <!-- <svg class="bi me-2" width="40" height="32"></svg> -->
-        </a>
-
-        <ul class="nav col-md-4 justify-content-end mx-auto" id="footer-nav-ul">
-          <li id="footer-get-home-li" class="nav-item"><a
-              id="footer-get-home"
-              class="nav-link px-2 text-muted"
-            >Home</a></li>
-          <li id="footer-get-artists-li" class="nav-item"><a
-              id="footer-get-artists"
-              class="nav-link px-2 text-muted"
-            >Artists</a></li>
-          <li id="footer-get-albums-li" class="nav-item"><a
-              id="footer-get-albums"
-              class="nav-link px-2 text-muted"
-            >Albums</a></li>
-          <li id="footer-get-store-li" class="nav-item"><a
-              id="footer-get-store"
-              class="nav-link px-2 text-muted"
-            >Store</a></li>
-          <li class="nav-item"><a
-              class="nav-link px-2 text-muted"
-              data-bs-target="#login-modal"
-              data-bs-toggle="modal"
-            >Login</a></li>
-          <li class="nav-item"><a
-              class="nav-link px-2 text-muted"
-              data-bs-target="#signup-modal"
-              data-bs-toggle="modal"
-            >Sign-Up</a></li>
-        </ul>
-      </footer>
-    </div>
-    </div>
+    </main>
+    {{! </div> }}
 
     <!-- jQuery script -->
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -282,8 +297,9 @@
       integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
       crossorigin="anonymous"
     ></script>
-    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
- 
+    <script
+      src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
+    ></script>
 
     <!-- personal JS script -->
     <script src="../js/nav.js"></script>
