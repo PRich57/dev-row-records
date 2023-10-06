@@ -5,7 +5,6 @@
 
 ## DELETE ITEM ROUTES
 
-- artist
 - genre
 - merch
 - tag
