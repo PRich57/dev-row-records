@@ -125,6 +125,8 @@ router.get("/merch", async (req, res) => {
     const tags = dataTags.map((value) => {
       return value.get({ plain: true }).tag_name;
     });
+    console.log(tags)
+    console.log(merch)
     res.status(200).render("merch", { merch, tags });
   } catch (err) {
     console.warn(err);

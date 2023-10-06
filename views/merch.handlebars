@@ -1,1 +1,53 @@
-<div>THIS IS THE MERCH PAGE</div>
+<div class="container-fluid mx-0 p-5" style = "border: .2rem solid red">
+    <h1>MERCHANDISE</h1>
+    <div class = "row d-flex justify-content-around">
+    <div class="card col-6" style="width: 18rem;">
+        <img class="card-img-top" src="../Assets/merch-type.avif" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Sort by Type</h5>
+            <p class="card-text">See all the merch available by clicking the category.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            {{#each tags as |tag|}}
+                <li class="list-group-item">{{tag}}</li>
+                
+                {{/each}}
+        </ul>
+    </div>
+    <div class="card col-6" style="width: 18rem;">
+        <img class="card-img-top" src="../Assets/merch-type.avif" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Sort by Type</h5>
+            <p class="card-text">See all the merch available by clicking the category.</p>
+        </div>
+        <ul class="list-group list-group-flush">
+            {{#each tags as |tag|}}
+                <li class="list-group-item">{{tag}}</li>
+                
+                {{/each}}
+        </ul>
+    </div>
+    </div>
+    
+</div>
+    {{!-- <div class = "row">
+        <div class = "col-lg-3 col-md-4 col-12">
+
+        </div>
+    </div> --}}
+    {{!-- <div class = "row" style = "border: .2rem solid blue" id = "artist-div-row">
+      {{#each artists as |artist|}}
+     <div class = "col-xl-3 col-lg-6 col-12 d-flex align-items-center justify-content-center p-3" style = "border: .2rem solid green">
+        <div class="card cardEvent" style="width: 18rem;"  id = "{{id}}">
+          <img src="{{filename}}" class="card-img-top img-fluid" alt="image of {{artist_name}}" style = "height: 15rem" id = "artistIndex">
+          <div class="card-body d-flex justify-content-center">
+            <h5 class="card-title">{{artist_name}}</h5>
+          </div>
+        </div>
+      </div>
+      {{/each}}
+    </div> --}}
+
+    
+
+     
