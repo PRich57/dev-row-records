@@ -45,6 +45,13 @@ body {
   margin: 0;
   font: normal 75% Arial, Helvetica, sans-serif;
 }
+
+/* Custom Font*/
+body {
+  font-family: "Bebas Neue", sans-serif;
+  background-color: rgb(31, 32, 33);
+  color: white;
+}
 canvas {
   display: block;
   vertical-align: bottom;
@@ -54,7 +61,7 @@ canvas {
   position: absolute;
   width: 100%;
   height: 100%;
-  border: .5rem solid yellow;
+  border: 0.5rem solid yellow;
   background-color: black;
   background-image: url("");
   background-repeat: repeat;
@@ -64,10 +71,9 @@ canvas {
 }
 #footer-div {
   /* position: relative; */
-  border: .1rem solid pink;
+  border: 0.1rem solid pink;
   background-color: white;
   /* z-index: 1; */
-  
 }
 /* ---- stats.js ---- */
 /* .count-particles {
@@ -103,6 +109,5 @@ canvas {
 } */
 
 .z-class {
-
   position: absolute;
 }
