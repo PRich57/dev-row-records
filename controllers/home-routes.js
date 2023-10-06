@@ -33,14 +33,25 @@ router.get("/artists", async (req, res) => {
 
 router.get("/artists/:id", async (req, res) => {
   // TODO: pull data from models and send to view.
-  const data = await Artist.findOne({
-    where: {
-      id: req.params.id,
-    },
-  });
-  const artist = await data.get({ plain: true });
-  console.log(artist)
-  res.status(200).render("singleArtist", artist );
+  try {
+    const data = await Artist.findOne({
+      where: {
+        id: req.params.id,
+      },
+      include: {
+        model: Album,
+        attributes: [
+          'filename',
+          'album_name',
+        ],
+      },
+    });
+    const artist = await data.get({ plain: true });
+    console.log(artist)
+    res.status(200).render("singleArtist", artist );    
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get("/music", async (req, res) => {
@@ -65,7 +76,7 @@ router.get("/music/:id", async (req, res) => {
     },
   });
   const album = data.get({ plain: true });
-  res.status(200).render("singleArtist", { album });
+  res.status(200).render("singleArtist", album );
 });
 
 //http:/website.dev/merch?tag=hoodie
