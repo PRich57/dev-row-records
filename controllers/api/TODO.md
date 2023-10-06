@@ -5,7 +5,6 @@
 
 ## DELETE ITEM ROUTES
 
-- merch
 - tag
 - category
 
