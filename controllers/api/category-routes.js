@@ -1,4 +1,4 @@
-const router = require("express");
+const router = require("express").Router();
 const { Category } = require("../../models");
 
 router.post("/", async (req, res) => {
@@ -14,3 +14,5 @@ router.post("/", async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+module.exports = router

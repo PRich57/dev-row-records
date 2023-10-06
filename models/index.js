@@ -39,7 +39,7 @@ Genre.belongsToMany(Artist, {
 // Artist belongsToMany Genre through ArtistGenre
 Artist.belongsToMany(Genre, {
   through: ArtistGenre,
-  foreignKey: "artist_id",
+  foreignKey: "genre_id",
 });
 
 // Genre belongsToMany Album through AlbumGenre
@@ -51,7 +51,7 @@ Genre.belongsToMany(Album, {
 // Album belongsToMany Genre through AlbumGenre
 Album.belongsToMany(Genre, {
   through: AlbumGenre,
-  foreignKey: "album_id",
+  foreignKey: "genre_id",
 });
 
 // Album hasMany Favorite
