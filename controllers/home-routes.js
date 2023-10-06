@@ -7,7 +7,9 @@ const {
   Tag,
   User,
   Favorite,
-  
+  Genre,
+  AlbumGenre,
+  ArtistGenre,
 } = require("../models");
 const router = require("express").Router();
 const auth = require("../utils/withAuth");
