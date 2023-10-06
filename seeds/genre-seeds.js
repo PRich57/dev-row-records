@@ -1,6 +1,6 @@
 const { Genre } = require("../models");
 
-const Genre = [
+const GenreData = [
   {
     genre_name: "rock",
   },
@@ -22,11 +22,11 @@ const Genre = [
   {
     genre_name: "mongolian throat singing"
   }
-  // are there more?
+  // I think this is every genre but if you think of more go ahead and add them
 ];
 
 const seedGenre = async () => {
-  await Genre.bulkCreate(seedGenre);
+  await Genre.bulkCreate(GenreData);
 };
 
 module.exports = seedGenre;

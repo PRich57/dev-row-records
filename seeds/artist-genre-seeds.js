@@ -1,6 +1,6 @@
 const { ArtistGenre } = require("../models");
 
-const ArtistGenre = [
+const ArtistGenreData = [
   {
     genre_id: 1,
     artist_id: 1,
@@ -9,7 +9,7 @@ const ArtistGenre = [
 ];
 
 const seedArtistGenre = async () => {
-  await ArtistGenre.bulkCreate(seedArtistGenre);
+  await ArtistGenre.bulkCreate(ArtistGenreData);
 };
 
 module.exports = seedArtistGenre;

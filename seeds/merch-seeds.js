@@ -4,6 +4,7 @@ const merchData = [
   {
     merch_name: "Example Merch 1",
     price: 10.99,
+    filename: '../Assets/DH.png',
     category_id: 1,
     artist_id: 1,
   },
