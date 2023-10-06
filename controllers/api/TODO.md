@@ -5,6 +5,5 @@
 
 ## DELETE ITEM ROUTES
 
-- tag
 - category
 
