@@ -7,12 +7,14 @@ router.post("/", async (req, res) => {
   try {
     const artist_id = await findArtistIDByName(artist_name);
     const allTagIDs = [];
-    for (tagName of tag) {
-      const dataTag = await Tag.findOne({ where: { tag_name: tagName } });
-      if (!tagName) {
-        console.warn(`Could not retrieve tag data for ${tagName}`);
-      } else {
-        allTagIDs.push(dataTag.get({ plain: true }));
+    if (tag) {
+      for (tagName of tag) {
+        const dataTag = await Tag.findOne({ where: { tag_name: tagName } });
+        if (!tagName) {
+          console.warn(`Could not retrieve tag data for ${tagName}`);
+        } else {
+          allTagIDs.push(dataTag.get({ plain: true }));
+        }
       }
     }
     const dataMerch = await Merch.create({ merch_name, price, artist_id, category_id });

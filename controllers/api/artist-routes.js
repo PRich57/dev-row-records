@@ -3,19 +3,22 @@ const { Artist, Genre, ArtistGenre } = require("../../models");
 
 router.post("/", async (req, res) => {
   // genre can either be a string or an array of strings
-  const { name, genre } = req.body;
+  const { artist_name, genre } = req.body;
   try {
     const allGenreID = [];
-    // for each genre passed in...
-    for (genreName of genre) {
-      // find the associated genre model
-      const genreData = await Genre.findOne({ where: { genre_name: genreName } });
-      // pull the genre's id
-      const genreID = genreData.get({ plain: true }).id;
-      // save the genre id for later
-      allGenreID.push(genreID);
+    if (genre) {
+      for (genre_name of genre) {
+        const genreData = await Genre.findOne({ where: { genre_name }, });
+        if (genreData) {
+          const genreID = genreData.get({ plain: true }).id;
+          allGenreID.push(genreID);
+        } else {
+          console.warn(`No genre object exists with name ${genre_name}`);
+        }
+      }
     }
-    const data = await Artist.create({ name });
+    console.info(allGenreID);
+    const data = await Artist.create({ artist_name });
     if (!data) {
       res.status(400).json({ message: "Failed to create artist" });
       return;

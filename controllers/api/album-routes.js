@@ -3,20 +3,23 @@ const { Album, Genre, AlbumGenre } = require('../../models');
 const { findArtistIDByName } = require('./helper');
 
 router.post("/", async (req, res) => {
-  const { artist_name, name, genre } = req.body;
+  const { artist_name, album_name, genre } = req.body;
   try {
     const artist_id = await findArtistIDByName(artist_name);
     const allGenreID = [];
     // for each genre passed in...
-    for (genreName of genre) {
-      // find the associated genre model
-      const genreData = await Genre.findOne({ where: { genre_name: genreName } });
-      // pull the genre's id
-      const genreID = genreData.get({ plain: true }).id;
-      // save the genre id for later
-      allGenreID.push(genreID);
+    if (genre) {
+      for (genre_name of genre) {
+        const genreData = await Genre.findOne({ where: { genre_name } });
+        if (genreData) {
+          const genreID = genreData.get({ plain: true }).id;
+          allGenreID.push(genreID);
+        } else {
+          console.warn(`No genre object exists with name ${genre_name}`);
+        }
+      }
     }
-    const data = await Album.create({ artist_id, name });
+    const data = await Album.create({ artist_id, album_name });
     if (!data) {
       res.status(400).json({ message: "Failed to create album" });
       return;
