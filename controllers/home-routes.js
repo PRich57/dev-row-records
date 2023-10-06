@@ -33,6 +33,32 @@ router.get("/artists", async (req, res) => {
   }
 });
 
+router.get("/albums", async (req, res) => {
+  // TODO: pull data from models and send to view.
+  // this should work but I don't really have a great way of testing it at the moment.
+  try {
+    const data = await Artist.findAll({
+      include: 
+        {
+          model: Album,
+          attributes: [
+            'filename',
+            'album_name',
+          ],
+        },
+    });
+    const artists = data.map((value) => {
+      return value.get({ plain: true });
+    });
+    console.log(artists);
+    res.status(200).render("albums", { artists });
+  } catch (err) {
+    console.warn(err);
+    res.status(500).json(err);
+  }
+});
+
+
 router.get("/artists/:id", async (req, res) => {
   // TODO: pull data from models and send to view.
   try {

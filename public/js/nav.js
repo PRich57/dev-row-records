@@ -57,12 +57,12 @@ const getAllMusic = async (event) => {
     event.preventDefault();
     event.stopPropagation();
     console.log("hello");
-    const response = await fetch("/music", {
+    const response = await fetch("/albums", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      window.location.replace("/music");
+      window.location.replace("/albums");
     }
   } catch (err) {
     console.log(err);
