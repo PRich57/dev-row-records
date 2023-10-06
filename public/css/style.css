@@ -1,12 +1,49 @@
+/* ---- reset ---- */
+body {
+  margin: 0;
+  font: normal 75% Arial, Helvetica, sans-serif;
+}
+canvas {
+  display: block;
+  vertical-align: bottom;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+} /* ---- particles.js container ---- */
+#particles-js {
+  position: fixed;
+  /* position: absolute;
+  top: 0px;
+  left: 0px; */ */
+  width: 100vh;
+  height: 100vh;
+  background-color: #121212;
+  background-size: cover;
+  /* background-position: 50% 50%; */
+} /* ---- stats.js ---- */
 
-#header-ul li:hover, #footer-nav-ul li:hover {
+#home-container {
+  position: relative;
+}
+
+/* Custom Font*/
+body {
+  font-family: "Bebas Neue", sans-serif;
+  background-color: rgb(31, 32, 33);
+  color: white;
+}
+
+#header-ul li:hover,
+#footer-nav-ul li:hover {
   cursor: pointer;
   scale: 1.1;
   text-decoration: underline;
 }
 
-#get-all-artists, #get-home, #get-all-music{
-    cursor: pointer;
+#get-all-artists,
+#get-home,
+#get-all-music {
+  cursor: pointer;
 }
 
 /* DEV ROW RECORDS in navr bar*/
@@ -14,19 +51,26 @@
   font-weight: 900;
   font-size: 5rem;
   margin-left: 0.8rem;
+  /* color: #050a30; */
 }
 
 /* all links in nav bar*/
 .Home_Link {
-  color: black !important;
+  color: white !important;
   font-weight: 800 !important;
-  margin-top: 2.7rem !important;
+  /* margin-top: 2.7rem !important; */
+}
+
+#header-ul {
+  margin-top: 1.5rem;
 }
 
 .card {
-  box-shadow: 5px 5px 10px 10px gray;
+  box-shadow: 5px 5px 8px 8px rgb(57, 57, 57);
+  background-color: #aeb2b6;
+  color: black;
 }
 .card:hover {
   scale: 1.1;
-  cursor: pointer
+  cursor: pointer;
 }
