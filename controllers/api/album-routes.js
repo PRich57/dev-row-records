@@ -44,27 +44,24 @@ router.post("/", async (req, res) => {
   }
 });
 
-/*
-router.post("/album", async (req, res) => {
-  // get artist id from artist name
-  const { artist_name, name } = req.body;
-  const artist_id = await findArtistIDByName(artist_name);
-
-  // create album with artist id
+router.delete("/:id", async (req, res) => {
+  const { id } = req.params;
   try {
-    const data = await Album.create({ artist_id, name });
+    console.info(id);
+    const data = await Album.destroy({ where: { id } });
+    if (!data) {
+      res.status(404).json({
+        message: `No album found with id ${id}`,
+      });
+      return;
+    }
     res.status(200).json({
-      message: "Successfully created album:",
+      message: "Successfully destroyed album",
       data,
     });
   } catch (err) {
-    console.warn(err);
-    res.status(500).json({
-      message: "Internal error while creating album:",
-      err,
-    });
+    res.status(500).json({ err, id });
   }
 });
-*/
 
 module.exports = router;
