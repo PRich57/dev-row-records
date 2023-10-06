@@ -2,7 +2,6 @@
 
 ## CREATE ITEM ROUTES
 
-- category
 
 ## DELETE ITEM ROUTES
 
