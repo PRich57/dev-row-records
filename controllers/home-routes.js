@@ -7,7 +7,9 @@ const {
   Tag,
   User,
   Favorite,
-  
+  Genre,
+  AlbumGenre,
+  ArtistGenre,
 } = require("../models");
 const router = require("express").Router();
 const auth = require("../utils/withAuth");
@@ -38,22 +40,23 @@ router.get("/artists/:id", async (req, res) => {
       where: {
         id: req.params.id,
       },
-      include: [{
-        model: Album,
-        attributes: [
-          'filename',
-          'album_name',
-        ],
+      include: [
+        {
+          model: Album,
+          attributes: [
+            'filename',
+            'album_name',
+          ],
         },
         {
-         model: Merch,
-        attributes: [
-          'merch_name',
-          'price',
-          'filename'
-        ],
-        }
-  ],
+          model: Merch,
+          attributes: [
+            'filename',
+            'merch_name',
+            'price',
+          ],
+        },
+      ],
     });
     const artist = await data.get({ plain: true });
     console.log(artist)
