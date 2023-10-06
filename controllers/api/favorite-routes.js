@@ -25,7 +25,30 @@ router.post("/", (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  const { type } = req.query;
+  const reqInfo = {
+    user_id: req.session.user.id,
+  }
+  reqInfo[`${type}_id`] = req.params.id;
 
-
+  try {
+    const data = await Favorite.destroy({ where: reqInfo });
+    if (!data) {
+      console.warn("Favorites record with the following info could not be found when attempting to destroy it:", reqInfo);
+      res.status(404).json({
+        message: "Could not find Favorite to delete",
+        reqInfo,
+      });
+      return;
+    }
+    res.status(204).json({
+      message: "Successfully removed Favorite",
+      data,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
