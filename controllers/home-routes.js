@@ -38,14 +38,10 @@ router.get("/albums", async (req, res) => {
   // this should work but I don't really have a great way of testing it at the moment.
   try {
     const data = await Artist.findAll({
-      include: 
-        {
-          model: Album,
-          attributes: [
-            'filename',
-            'album_name',
-          ],
-        },
+      include: {
+        model: Album,
+        attributes: ["filename", "album_name"],
+      },
     });
     const artists = data.map((value) => {
       return value.get({ plain: true });
@@ -58,7 +54,6 @@ router.get("/albums", async (req, res) => {
   }
 });
 
-
 router.get("/artists/:id", async (req, res) => {
   // TODO: pull data from models and send to view.
   try {
@@ -69,24 +64,17 @@ router.get("/artists/:id", async (req, res) => {
       include: [
         {
           model: Album,
-          attributes: [
-            'filename',
-            'album_name',
-          ],
+          attributes: ["filename", "album_name"],
         },
         {
           model: Merch,
-          attributes: [
-            'filename',
-            'merch_name',
-            'price',
-          ],
+          attributes: ["filename", "merch_name", "price"],
         },
       ],
     });
     const artist = await data.get({ plain: true });
-    console.log(artist)
-    res.status(200).render("singleArtist", artist );    
+    console.log(artist);
+    res.status(200).render("singleArtist", artist);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -108,18 +96,18 @@ router.get("/music", async (req, res) => {
 
 router.get("/music/:id", async (req, res) => {
   // TODO: pull data from models and send to view.
-    try {
-      const data = await Album.findOne({
-        where: {
-          id: req.params.id,
-        },
-      });
-      const album = data.get({ plain: true });
-      res.status(200).render("singleAlbum", album);
-    } catch (err) {
-      console.warn(err);
-      res.status(500).json(err);
-    }
+  try {
+    const data = await Album.findOne({
+      where: {
+        id: req.params.id,
+      },
+    });
+    const album = data.get({ plain: true });
+    res.status(200).render("singleAlbum", album);
+  } catch (err) {
+    console.warn(err);
+    res.status(500).json(err);
+  }
 });
 
 //http:/website.dev/merch?tag=hoodie
@@ -127,6 +115,24 @@ router.get("/merch", async (req, res) => {
   // TODO: pull data from models and send to view.
   try {
     let data;
+    const dataTags = await Tag.findAll({
+      include: [
+        {
+          model: Merch,
+          attributes: ["merch_name", "price", "filename"],
+        },
+      ],
+    });
+    const tags = dataTags.map((value) => {
+      return value.get({ plain: true });
+    });
+    const dataArtist = await Artist.findAll();
+    const dataArtistsPlain = dataArtist.map((value) => {
+      return value.get({ plain: true });
+    });
+    console.log(tags);
+    console.log(dataArtistsPlain);
+    console.log(tags[0].merches[0].merch_name);
     if (req.query.tag) {
       const dataTag = await Tag.findOne({
         where: {
@@ -135,25 +141,20 @@ router.get("/merch", async (req, res) => {
         include: [
           {
             model: Merch,
-            through: MerchTag,
           },
         ],
       });
       console.warn(dataTag);
-      data = dataTag.merch;
+      data = dataTag.merches;
+      let name = req.query.tag
+      const merch = data.map((value) => {
+        return value.get({ plain: true });
+      });
+      console.log(merch);
+      res.status(200).render("merchSortTag", {merch, name, tags, dataArtistsPlain});
     } else {
-      data = await Merch.findAll();
+      res.status(200).render("merch", { tags, dataArtistsPlain });
     }
-    const merch = data.map((value) => {
-      return value.get({ plain: true });
-    });
-    const dataTags = await Tag.findAll();
-    const tags = dataTags.map((value) => {
-      return value.get({ plain: true }).tag_name;
-    });
-    console.log(tags)
-    console.log(merch)
-    res.status(200).render("merch", { merch, tags });
   } catch (err) {
     console.warn(err);
     res.status(500).json(err);
@@ -162,18 +163,18 @@ router.get("/merch", async (req, res) => {
 
 router.get("/merch/:id", async (req, res) => {
   // TODO: pull data from models and send to view.
-    try {
-      const data = await Merch.findOne({
-        where: {
-          id: req.params.id,
-        },
-      });
-      const merch = data.get({ plain: true });
-      res.status(200).render("singleMerch", merch);
-    } catch (err) {
-      console.warn(err);
-      res.status(500).json(err);
-    }
+  try {
+    const data = await Merch.findOne({
+      where: {
+        id: req.params.id,
+      },
+    });
+    const merch = data.get({ plain: true });
+    res.status(200).render("singleMerch", merch);
+  } catch (err) {
+    console.warn(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get("/favorites", auth, async (req, res) => {
