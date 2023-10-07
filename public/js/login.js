@@ -96,7 +96,7 @@ const signoutHandler = async (event) => {
 
     if (response.ok) {
       // Redirect to homepage or show a message. For now, we'll simply reload the page.
-      location.reload();
+      window.location.replace(`/`);
     } else {
       alert("Failed to log out. Please try again.");
     }
