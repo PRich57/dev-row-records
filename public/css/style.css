@@ -1,6 +1,6 @@
 #header-ul li:hover,
 #footer-nav-ul-1 li:hover,
-#footer-nav-ul-2 li:hover{
+#footer-nav-ul-2 li:hover {
   cursor: pointer;
   color: rgb(163, 166, 169) !important;
   text-decoration: underline;
@@ -55,7 +55,6 @@
 .card-shade {
   box-shadow: 0px 0px 20px 1px rgb(185, 184, 184);
   color: white;
- 
 }
 .card-title {
   font-size: 1.5rem;
@@ -91,18 +90,20 @@ canvas {
 }
 #footer-div {
   background-color: rgb(31, 32, 33);
-  font-size: 1.2rem;
+  font-size: 1.5rem;
 }
 
 #signup-modal-content {
   background-color: rgb(21, 21, 21) !important;
   border-width: 1px;
   border-color: rgb(144, 144, 144);
+  color: white;
 }
 #login-modal-content {
   background-color: rgb(21, 21, 21) !important;
   border-width: 1px;
   border-color: rgb(144, 144, 144);
+  color: white;
 }
 
 .form-control {
@@ -124,7 +125,7 @@ canvas {
 }
 
 .modal {
-  color: black
+  color: black;
 }
 
 .title-page {
@@ -134,10 +135,11 @@ canvas {
 .merch-sort-card {
   color: white;
 }
-.merch-sort-ul, .merch-sort-li {
+.merch-sort-ul,
+.merch-sort-li {
   color: white;
-  border: .2rem solid white;
-  font-size: 1.5rem
+  border: 0.2rem solid white;
+  font-size: 1.5rem;
 }
 
 .merch-card-p {
@@ -151,7 +153,7 @@ canvas {
 .merch-sort-li:hover {
   cursor: pointer;
   text-decoration: underline;
-  color:rgb(112, 112, 112)
+  color: rgb(112, 112, 112);
 }
 
 .single-artist-title {
@@ -159,7 +161,10 @@ canvas {
   text-align: center;
 }
 
-@media (width<550px){
+.footer-image {
+  width: 80px;
+}
+@media (width<550px) {
   .title-page {
     font-size: 4rem;
   }
@@ -171,7 +176,7 @@ canvas {
   }
 }
 
-@media (width<360px){
+@media (width<360px) {
   .title-page {
     font-size: 3rem;
   }
@@ -179,9 +184,8 @@ canvas {
     font-size: 1rem;
   }
 }
-@media (width<360px){
+@media (width<360px) {
   .title-page {
     font-size: 2rem;
   }
-
 }
