@@ -288,22 +288,22 @@
               </li>
               {{#if isLoggedIn}}
                 <!-- Signout Button -->
-                <button
+                <li class="nav-item"><a
                   id="signout-button"
                   class="nav-link Home_Link text-uppercase"
-                >Sign Out</button>
+                >Sign Out</a></li>
               {{else}}
                 <!-- Login and Signup Links/Buttons -->
-                <a
+                <li class="nav-item"><a
                   class="nav-link Home_Link text-uppercase"
                   data-bs-target="#login-modal"
                   data-bs-toggle="modal"
-                >Login</a>
-                <a
+                >Login</a></li>
+                <li class="nav-item"><a
                   class="nav-link Home_Link text-uppercase"
                   data-bs-target="#signup-modal"
                   data-bs-toggle="modal"
-                >Sign-Up</a>
+                >Sign-Up</a></li>
               {{/if}}
             </ul>
           </div>
