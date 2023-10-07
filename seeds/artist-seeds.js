@@ -2,16 +2,20 @@ const { Artist } = require("../models");
 
 const artistData = [
   {
-    artist_name: "A Place For Owls",
-    filename: "../Assets/gorillaz.jpg"
+    artist_name: "Closed Tear",
+    filename: "../Assets/ClosedTear.jpg"
   },
   {
-    artist_name: "Creek",
-    filename: "../Assets/single-artist.jpg"
+    artist_name: "Dave",
+    filename: "../Assets/Dave.JPG"
   },
   {
-    artist_name: "Floral Patterns",
-    filename: "../Assets/pink-floyd.avif"
+    artist_name: "Cholo Goth",
+    filename: "../Assets/CholoGoth.png"
+  },
+  {
+    artist_name: "Demon Compass",
+    filename: "../Assets/DemonCompass.png"
   },
 ];
 
