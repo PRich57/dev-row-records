@@ -126,12 +126,20 @@ router.get("/merch", async (req, res) => {
     const tags = dataTags.map((value) => {
       return value.get({ plain: true });
     });
-    const dataArtist = await Artist.findAll();
+    const dataArtist = await Artist.findAll({
+      include: [
+        {
+          model: Merch,
+        },
+      ],
+    });
+    
     const dataArtistsPlain = dataArtist.map((value) => {
       return value.get({ plain: true });
     });
     console.log(tags);
     console.log(dataArtistsPlain);
+    console.log(dataArtistsPlain[0].merches)
     console.log(tags[0].merches[0].merch_name);
     if (req.query.tag) {
       const dataTag = await Tag.findOne({
@@ -144,14 +152,31 @@ router.get("/merch", async (req, res) => {
           },
         ],
       });
-      console.warn(dataTag);
-      data = dataTag.merches;
       let name = req.query.tag
-      const merch = data.map((value) => {
-        return value.get({ plain: true });
-      });
-      console.log(merch);
-      res.status(200).render("merchSortTag", {merch, name, tags, dataArtistsPlain});
+      if (dataTag) {
+        console.warn(dataTag);
+        data = dataTag.merches;
+        const merch = data.map((value) => {
+          return value.get({ plain: true });
+        });
+        console.log(merch);
+        res.status(200).render("merchSortTag", {merch, name, tags, dataArtistsPlain});
+      } else {
+        const oneArtist = await Artist.findOne({
+          where: {
+            artist_name: req.query.tag,
+          },
+          include: [
+            {
+              model: Merch,
+            },
+          ],
+        });
+        console.log(oneArtist);
+        const oneArtistPlain = oneArtist.get({ plain: true });
+        console.log(oneArtistPlain);
+        res.status(200).render("merchSortArtist", {name, tags, oneArtistPlain, dataArtistsPlain});
+      }
     } else {
       res.status(200).render("merch", { tags, dataArtistsPlain });
     }

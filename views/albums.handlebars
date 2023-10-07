@@ -2,21 +2,20 @@
 
 <!-- ALL ALBUMS SECTION -->
 
-<div class="container-fluid mx-0" style="border: .2rem solid red">
-  <div class="row mt-5 mb-2">
-    <h1 class="text-center">ALBUMS SECTION</h1>
+<div class="container-fluid mx-0">
+  <div class="row mt-5">
+    <h1 class="text-center title-page">ALBUMS</h1>
   </div>
 
-  <div class="row" style="border: .2rem solid blue">
+  <div class="row d-flex justify-content-around pb-5 mt-2">
 
     {{#each artists as |artist|}}
-      <h2 class="text-center">{{artist_name}}</h2>
+      <h2 class="text-center border-bottom">{{artist_name}}</h2>
       {{#each albums as |album|}}
       <div
-        class="col-xl-3 col-lg-6 col-12 d-flex align-items-center justify-content-center p-3"
-        style="border: .2rem solid green"
+        class="col-xl-3 col-lg-6 col-12 d-flex align-items-center justify-content-center p-3 pb-5 mb-4"
       >
-        <div class="card cardEvent" style="width: 18rem;" id="{{album.id}}">
+        <div class="card cardEvent card-shade bg-dark" style="width: 18rem;" id="{{artist.id}}">
           <img
             src="{{album.filename}}"
             class="card-img-top img-fluid"

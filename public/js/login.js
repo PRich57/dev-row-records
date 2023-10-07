@@ -29,7 +29,13 @@ const loginHandler = async (event) => {
     body: JSON.stringify(login),
   });
   if (response.ok) {
-    console.log("Successful POST request");
+    console.log("bad boy")
+    $('#signupSuccess-modal-message').text("WELCOME BACK")
+    $("#signupSuccess-modal").modal("show");
+  } else {
+    console.log(response)
+    $('#signupFail-modal-message').text(`Login Failed:`)
+    $("#signupFail-modal").modal("show");
   }
 };
 
@@ -59,14 +65,18 @@ const signupHandler = async (event) => {
     });
 
     if (response.ok) {
-      alert("Successfully signed up!");
+      $('#signupSuccess-modal-message').text("SIGN UP SUCCESSFUL: WELCOME TO DEV ROW RECORDS")
+      $("#signupSuccess-modal").modal("show");
       // Redirect user to another page or provide further actions here if needed
     } else {
       const responseData = await response.json();
-      alert(`Signup failed: ${responseData.message}`);
+      // alert(`Signup failed: ${responseData.message}`);
+      $('#signupFail-modal-message').text(`Sign Up Failed: ${responseData.message}`)
+      $("#signupFail-modal").modal("show");
     }
   } catch (error) {
-    alert("Error during signup. Please try again.");
+    $('#signupFail-modal-message').text(`Server Error Come Back Later: ${responseData.message}`)
+    $("#signupFail-modal").modal("show");
   }
 };
 
