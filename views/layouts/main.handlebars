@@ -35,14 +35,6 @@
     <title>Dev Row Records </title>
   </head>
   <body>
-    {{#if isLoggedIn}}
-      <!-- Signout Button -->
-      <button
-        id="signout-button"
-        class="signout-btn"
-        style="position: absolute; top: 10px; right: 10px;"
-      >Sign Out</button>
-    {{/if}}
 
     <!-- LOGIN MODAL -->
     <div
@@ -296,22 +288,25 @@
                   id="header-get-store"
                 >Store</a>
               </li>
-              {{#unless isLoggedIn}}
-                <li class="nav-item">
-                  <a
-                    class="nav-link Home_Link text-uppercase"
-                    data-bs-target="#login-modal"
-                    data-bs-toggle="modal"
-                  >Login</a>
-                </li>
-                <li class="nav-item">
-                  <a
-                    class="nav-link Home_Link text-uppercase"
-                    data-bs-target="#signup-modal"
-                    data-bs-toggle="modal"
-                  >Sign-Up</a>
-                </li>
-              {{/unless}}
+              {{#if isLoggedIn}}
+                <!-- Signout Button -->
+                <button
+                  id="signout-button"
+                  class="nav-link Home_Link text-uppercase"
+                >Sign Out</button>
+              {{else}}
+                <!-- Login and Signup Links/Buttons -->
+                <a
+                  class="nav-link Home_Link text-uppercase"
+                  data-bs-target="#login-modal"
+                  data-bs-toggle="modal"
+                >Login</a>
+                <a
+                  class="nav-link Home_Link text-uppercase"
+                  data-bs-target="#signup-modal"
+                  data-bs-toggle="modal"
+                >Sign-Up</a>
+              {{/if}}
             </ul>
           </div>
         </div>
@@ -388,6 +383,8 @@
     <script
       src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
     ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- personal JS script -->
     <script src="../js/nav.js"></script>
