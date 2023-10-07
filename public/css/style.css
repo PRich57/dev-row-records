@@ -1,7 +1,8 @@
 #header-ul li:hover,
-#footer-nav-ul li:hover {
+#footer-nav-ul-1 li:hover,
+#footer-nav-ul-2 li:hover{
   cursor: pointer;
-  scale: 1.1;
+  color: rgb(163, 166, 169) !important;
   text-decoration: underline;
 }
 
@@ -31,15 +32,22 @@
 }
 
 .card {
-  box-shadow: 5px 5px 8px 8px rgb(57, 57, 57);
+
   background-color: #aeb2b6;
   color: black;
 }
-.card:hover {
+.cardEvent:hover {
   scale: 1.1;
   cursor: pointer;
 }
-
+.card-shade {
+  box-shadow: 0px 0px 20px 1px rgb(185, 184, 184);
+  color: white;
+ 
+}
+.card-title {
+  font-size: 2rem;
+}
 /* ---- reset ---- */
 body {
   margin: 0;
@@ -74,41 +82,78 @@ canvas {
   /* border: 0.1rem solid pink; */
   /* background-color: white; */
   background-color: rgb(31, 32, 33);
+ 
   /* z-index: 1; */
 }
-/* ---- stats.js ---- */
-/* .count-particles {
-  background: #000022;
-  position: absolute;
-  top: 48px;
-  left: 0;
-  width: 80px;
-  color: #13e8e9;
-  font-size: 0.8em;
-  text-align: left;
-  text-indent: 4px;
-  line-height: 14px;
-  padding-bottom: 2px;
-  font-family: Helvetica, Arial, sans-serif;
-  font-weight: bold;
+footer {
+  font-size: 3rem;
 }
-.js-count-particles {
-  font-size: 1.1em;
+.footer-nav-h2 {
+  font-size: 4rem;
 }
-#stats,
-.count-particles {
-  -webkit-user-select: none;
-  margin-top: 5px;
-  margin-left: 5px;
-}
-#stats {
-  border-radius: 3px 3px 0 0;
-  overflow: hidden;
-}
-.count-particles {
-  border-radius: 0 0 3px 3px;
-} */
-
 .z-class {
   position: absolute;
+}
+
+.modal {
+  color: black
+}
+
+.title-page {
+  font-size: 6rem;
+}
+
+.merch-sort-card {
+  color: white;
+}
+.merch-sort-ul, .merch-sort-li {
+  color: white;
+  border: .2rem solid white;
+  font-size: 1.5rem
+}
+
+.merch-card-p {
+  font-size: 1rem;
+}
+
+.merch-card-h5 {
+  font-size: 2rem;
+}
+
+.merch-sort-li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color:rgb(112, 112, 112)
+}
+
+.single-artist-title {
+  font-size: 7rem;
+  text-align: center;
+}
+
+@media (width<550px){
+  .title-page {
+    font-size: 4rem;
+  }
+  footer {
+    font-size: 1.5rem;
+  }
+  .footer-nav-h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (width<360px){
+  .title-page {
+    font-size: 3rem;
+  }
+  .footer-nav-h2 {
+    font-size: 1rem;
+  }
+}
+@media (width<360px){
+  .title-page {
+    font-size: 2rem;
+  }
+
 }
