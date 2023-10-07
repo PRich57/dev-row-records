@@ -15,13 +15,11 @@
   - [Mock-Up](#mock-up)
   - [License](#license)
   - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
-
+  - [Credits](#credits)
 
 ## Installation
 
-  - This project requires the use of Node.js and dependencies included in the package.json file
+  - This application requires the use of Node.js and dependencies included in the package.json file
   - Clone this repository to your local machine
   - Install the required dependencies using the command 'npm i'
 
