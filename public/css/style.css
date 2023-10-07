@@ -30,6 +30,18 @@
   margin-top: 1.5rem;
 }
 
+.artist-card img {
+  height: 15rem;
+}
+
+.album-card {
+  width: 19rem;
+}
+
+.artist-card {
+  width: 19rem;
+}
+
 .card {
   box-shadow: 2px 2px 4px 4px rgb(30, 30, 30);
   background-color: rgb(44, 44, 44);
