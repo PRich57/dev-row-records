@@ -30,9 +30,9 @@
     </div>
     </div>
     <div class = "row d-flex justify-content-around">
-        {{#each tags as |tag|}}
-            <h2 class="text-center mt-5 mb-4" style = "border-bottom: .2rem solid white">{{tag.tag_name}}</h2>
-            {{#each tag.merches as |merch|}}
+
+            <h2 class="text-center mt-5 mb-4" style = "border-bottom: .2rem solid white">{{name}}</h2>
+            {{#each merch as |merch|}}
 
                 <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3" style = "border: .2rem solid green">
                     <div class="card" style="width: 18rem; height: 100%">
@@ -45,7 +45,7 @@
                 </div>
         {{/each}}
  
-        {{/each}}
+   
     </div>
 
 

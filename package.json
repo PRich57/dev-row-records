@@ -21,6 +21,7 @@
     "handlebars": "^4.7.6",
     "mysql2": "^2.2.5",
     "particles.js": "^2.0.0",
-    "sequelize": "^6.3.5"
+    "sequelize": "^6.3.5",
+    "sweetalert2": "^11.7.32"
   }
 }
