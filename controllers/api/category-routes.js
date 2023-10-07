@@ -15,4 +15,24 @@ router.post("/", async (req, res) => {
   }
 });
 
+router.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  try {
+    console.info(id);
+    const data = await Tag.destroy({ where: { id } });
+    if (!data) {
+      res.status(404).json({
+        message: `No Tag found with id ${id}`,
+      });
+      return;
+    }
+    res.status(200).json({
+      message: "Successfully destroyed Tag",
+      data,
+    });
+  } catch (err) {
+    res.status(500).json({ err, id });
+  }
+});
+
 module.exports = router

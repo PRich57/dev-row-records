@@ -1,10 +1,10 @@
 const { Artist } = require('../../models');
 
-async function findArtistIDByName(name) {
+async function findArtistIDByName(artist_name) {
   try {
     const artist = await Artist.findOne({
       where: {
-        name,
+        artist_name,
       },
     });
     console.log(artist);

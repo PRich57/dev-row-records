@@ -1,24 +1,18 @@
 <!-- BODY -->
 
 <!-- ALL ARTISTS SECTION -->
-<div class="container-fluid mx-0">
+<div class="container-fluid px-5">
 
-  <div class="row mt-5 mb-3">
-    <h1 class="text-center">ARTISTS SECTION</h1>
-  </div>
-
-  <div class="row justify-content-around" id="artist-div-row">
-    {{#each artists as |artist|}}
-      <div
-        class="col-xl-3 col-lg-6 col-12 d-flex align-items-center justify-content-center p-3"
-      >
-        <div class="card cardEvent artist-card" id="{{id}}">
-          <img
-            src="{{filename}}"
-            class="card-img-top img-fluid"
-            alt="image of {{artist_name}}"
-            id="artistIndex"
-          />
+    <div class = "row  mt-5 mb-3">
+      <h1 class = "text-center title-page">ARTISTS</h1>
+    </div>
+    
+    
+    <div class = "row d-flex justify-content-around" id = "artist-div-row">
+      {{#each artists as |artist|}}
+      <div class = "col-xl-3 col-lg-6 col-12 d-flex align-items-center justify-content-center p-3">
+        <div class="card cardEvent card-shade bg-dark" style="width: 18rem;"  id = "{{id}}">
+          <img src="{{filename}}" class="card-img-top img-fluid" alt="image of {{artist_name}}" style = "height: 15rem" id = "artistIndex">
           <div class="card-body d-flex justify-content-center">
             <h5 class="card-title">{{artist_name}}</h5>
           </div>
@@ -26,5 +20,8 @@
       </div>
     {{/each}}
   </div>
+
+    
+
 
 </div>

@@ -1,121 +1,35 @@
 <!-- BODY -->
 
 <!-- ALL ALBUMS SECTION -->
+
 <div class="container-fluid mx-0">
   <div class="row mt-5 mb-2 justify-content-aroud">
-    <h1 class="text-center">ALBUMS SECTION</h1>
+    <h1 class="text-center title-page">ALBUMS</h1>
   </div>
 
-  <div class="row">
-    <div
-      class="col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3"
-    >
-      <div class="card album-card" >
-        <img
-          src="../Assets/artist-thumbnail.PNG"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body d-flex justify-content-center">
-          <h5 class="card-title">Card title</h5>
+  <div class="row d-flex justify-content-around pb-5 mt-2">
+
+    {{#each artists as |artist|}}
+      <h2 class="text-center border-bottom">{{artist_name}}</h2>
+      {{#each albums as |album|}}
+      <div
+        class="col-xl-3 col-lg-6 col-12 d-flex align-items-center justify-content-center p-3 pb-5 mb-4"
+      >
+        <div class="card cardEvent card-shade bg-dark" style="width: 18rem;" id="{{artist.id}}">
+          <img
+            src="{{album.filename}}"
+            class="card-img-top img-fluid"
+            alt="image of {{album.album_name}}"
+            style="height: 15rem"
+            id="albumIndex"
+          />
+          <div class="card-body d-flex justify-content-center">
+            <h5 class="card-title">{{album.album_name}}</h5>
+          </div>
         </div>
       </div>
-    </div>
-    <div
-      class="col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3"
-    >
-      <div class="card album-card" >
-        <img
-          src="../Assets/artist-thumbnail.PNG"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body d-flex justify-content-center">
-          <h5 class="card-title">Card title</h5>
-        </div>
-      </div>
-    </div>
-    <div
-      class="col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3"
-    >
-      <div class="card album-card" >
-        <img src="../Assets/PrayersFoto.jpg" class="card-img-top" alt="..." />
-        <div class="card-body d-flex justify-content-center">
-          <h5 class="card-title">Card title</h5>
-        </div>
-      </div>
-    </div>
-    <div
-      class="col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3"
-    >
-      <div class="card album-card" >
-        <img
-          src="../Assets/artist-thumbnail.PNG"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body d-flex justify-content-center">
-          <h5 class="card-title">Card title</h5>
-        </div>
-      </div>
-    </div>
-    <div
-      class="col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3"
-    >
-      <div class="card album-card" >
-        <img
-          src="../Assets/artist-thumbnail.PNG"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body d-flex justify-content-center">
-          <h5 class="card-title">Card title</h5>
-        </div>
-      </div>
-    </div>
-    <div
-      class="col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3"
-    >
-      <div class="card album-card" >
-        <img
-          src="../Assets/artist-thumbnail.PNG"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body d-flex justify-content-center">
-          <h5 class="card-title">Card title</h5>
-        </div>
-      </div>
-    </div>
-    <div
-      class="col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3"
-    >
-      <div class="card album-card" >
-        <img
-          src="../Assets/artist-thumbnail.PNG"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body d-flex justify-content-center">
-          <h5 class="card-title">Card title</h5>
-        </div>
-      </div>
-    </div>
-    <div
-      class="col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3"
-    >
-      <div class="card album-card" >
-        <img
-          src="../Assets/artist-thumbnail.PNG"
-          class="card-img-top"
-          alt="..."
-        />
-        <div class="card-body d-flex justify-content-center">
-          <h5 class="card-title">Card title</h5>
-        </div>
-      </div>
-    </div>
+    {{/each}}
+    {{/each}}
 
   </div>
-
 </div>
