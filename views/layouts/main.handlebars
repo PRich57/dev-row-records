@@ -292,20 +292,22 @@
                   id="header-get-store"
                 >Store</a>
               </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link Home_Link text-uppercase"
-                  data-bs-target="#login-modal"
-                  data-bs-toggle="modal"
-                >Login</a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link Home_Link text-uppercase"
-                  data-bs-target="#signup-modal"
-                  data-bs-toggle="modal"
-                >Sign-Up</a>
-              </li>
+              {{#unless isLoggedIn}}
+                <li class="nav-item">
+                  <a
+                    class="nav-link Home_Link text-uppercase"
+                    data-bs-target="#login-modal"
+                    data-bs-toggle="modal"
+                  >Login</a>
+                </li>
+                <li class="nav-item">
+                  <a
+                    class="nav-link Home_Link text-uppercase"
+                    data-bs-target="#signup-modal"
+                    data-bs-toggle="modal"
+                  >Sign-Up</a>
+                </li>
+              {{/unless}}
             </ul>
           </div>
         </div>

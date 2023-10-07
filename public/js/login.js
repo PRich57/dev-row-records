@@ -63,6 +63,8 @@ const signupHandler = async (event) => {
     });
 
     if (response.ok) {
+      $('.nav-item a[data-bs-target="#login-modal"]').hide();
+      $('.nav-item a[data-bs-target="#signup-modal"]').hide();
       $("#signupSuccess-modal-message").text(
         "SIGN UP SUCCESSFUL: WELCOME TO DEV ROW RECORDS"
       );
