@@ -145,7 +145,6 @@ $(".cardEvent").click(function () {
 $(".sort-list-link").click(function () {
   let sortidLi = $(this).attr("id");
   sortMerch(sortidLi);
-
 })
 
 
