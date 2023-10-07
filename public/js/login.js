@@ -1,4 +1,3 @@
-console.log("TEST");
 // variables
 const loginUsernameInput = $("#loginUsernameInput");
 const loginPasswordInput = $("#loginPasswordInput");
@@ -29,12 +28,11 @@ const loginHandler = async (event) => {
     body: JSON.stringify(login),
   });
   if (response.ok) {
-    console.log("bad boy")
-    $('#signupSuccess-modal-message').text("WELCOME BACK")
+    $("#signupSuccess-modal-message").text("WELCOME BACK");
     $("#signupSuccess-modal").modal("show");
   } else {
-    console.log(response)
-    $('#signupFail-modal-message').text(`Login Failed:`)
+    console.log(response);
+    $("#signupFail-modal-message").text(`Login Failed:`);
     $("#signupFail-modal").modal("show");
   }
 };
@@ -65,17 +63,23 @@ const signupHandler = async (event) => {
     });
 
     if (response.ok) {
-      $('#signupSuccess-modal-message').text("SIGN UP SUCCESSFUL: WELCOME TO DEV ROW RECORDS")
+      $("#signupSuccess-modal-message").text(
+        "SIGN UP SUCCESSFUL: WELCOME TO DEV ROW RECORDS"
+      );
       $("#signupSuccess-modal").modal("show");
       // Redirect user to another page or provide further actions here if needed
     } else {
       const responseData = await response.json();
       // alert(`Signup failed: ${responseData.message}`);
-      $('#signupFail-modal-message').text(`Sign Up Failed: ${responseData.message}`)
+      $("#signupFail-modal-message").text(
+        `Sign Up Failed: ${responseData.message}`
+      );
       $("#signupFail-modal").modal("show");
     }
   } catch (error) {
-    $('#signupFail-modal-message').text(`Server Error Come Back Later: ${responseData.message}`)
+    $("#signupFail-modal-message").text(
+      `Server Error Come Back Later: ${responseData.message}`
+    );
     $("#signupFail-modal").modal("show");
   }
 };
