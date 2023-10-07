@@ -35,7 +35,7 @@ router.get("/artists", async (req, res) => {
   // TODO: pull data from models and send to view.
   // this should work but I don't really have a great way of testing it at the moment.
   const any = { [Op.not]: null };
-  
+
   const { genre: genreQuery } = req.query;
   try {
     let data;
@@ -43,15 +43,11 @@ router.get("/artists", async (req, res) => {
       data = await Artist.findAll();
       dataAlbum = await Album.findAll();
     } else {
-      const dataGenre = await Genre.findOne({ 
+      const dataGenre = await Genre.findOne({
         where: { genre_name: genreQuery },
         include: {
           model: Artist,
-          attributes: [
-            "id",
-            "artist_name",
-            "filename",
-          ],
+          attributes: ["id", "artist_name", "filename"],
         },
       });
       console.info(dataGenre);
@@ -70,30 +66,22 @@ router.get("/artists", async (req, res) => {
 router.get("/albums", async (req, res) => {
   const any = { [Op.not]: null };
   const ALLOW_NO_GENRE_ENTRIES = false;
-  const {
-    genre: queryGenre,
-    artist: queryArtist,
-  } = req.query;
+  const { genre: queryGenre, artist: queryArtist } = req.query;
 
   try {
-    const data = await Artist.findAll(
-      {
-        where: {
-          artist_name: queryArtist || any,
-        },
+    const data = await Artist.findAll({
+      where: {
+        artist_name: queryArtist || any,
+      },
+      include: {
+        model: Album,
+        attributes: ["album_name", "filename"],
         include: {
-          model: Album,
-          attributes: [
-            "album_name",
-            "filename",
-          ],
-          include: {
-            model: Genre,
-            attributes: [ "genre_name" ],
-          },
-        }
-      }
-    )
+          model: Genre,
+          attributes: ["genre_name"],
+        },
+      },
+    });
     let artists = data.map((artist) => artist.get({ plain: true }));
     console.info(artists);
     if (queryGenre) {
@@ -105,10 +93,10 @@ router.get("/albums", async (req, res) => {
           if (!album.genres[0]) {
             return ALLOW_NO_GENRE_ENTRIES;
           }
-          for (const genre of album.genres) { 
+          for (const genre of album.genres) {
             if (genre.genre_name === queryGenre) return true;
           }
-          return false; 
+          return false;
         });
         if (artist.albums[0]) artistsTemp.push(artist);
       });
@@ -201,13 +189,13 @@ router.get("/merch", async (req, res) => {
         },
       ],
     });
-    
+
     const dataArtistsPlain = dataArtist.map((value) => {
       return value.get({ plain: true });
     });
     console.log(tags);
     console.log(dataArtistsPlain);
-    console.log(dataArtistsPlain[0].merches)
+    console.log(dataArtistsPlain[0].merches);
     console.log(tags[0].merches[0].merch_name);
     if (req.query.tag) {
       const dataTag = await Tag.findOne({
@@ -220,7 +208,7 @@ router.get("/merch", async (req, res) => {
           },
         ],
       });
-      let name = req.query.tag
+      let name = req.query.tag;
       if (dataTag) {
         console.warn(dataTag);
         data = dataTag.merches;
@@ -228,7 +216,9 @@ router.get("/merch", async (req, res) => {
           return value.get({ plain: true });
         });
         console.log(merch);
-        res.status(200).render("merchSortTag", {merch, name, tags, dataArtistsPlain});
+        res
+          .status(200)
+          .render("merchSortTag", { merch, name, tags, dataArtistsPlain });
       } else {
         const oneArtist = await Artist.findOne({
           where: {
@@ -243,7 +233,12 @@ router.get("/merch", async (req, res) => {
         console.log(oneArtist);
         const oneArtistPlain = oneArtist.get({ plain: true });
         console.log(oneArtistPlain);
-        res.status(200).render("merchSortArtist", {name, tags, oneArtistPlain, dataArtistsPlain});
+        res.status(200).render("merchSortArtist", {
+          name,
+          tags,
+          oneArtistPlain,
+          dataArtistsPlain,
+        });
       }
     } else {
       res.status(200).render("merch", { tags, dataArtistsPlain });
@@ -285,7 +280,8 @@ router.get("/favorites", auth, async (req, res) => {
         user_id,
       },
     });
-    const favorites = data.map((value) => {
+    console.log(data);
+    const favorites = await data.map((value) => {
       return value.get({ plain: true });
     });
     favorites.forEach((value) => {
