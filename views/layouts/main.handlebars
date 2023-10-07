@@ -35,6 +35,15 @@
     <title>Dev Row Records </title>
   </head>
   <body>
+    {{#if isLoggedIn}}
+      <!-- Signout Button -->
+      <button
+        id="signout-button"
+        class="signout-btn"
+        style="position: absolute; top: 10px; right: 10px;"
+      >Sign Out</button>
+    {{/if}}
+
     <!-- LOGIN MODAL -->
     <div
       class="modal fade"
@@ -130,6 +139,13 @@
                   class="form-control"
                   id="signup-username-input"
                   placeholder="jdoe23"
+                />
+                <label for="message-text" class="col-form-label">Email:</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="signup-email-input"
+                  placeholder="example@gmail.com"
                 />
                 <label
                   for="message-text"
