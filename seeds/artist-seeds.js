@@ -13,6 +13,14 @@ const artistData = [
     artist_name: "Floral Patterns",
     filename: "../Assets/pink-floyd.avif"
   },
+  {
+    artist_name: "Provoker",
+    filename: "../Assets/Provoker.JPG"
+  },
+  {
+    artist_name: "Dave Parley",
+    filename: "../Assets/Dave.JPG"
+  }
 ];
 
 const seedArtist = () => Artist.bulkCreate(artistData);

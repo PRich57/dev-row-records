@@ -1,6 +1,6 @@
 #header-ul li:hover,
-#footer-nav-ul-1 li:hover,
-#footer-nav-ul-2 li:hover {
+#footer-nav-ul li:hover
+ {
   cursor: pointer;
   color: rgb(163, 166, 169) !important;
   text-decoration: underline;
@@ -44,8 +44,8 @@
 }
 
 .card {
-  box-shadow: 2px 2px 4px 4px rgb(30, 30, 30);
-  background-color: rgb(44, 44, 44);
+  /* box-shadow: 3px 3px 4px 4px rgb(30, 30, 30);
+  background-color: rgb(44, 44, 44); */
   color: white;
 }
 .cardEvent:hover {
@@ -53,7 +53,7 @@
   cursor: pointer;
 }
 .card-shade {
-  box-shadow: 0px 0px 20px 1px rgb(185, 184, 184);
+  box-shadow: 0px 0px 20px 1px rgb(126, 126, 126);
   color: white;
 }
 .card-title {
@@ -89,7 +89,7 @@ canvas {
   z-index: -1;
 }
 #footer-div {
-  background-color: rgb(31, 32, 33);
+
   font-size: 1.5rem;
 }
 

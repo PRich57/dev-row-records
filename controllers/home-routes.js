@@ -12,9 +12,23 @@ const {
 const router = require("express").Router();
 const auth = require("../utils/withAuth");
 const { Op } = require("sequelize");
+const randomizeIndex = require("../utils/randomIndex")
+
 
 router.get("/", async (req, res) => {
-  res.status(200).render("homepage");
+  let dataArtists = await Artist.findAll();
+  let dataAlbums = await Album.findAll();
+  let artists = dataArtists.map((value) => {
+    return value.get({plain: true});
+  })
+  let albums = dataAlbums.map((value) => {
+    return value.get({plain: true});
+  })
+  console.log(albums)
+  const fourRandomAlbums = await randomizeIndex(albums)
+  const fourRandomArtists = await randomizeIndex(artists)
+  console.log(fourRandomAlbums)
+  res.status(200).render("homepage", {fourRandomAlbums, fourRandomArtists});
 });
 
 router.get("/artists", async (req, res) => {
@@ -27,6 +41,7 @@ router.get("/artists", async (req, res) => {
     let data;
     if (!genreQuery) {
       data = await Artist.findAll();
+      dataAlbum = await Album.findAll();
     } else {
       const dataGenre = await Genre.findOne({ 
         where: { genre_name: genreQuery },

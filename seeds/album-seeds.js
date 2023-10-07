@@ -20,12 +20,12 @@ const albumData = [
   // Floral Patterns Albums //
   {
     artist_id: 3,
-    album_name: "Split (Split EP - 2020)",
+    album_name: "Split (Split EP P1 - 2020)",
     filename: "../Assets/led_zeppelin.png"
   },
   {
     artist_id: 3,
-    album_name: "Split (Split EP - 2020)",
+    album_name: "Split (Split EP P2 - 2020)",
     filename: "../Assets/led_zeppelin.png"
   },
   // Creek Albums //
