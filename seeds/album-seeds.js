@@ -10,18 +10,18 @@ const albumData = [
   {
     artist_id: 1,
     album_name: "Celebration Guns / A Place For Owls (Split EP - 2023)",
-    filename: "../Assets/led_zeppelin.png"
+    filename: "../Assets/gorillaz.jpg"
   },
   {
     artist_id: 1,
     album_name: "You Are Still in Every Song I Sing (EP - 2020)",
-    filename: "../Assets/led_zeppelin.png"
+    filename: "../Assets/george-strait.jpg"
   },
   // Floral Patterns Albums //
   {
     artist_id: 3,
-    album_name: "Split (Split EP P1 - 2020)",
-    filename: "../Assets/led_zeppelin.png"
+    album_name: "Split (Split EP - 2020)",
+    filename: "../Assets/ClosedTearAlbum.png"
   },
   {
     artist_id: 3,
@@ -32,12 +32,12 @@ const albumData = [
   {
     artist_id: 2,
     album_name: "Thirteen Hundred (EP - 2017)",
-    filename: "../Assets/led_zeppelin.png"
+    filename: "../Assets/george-strait.jpg"
   },
   {
     artist_id: 2,
     album_name: "Lucky Seven (EP - 2018)",
-    filename: "../Assets/led_zeppelin.png"
+    filename: "../Assets/gorillaz.jpg"
   },
   {
     artist_id: 2,

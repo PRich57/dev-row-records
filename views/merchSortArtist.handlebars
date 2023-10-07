@@ -1,31 +1,28 @@
-<div class="container-fluid mx-0 p-5" style = "border: .2rem solid red">
-    <h1 class = "title-page border-bottom text-center mb-5">MERCHANDISE</h1>
+<h1 class = "title-page border-bottom text-center mb-5">MERCHANDISE</h1>
     {{!-- SORTING CARDS --}}
     {{!-- Sort by Type --}}
-    <div class = "row d-flex justify-content-around">
-    <div class="card col-6 bg-dark merch-sort-card" style="width: 18rem;">
-        <img class="card-img-top mt-2 border" src="../Assets/merch-type.avif" alt="Card image cap">
-        <div class="card-body ">
-            <h5 class="card-title text-center merch-card-h5 card-shade">Sort by Type</h5>
-        <ul class="list-group list-group-flush text-center merch-sort-ul bg-dark">
+    <div class = "text-center justify-content-around">
+     <div class="btn-group">
+        <button class="btn btn-secondary dropdown-toggle bg-dark" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+            Sort by Type
+        </button>
+        <ul class="dropdown-menu">
             {{#each tags as |tag|}}
-                <li class="list-group-item sort-list-link merch-sort-li bg-dark" id = "{{tag.tag_name}}">{{tag.tag_name}}</li>
-                
-                {{/each}}
-        </ul>
-        </div>
-    </div>
-    {{!-- Sort by Artist --}}
-    <div class="card col-6 bg-dark merch-sort-card card-shade" style="width: 18rem;">
-        <img class="card-img-top mt-2 border" src="../Assets/sort-band.avif" alt="Card image cap">
-        <div class="card-body ">
-            <h5 class="card-title text-center merch-card-h5">Sort by Artist</h5>
-            <ul class="list-group list-group-flush text-center merch-sort-ul bg-dark">
-            {{#each dataArtistsPlain as |artist|}}
-                <li class="list-group-item sort-list-link merch-sort-li bg-dark" id = "{{artist_name}}">{{artist_name}}</li>
+            <li class="dropdown-item sort-list-link merch-sort-li bg-dark" id="{{tag.tag_name}}">{{tag.tag_name}}</li>
             {{/each}}
-            </ul>
-        </div>
+        </ul>
+    </div>
+    
+    {{!-- Sort by Artist --}}
+        <div class="btn-group">
+        <button class="btn btn-secondary dropdown-toggle bg-dark" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+            Sort by Artist
+        </button>
+        <ul class="dropdown-menu">
+            {{#each dataArtistsPlain as |artist|}}
+            <li class="dropdown-item sort-list-link merch-sort-li bg-dark" id="{{artist_name}}">{{artist_name}}</li>
+            {{/each}}
+        </ul>
     </div>
     </div>
 

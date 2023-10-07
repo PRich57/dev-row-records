@@ -1,4 +1,3 @@
-console.log("TEST");
 // variables
 const loginUsernameInput = $("#loginUsernameInput");
 const loginPasswordInput = $("#loginPasswordInput");
@@ -29,13 +28,18 @@ const loginHandler = async (event) => {
     body: JSON.stringify(login),
   });
   if (response.ok) {
-    console.log("bad boy")
-    $('#signupSuccess-modal-message').text("WELCOME BACK")
-    $("#signupSuccess-modal").modal("show");
+    Swal.fire({
+      title: "Success",
+      text: "WELCOME BACK",
+      icon: "success",
+      confirmButtonText: "Okay",
+      willClose: function () {
+        location.reload();
+      },
+    });
   } else {
-    console.log(response)
-    $('#signupFail-modal-message').text(`Login Failed:`)
-    $("#signupFail-modal").modal("show");
+    console.log(response);
+    Swal.fire("Error", "Login Failed", "error");
   }
 };
 
@@ -65,25 +69,24 @@ const signupHandler = async (event) => {
     });
 
     if (response.ok) {
-      $('#signupSuccess-modal-message').text("SIGN UP SUCCESSFUL: WELCOME TO DEV ROW RECORDS")
-      $("#signupSuccess-modal").modal("show");
-      // Redirect user to another page or provide further actions here if needed
+      Swal.fire(
+        "Success",
+        "SIGN UP SUCCESSFUL : WELCOME TO DEV ROW RECORDS",
+        "success"
+      );
     } else {
       const responseData = await response.json();
       // alert(`Signup failed: ${responseData.message}`);
-      $('#signupFail-modal-message').text(`Sign Up Failed: ${responseData.message}`)
-      $("#signupFail-modal").modal("show");
+      Swal.fire("Error", `Sign Up Failed: ${responseData.message}`, "error");
     }
   } catch (error) {
-    $('#signupFail-modal-message').text(`Server Error Come Back Later: ${responseData.message}`)
-    $("#signupFail-modal").modal("show");
+    Swal.fire("Error", `Sign Up Failed: ${responseData.message}`, "error");
   }
 };
 
 modalLoginSubmitDiv.on("click", "#modal-login-submit", loginHandler);
 modalSignupSubmitDiv.on("click", "#modal-signup-submit", signupHandler);
 
-// Signout handler
 const signoutHandler = async (event) => {
   event.preventDefault();
   try {
@@ -95,10 +98,18 @@ const signoutHandler = async (event) => {
     });
 
     if (response.ok) {
-      // Redirect to homepage or show a message. For now, we'll simply reload the page.
-      window.location.replace(`/`);
+      Swal.fire({
+        position: "top-end",
+        icon: "success",
+        title: "Successfully Signed Out",
+        showConfirmButton: false,
+        timer: 1500,
+        willClose: function () {
+          window.location.replace(`/`);
+        },
+      });
     } else {
-      alert("Failed to log out. Please try again.");
+      Swal.fire("Error", "Error during signout. Please try again.", "error");
     }
   } catch (error) {
     alert("Error during signout. Please try again.");

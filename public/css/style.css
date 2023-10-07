@@ -1,6 +1,5 @@
 #header-ul li:hover,
-#footer-nav-ul li:hover
- {
+#footer-nav-ul li:hover {
   cursor: pointer;
   color: rgb(163, 166, 169) !important;
   text-decoration: underline;

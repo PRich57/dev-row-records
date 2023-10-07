@@ -2,8 +2,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {{! particles.js }}
-   
     <!-- Favicon -->
     <link rel="icon" type="icon" href="../Assets/DRR-logo.png" />
     <!-- Reset CSS -->
@@ -35,14 +33,6 @@
     <title>Dev Row Records </title>
   </head>
   <body>
-    {{#if isLoggedIn}}
-      <!-- Signout Button -->
-      <button
-        id="signout-button"
-        class="signout-btn"
-        style="position: absolute; top: 10px; right: 10px;"
-      >Sign Out</button>
-    {{/if}}
 
     <!-- LOGIN MODAL -->
     <div
@@ -243,9 +233,11 @@
     </div>
 
     {{! BODY }}
+    {{! BODY }}
     <main style="position: relative; height:100%; width:100%;">
       <div class="count-particles" id="particles-js"> </div>
 
+      <!-- NAV BAR -->
       <!-- NAV BAR -->
       <nav
         class="headerContainer navbar navbar-expand-lg navbar-dark bg-dark"
@@ -294,20 +286,25 @@
                   id="header-get-store"
                 >Store</a>
               </li>
-              <li class="nav-item">
+              {{#if isLoggedIn}}
+                <!-- Signout Button -->
+                <button
+                  id="signout-button"
+                  class="nav-link Home_Link text-uppercase"
+                >Sign Out</button>
+              {{else}}
+                <!-- Login and Signup Links/Buttons -->
                 <a
                   class="nav-link Home_Link text-uppercase"
                   data-bs-target="#login-modal"
                   data-bs-toggle="modal"
                 >Login</a>
-              </li>
-              <li class="nav-item">
                 <a
                   class="nav-link Home_Link text-uppercase"
                   data-bs-target="#signup-modal"
                   data-bs-toggle="modal"
                 >Sign-Up</a>
-              </li>
+              {{/if}}
             </ul>
           </div>
         </div>
@@ -318,7 +315,7 @@
       <!-- FOOTER -->
       <div class="container-fluid bg-dark" id="footer-div">
         <footer
-          class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4"
+          class="d-flex flex-wrap justify-content-start align-items-center py-3 my-4"
         >
           <p class="col-md-4 mb-0 text-muted">© 2023 Dev Row Records, Inc</p>
 
@@ -383,6 +380,8 @@
     <script
       src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
     ></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!-- personal JS script -->
     <script src="../js/nav.js"></script>
