@@ -25,6 +25,7 @@ router.post("/", (req, res) => {
   }
 });
 
+// /api/favorite/id?type=album
 router.delete("/:id", async (req, res) => {
   const { type } = req.query;
   const reqInfo = {
@@ -43,7 +44,7 @@ router.delete("/:id", async (req, res) => {
       return;
     }
     res.status(204).json({
-      message: "Successfully removed Favorite",
+      message: "Successfully removed favorite",
       data,
     });
   } catch (err) {
