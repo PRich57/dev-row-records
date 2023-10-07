@@ -4,17 +4,13 @@ const {
   // Category is currently not used and will likely be deprecated before launch
   Category,
   Merch,
-  MerchTag,
   Tag,
   User,
   Favorite,
   Genre,
-  AlbumGenre,
-  ArtistGenre,
 } = require("../models");
 const router = require("express").Router();
 const auth = require("../utils/withAuth");
-// const { findArtistIDByName } = require("./api/helper");
 const { Op } = require("sequelize");
 
 router.get("/", async (req, res) => {
@@ -24,8 +20,28 @@ router.get("/", async (req, res) => {
 router.get("/artists", async (req, res) => {
   // TODO: pull data from models and send to view.
   // this should work but I don't really have a great way of testing it at the moment.
+  const any = { [Op.not]: null };
+  
+  const { genre: genreQuery } = req.query;
   try {
-    const data = await Artist.findAll();
+    let data;
+    if (!genreQuery) {
+      data = await Artist.findAll();
+    } else {
+      const dataGenre = await Genre.findOne({ 
+        where: { genre_name: genreQuery },
+        include: {
+          model: Artist,
+          attributes: [
+            "id",
+            "artist_name",
+            "filename",
+          ],
+        },
+      });
+      console.info(dataGenre);
+      data = dataGenre.artists;
+    }
     const artists = data.map((value) => {
       return value.get({ plain: true });
     });
@@ -83,8 +99,8 @@ router.get("/albums", async (req, res) => {
       });
       artists = artistsTemp;
     }
-    // res.status(200).render("albums", { artists });
-    res.status(206).json(artists);
+    res.status(200).render("albums", { artists });
+    // res.status(206).json(artists);
   } catch (err) {
     console.warn(err);
     res.status(500).json(err);
