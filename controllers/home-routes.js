@@ -272,13 +272,24 @@ router.get("/favorites", auth, async (req, res) => {
   const { id: user_id } = req.session.user;
 
   try {
-    const data = Favorite.findAll({
+    const data = await Favorite.findAll({
       where: {
         user_id,
       },
+      include: [
+        {
+        model: Artist,
+      },
+      {
+        model: Album,
+      },
+      // {
+      //   model: Merch,
+      // },
+    ]
     });
-    console.log(data);
-    const favorites = await data.map((value) => {
+    // console.log(data);
+    const favorites = data.map((value) => {
       return value.get({ plain: true });
     });
     favorites.forEach((value) => {
@@ -292,7 +303,9 @@ router.get("/favorites", auth, async (req, res) => {
         console.warn(`No associated data for ${value}`);
       }
     });
-    res.status(200).render("favorites", viewData);
+    console.log(viewData);
+  
+    res.status(200).render("favorites", { viewData });
   } catch (err) {
     console.warn(err);
     res.status(500).json({

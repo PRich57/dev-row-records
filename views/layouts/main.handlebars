@@ -2,8 +2,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {{! particles.js }}
-    <script src="particles.js"></script>
     <!-- Favicon -->
     <link rel="icon" type="icon" href="../Assets/Misc_Photos/DRR-logo.png" />
     <!-- Reset CSS -->
@@ -298,22 +296,22 @@
                   >Favorites</a>
                 </li>
                 <!-- Signout Button -->
-                <button
-                  id="footer-signout"
-                  class="nav-link Home_Link text-uppercase"
-                >Sign Out</button>
+                <li class="nav-item"><a
+                  id="signout-button"
+                  class="nav-link Home_Link text-uppercase signout-button"
+                >Sign Out</a></li>
               {{else}}
                 <!-- Login and Signup Links/Buttons -->
-                <a
+                <li class="nav-item"><a
                   class="nav-link Home_Link text-uppercase"
                   data-bs-target="#login-modal"
                   data-bs-toggle="modal"
-                >Login</a>
-                <a
+                >Login</a></li>
+                <li class="nav-item"><a
                   class="nav-link Home_Link text-uppercase"
                   data-bs-target="#signup-modal"
                   data-bs-toggle="modal"
-                >Sign-Up</a>
+                >Sign-Up</a></li>
               {{/if}}
             </ul>
           </div>
@@ -370,8 +368,10 @@
                 >Favorites</a>
               </li>
               <!-- Signout Button -->
-              <button id="signout-button" class="nav-link px-2 text-muted">Sign
-                Out</button>
+              <li class="nav-item"><a
+                  id="signout-button"
+                  class="nav-link px-2 text-muted signout-button"
+                >Sign Out</a></li>
             {{else}}
               <li class="nav-item"><a
                   class="nav-link px-2 text-muted"

@@ -117,5 +117,5 @@ const signoutHandler = async (event) => {
 };
 
 // Adding event listener to the signout button
-$("#signout-button").on("click", signoutHandler);
+$(".signout-button").on("click", signoutHandler);
 $("#footer-signout").on("click", signoutHandler);
