@@ -123,6 +123,10 @@ canvas {
   position: absolute;
 }
 
+.dropdown-menu {
+  padding-bottom: 0;
+}
+
 .modal {
   color: black;
 }
@@ -132,8 +136,14 @@ canvas {
 }
 
 .merch-sort-card {
+  flex-direction: row;
   color: white;
 }
+
+.btn-group {
+  flex-direction: column;
+}
+
 .merch-sort-ul,
 .merch-sort-li {
   color: white;

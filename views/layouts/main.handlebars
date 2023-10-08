@@ -358,16 +358,32 @@
                 id="footer-get-store"
                 class="nav-link px-2 text-muted"
               >Store</a></li>
-            <li class="nav-item"><a
-                class="nav-link px-2 text-muted"
-                data-bs-target="#login-modal"
-                data-bs-toggle="modal"
-              >Login</a></li>
-            <li class="nav-item"><a
-                class="nav-link px-2 text-muted"
-                data-bs-target="#signup-modal"
-                data-bs-toggle="modal"
-              >Sign-Up</a></li>
+              {{#if isLoggedIn}}
+
+                <li class="nav-item" id="header-get-favorite-li">
+                  <a
+                    class="nav-link px-2 text-muted"
+                    id="header-get-favorite"
+                  >Favorites</a>
+                </li>
+                <!-- Signout Button -->
+                <li class="nav-item"><a
+                  id="signout-button"
+                  class="nav-link px-2 text-muted"
+                >Sign Out</a></li>
+              {{else}}
+                <!-- Login and Signup Links/Buttons -->
+                <li class="nav-item"><a
+                  class="nav-link px-2 text-muted"
+                  data-bs-target="#login-modal"
+                  data-bs-toggle="modal"
+                >Login</a></li>
+                <li class="nav-item"><a
+                  class="nav-link px-2 text-muted"
+                  data-bs-target="#signup-modal"
+                  data-bs-toggle="modal"
+                >Sign-Up</a></li>
+              {{/if}}
           </ul>
         </footer>
       </div>
