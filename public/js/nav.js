@@ -189,11 +189,13 @@ const deleteFromFavorite = async (buttonId, dataType) => {
     console.log(buttonId);
     console.log(dataType)
     const response = await fetch(`/api/favorite/${buttonId}?type=${dataType}`, {
-      method: "GET",
+      method: "DELETE",
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      window.location.replace(`/merch/?tag=${sortidLi}`);
+      return true;
+    } else {
+      return false;
     }
   } catch (err) {
     console.log(err);
@@ -229,6 +231,7 @@ $(".sort-list-link").click(function () {
 //favorite add event listener
 $(".card-favorite-button").click(async function () {
   let buttonId = $(this).attr("id");
+  console.log(buttonId)
   let dataType = $(this).attr("data-type");
   if ($(this).attr("fill") === "white"){
     const addFavSuccess = await addToFavorite(buttonId, dataType)
@@ -248,3 +251,4 @@ $(".card-favorite-button").click(async function () {
 
   }
 })
+

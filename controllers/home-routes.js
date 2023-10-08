@@ -75,7 +75,6 @@ router.get("/albums", async (req, res) => {
       },
       include: {
         model: Album,
-        attributes: ["album_name", "filename"],
         include: {
           model: Genre,
           attributes: ["genre_name"],
@@ -120,11 +119,9 @@ router.get("/artists/:id", async (req, res) => {
       include: [
         {
           model: Album,
-          attributes: ["filename", "album_name"],
         },
         {
           model: Merch,
-          attributes: ["filename", "merch_name", "price"],
         },
       ],
     });
@@ -175,7 +172,6 @@ router.get("/merch", async (req, res) => {
       include: [
         {
           model: Merch,
-          attributes: ["merch_name", "price", "filename"],
         },
       ],
     });
