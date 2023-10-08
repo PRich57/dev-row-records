@@ -205,11 +205,29 @@ canvas {
 /* first comment out the img and its parent div
   second: uncomment out the items below */
 /* .fullScreenImageDiv {
-  background-image: url(../Assets/homepage-SMTB_BW.jpg); 
+  background-image: url(../Assets/Misc_Photos/homepage-SMTB_BW.jpg); 
   background-size: cover; 
   background-repeat: no-repeat; 
   height: 80vh;
 }
+*/
 .fullScreenImageNav {
-  height: 20vh;
-} */
+  height: 20%;
+} 
+
+.coverImage {
+  object-fit: cover;
+  height: 80%;
+  width: 100%;
+  
+}
+@media (width<1000px) {
+  .coverImage {
+    object-fit: revert;
+    width: revert;
+    height: revert;
+  }
+  .fullScreenImageNav {
+    height: revert;
+  }
+}
