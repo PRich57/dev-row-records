@@ -12,6 +12,7 @@ var footerHomeLi = $("#footer-get-home-li");
 var footerAllArtistsLi = $("#footer-get-artists-li");
 var footerAllAlbumsLi = $("#footer-get-albums-li");
 var footerStoreLi = $("#footer-get-store-li");
+var footerFavoriteLi = $("#footer-get-favorite-li");
 
 //FUNCTIONS
 //go home page (controllers/home-routes.js)
@@ -154,6 +155,7 @@ footerHomeLi.on("click", "#footer-get-home", getHome);
 footerAllArtistsLi.on("click", "#footer-get-artists", getAllArtists);
 footerAllAlbumsLi.on("click", "#footer-get-albums", getAllMusic);
 footerStoreLi.on("click", "#footer-get-store", getStore);
+footerFavoriteLi.on("click", "#footer-get-favorite", getFavorite);
 
 //get single artist from All Artist page - event listener
 $(".cardEvent").click(function () {
