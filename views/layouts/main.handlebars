@@ -298,14 +298,9 @@
                   >Favorites</a>
                 </li>
                 <!-- Signout Button -->
-<<<<<<< HEAD
                 <li class="nav-item"><a
                   id="signout-button"
-=======
-                <button
-                  id="footer-signout"
->>>>>>> main
-                  class="nav-link Home_Link text-uppercase"
+                  class="nav-link Home_Link text-uppercase signout-button"
                 >Sign Out</a></li>
               {{else}}
                 <!-- Login and Signup Links/Buttons -->
@@ -364,25 +359,6 @@
             <li id="footer-get-store-li" class="nav-item"><a
                 id="footer-get-store"
                 class="nav-link px-2 text-muted"
-<<<<<<< HEAD
-              >Store</a></li>
-              {{#if isLoggedIn}}
-
-                <li class="nav-item" id="header-get-favorite-li">
-                  <a
-                    class="nav-link px-2 text-muted"
-                    id="header-get-favorite"
-                  >Favorites</a>
-                </li>
-                <!-- Signout Button -->
-                <li class="nav-item"><a
-                  id="signout-button"
-                  class="nav-link px-2 text-muted"
-                >Sign Out</a></li>
-              {{else}}
-                <!-- Login and Signup Links/Buttons -->
-                <li class="nav-item"><a
-=======
               >Store</a>
             </li>
             {{#if isLoggedIn}}
@@ -394,29 +370,22 @@
                 >Favorites</a>
               </li>
               <!-- Signout Button -->
-              <button id="signout-button" class="nav-link px-2 text-muted">Sign
-                Out</button>
+              <li class="nav-item"><a
+                  id="signout-button"
+                  class="nav-link px-2 text-muted signout-button"
+                >Sign Out</a></li>
             {{else}}
               <li class="nav-item"><a
->>>>>>> main
                   class="nav-link px-2 text-muted"
                   data-bs-target="#login-modal"
                   data-bs-toggle="modal"
                 >Login</a></li>
-<<<<<<< HEAD
-                <li class="nav-item"><a
-=======
               <li class="nav-item"><a
->>>>>>> main
                   class="nav-link px-2 text-muted"
                   data-bs-target="#signup-modal"
                   data-bs-toggle="modal"
                 >Sign-Up</a></li>
-<<<<<<< HEAD
-              {{/if}}
-=======
             {{/if}}
->>>>>>> main
           </ul>
         </footer>
       </div>
