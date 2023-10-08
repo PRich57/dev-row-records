@@ -166,7 +166,7 @@ router.get("/music/:id", async (req, res) => {
   }
 });
 
-//http:/website.dev/merch?tag=hoodie
+
 router.get("/merch", async (req, res) => {
   // TODO: pull data from models and send to view.
   try {
@@ -249,6 +249,7 @@ router.get("/merch", async (req, res) => {
   }
 });
 
+//http:/website.dev/merch?tag=hoodie
 router.get("/merch/:id", async (req, res) => {
   // TODO: pull data from models and send to view.
   try {

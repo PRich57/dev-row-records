@@ -13,6 +13,7 @@ var footerAllArtistsLi = $("#footer-get-artists-li");
 var footerAllAlbumsLi = $("#footer-get-albums-li");
 var footerStoreLi = $("#footer-get-store-li");
 
+
 //FUNCTIONS
 //go home page (controllers/home-routes.js)
 const getHome = async (event) => {
@@ -141,6 +142,64 @@ const getFavorite = async (event) => {
   }
 };
 
+//function: adding to favorites from star button
+const addToFavorite = async (buttonId, dataType) => {
+  try {
+    let postData = {
+      album_id: null,
+      artist_id: null,
+      merch_id: null
+    }
+    switch(dataType) {
+      case "album_id":
+        postData.album_id = buttonId;
+        break;
+      case "artist_id":
+        postData.artist_id = buttonId;
+        break;
+      case "merch_id":
+        postData.merch_id = buttonId;
+        break;
+    }
+    const response = await fetch('/api/favorite/', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(postData)
+    })
+    if (response.ok){
+      console.log(`This button works: card id - ${buttonId}`)
+      console.log(`the type is ${dataType}`)
+      return true
+    } else {
+      return false
+    }
+
+  } catch (err) {
+    console.error(err);
+  }
+}
+
+//function delete from favorites from star button
+//buttonId is the id of the model we want
+//dataType = "album_id" or "artist_id" or "merch_id"
+const deleteFromFavorite = async (buttonId, dataType) => {
+  try {
+    console.log(buttonId);
+    console.log(dataType)
+    const response = await fetch(`/api/favorite/${buttonId}?type=${dataType}`, {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    });
+    if (response.ok) {
+      window.location.replace(`/merch/?tag=${sortidLi}`);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+  
+}
 //EVENT LISTENERS
 //header event listeners
 allArtistsLi.on("click", "#get-all-artists", getAllArtists);
@@ -156,7 +215,7 @@ footerAllAlbumsLi.on("click", "#footer-get-albums", getAllMusic);
 footerStoreLi.on("click", "#footer-get-store", getStore);
 
 //get single artist from All Artist page - event listener
-$(".cardEvent").click(function () {
+$(".get-single-artist").click(function () {
   let id = $(this).attr("id");
   getSingleArtist(id);
 });
@@ -166,3 +225,26 @@ $(".sort-list-link").click(function () {
   let sortidLi = $(this).attr("id");
   sortMerch(sortidLi);
 });
+
+//favorite add event listener
+$(".card-favorite-button").click(async function () {
+  let buttonId = $(this).attr("id");
+  let dataType = $(this).attr("data-type");
+  if ($(this).attr("fill") === "white"){
+    const addFavSuccess = await addToFavorite(buttonId, dataType)
+    console.log(`line 225 addFavSuccess in nav.js: ${addFavSuccess}`)
+    if(addFavSuccess){
+      $(this).attr("fill", "yellow");
+    }else {
+      console.error("add favorite failed")
+    }
+  } else {
+    const deleteFavSuccess = await deleteFromFavorite(buttonId, dataType);
+    if(deleteFavSuccess){
+      $(this).attr("fill", "white");
+    } else {
+      console.error("delete favorite failed")
+    }
+
+  }
+})
