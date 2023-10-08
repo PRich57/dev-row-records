@@ -2,6 +2,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {{! particles.js }}
+    <script src="particles.js"></script>
     <!-- Favicon -->
     <link rel="icon" type="icon" href="../Assets/DRR-logo.png" />
     <!-- Reset CSS -->
@@ -297,7 +299,7 @@
                 </li>
                 <!-- Signout Button -->
                 <button
-                  id="signout-button"
+                  id="footer-signout"
                   class="nav-link Home_Link text-uppercase"
                 >Sign Out</button>
               {{else}}
@@ -323,7 +325,7 @@
       <!-- FOOTER -->
       <div class="container-fluid bg-dark" id="footer-div">
         <footer
-          class="d-flex flex-wrap justify-content-start align-items-center py-3 my-4"
+          class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4"
         >
           <p class="col-md-4 mb-0 text-muted">© 2023 Dev Row Records, Inc</p>
 
@@ -357,17 +359,31 @@
             <li id="footer-get-store-li" class="nav-item"><a
                 id="footer-get-store"
                 class="nav-link px-2 text-muted"
-              >Store</a></li>
-            <li class="nav-item"><a
-                class="nav-link px-2 text-muted"
-                data-bs-target="#login-modal"
-                data-bs-toggle="modal"
-              >Login</a></li>
-            <li class="nav-item"><a
-                class="nav-link px-2 text-muted"
-                data-bs-target="#signup-modal"
-                data-bs-toggle="modal"
-              >Sign-Up</a></li>
+              >Store</a>
+            </li>
+            {{#if isLoggedIn}}
+
+              <li class="nav-item" id="footer-get-favorite-li">
+                <a
+                  class="nav-link px-2 text-muted"
+                  id="footer-get-favorite"
+                >Favorites</a>
+              </li>
+              <!-- Signout Button -->
+              <button id="signout-button" class="nav-link px-2 text-muted">Sign
+                Out</button>
+            {{else}}
+              <li class="nav-item"><a
+                  class="nav-link px-2 text-muted"
+                  data-bs-target="#login-modal"
+                  data-bs-toggle="modal"
+                >Login</a></li>
+              <li class="nav-item"><a
+                  class="nav-link px-2 text-muted"
+                  data-bs-target="#signup-modal"
+                  data-bs-toggle="modal"
+                >Sign-Up</a></li>
+            {{/if}}
           </ul>
         </footer>
       </div>
