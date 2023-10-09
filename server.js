@@ -30,9 +30,6 @@ const hbs = exphbs.create({});
 
 // helper function for handlebars: If the id === userId value then display yellow star
   hbs.handlebars.registerHelper("calculation", function(value1, favorites, typeId) {
-    console.log(favorites)
-       console.log(value1)
-    console.log(typeId)
     for (let x = 0; x<favorites.length; x++){
        if (value1 == favorites[x][typeId]) {
       return "yellow"
