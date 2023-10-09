@@ -69,11 +69,15 @@ const signupHandler = async (event) => {
     });
 
     if (response.ok) {
-      Swal.fire(
-        "Success",
-        "SIGN UP SUCCESSFUL : WELCOME TO DEV ROW RECORDS",
-        "success"
-      );
+      Swal.fire({
+        title: "Success",
+        text: "SIGN UP SUCCESSFUL : WELCOME TO DEV ROW RECORDS",
+        icon: "success",
+        confirmButtonText: "Okay",
+        willClose: function () {
+          location.reload();
+        },
+      });
     } else {
       const responseData = await response.json();
       // alert(`Signup failed: ${responseData.message}`);
