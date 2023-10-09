@@ -90,6 +90,7 @@ const getStore = async (event) => {
   }
 };
 
+//go to single artist page
 const getSingleArtist = async (event) => {
   try {
     // event.preventDefault();
@@ -109,6 +110,7 @@ const getSingleArtist = async (event) => {
   }
 };
 
+//sort the merch on merch page
 const sortMerch = async (sortidLi) => {
   try {
     console.log("event listener");
@@ -143,7 +145,7 @@ const getFavorite = async (event) => {
   }
 };
 
-//function: adding to favorites from star button
+//adding to favorites from star button
 const addToFavorite = async (buttonId, dataType) => {
   try {
     let postData = {
@@ -183,8 +185,6 @@ const addToFavorite = async (buttonId, dataType) => {
 }
 
 //function delete from favorites from star button
-//buttonId is the id of the model we want
-//dataType = "album_id" or "artist_id" or "merch_id"
 const deleteFromFavorite = async (buttonId, dataType) => {
   try {
     console.log(buttonId);
@@ -250,7 +250,6 @@ $(".card-favorite-button").click(async function () {
     } else {
       console.error("delete favorite failed")
     }
-
   }
 })
 

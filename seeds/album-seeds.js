@@ -73,17 +73,17 @@ const albumData = [
     {
       artist_id: 4, 
       album_name: "Stormy Days",
-      filename: "../Assets/Album_Photos/stormy_days.avif"
+      filename: "../Assets/Album_Photos/stormy_days.avif",
     },
     {
       artist_id: 4, 
       album_name: "Sunken Vibes",
-      filename: "../Assets/Album_Photos/sunken_vibes.avif"
+      filename: "../Assets/Album_Photos/sunken_vibes.avif",
     },
     {
       artist_id: 4, 
       album_name: "The Gaze",
-      filename: "../Assets/Album_Photos/the_gaze.avif"
+      filename: "../Assets/Album_Photos/the_gaze.avif",
     },
     //Passion Pete
     {
@@ -115,22 +115,22 @@ const albumData = [
     {
       artist_id: 6,
       album_name: "Black Leather",
-      filename: "../Assets/Album_Photos/black_leather"
+      filename: "../Assets/Album_Photos/black_leather.png",
     },
     {
-      artists_id: 6, 
+      artist_id: 6, 
       album_name: "Wild Roses",
-      filename: "../Assets/Album_Photos/wild_roses.PNG"
+      filename: "../Assets/Album_Photos/wild_roses.PNG",
     },
     {
-      artists_id: 6, 
+      artist_id: 6, 
       album_name: "Baptism of Thieves",
-      filename: "../Assets/Album_Photos/baptism_of_theives.PNG"
+      filename: "../Assets/Album_Photos/baptism_of_theives.PNG",
     },
     {
-      artists_id: 6, 
+      artist_id: 6, 
       album_name: "Cursed Be Thy Blessings",
-      filename: "../Assets/Album_Photos/cursed_be_thy_blessings.PNG"
+      filename: "../Assets/Album_Photos/cursed_be_thy_blessings.PNG",
     },
   // Closed Tear Albums //
   // {

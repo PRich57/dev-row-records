@@ -6,7 +6,7 @@
       <h1 class = "single-artist-title" style = "color: white">{{artist_name}}</h1>
     </div>
     <div class = "col-lg-6 d-flex justify-content-center" >
-      <img src="{{filename}}" class="img-fluid" alt="rock-band-homepage">
+      <img src="{{filename}}" class="img-fluid card-shade" alt="rock-band-homepage">
     </div>
   </div> 
 
@@ -44,7 +44,7 @@
           <img src="{{merch.filename}}" class="card-img-top" alt="Image of {{merch.merch_name}}">
           <div class="card-body d-flex justify-content-center flex-column">
             <h5 class="card-title">{{merch.merch_name}}</h5>
-            <h6 class = "card-subtitle">{{merch.price}}</h6>
+            <h6 class = "card-subtitle">${{merch.price}}</h6>
           </div>
         </div>
         <button type="button" class="btn btn-dark" style = "position: relative; bottom: -143px; right: 47px">
