@@ -2,7 +2,7 @@ const { Artist } = require("../models");
 
 const artistData = [
   {
-    artist_name: "Mateo & The Black Crows",
+    artist_name: `Mateo And The Black Crows`,
     filename: "../Assets/Artist_Photos/black_crows.avif"
   },
   {
@@ -10,8 +10,8 @@ const artistData = [
     filename: "../Assets/Artist_Photos/dj_nicky.avif"
   },
   {
-    artist_name: "Liam the Boy",
-    filename: "../Assets/Artist_Photos/liam_the_boy.avif"
+    artist_name: "Liam the Kid",
+    filename: "../Assets/Artist_Photos/liam_the_kid.avif"
   },
   {
     artist_name: "The Sound of Kellogg",

@@ -194,7 +194,9 @@ const deleteFromFavorite = async (buttonId, dataType) => {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      window.location.reload();
+      if (window.location.href === "http://localhost:3001/favorites") {
+        window.location.reload();
+      }
       return true;
     } else {
       return false;
@@ -233,7 +235,9 @@ $(".sort-list-link").click(function () {
 });
 
 //favorite add event listener
-$(".card-favorite-button").click(async function () {
+$(".card-favorite-button").click(async function (event) {
+  event.stopPropagation();
+  event.preventDefault();
   let buttonId = $(this).attr("id");
   console.log(buttonId)
   let dataType = $(this).attr("data-type");
