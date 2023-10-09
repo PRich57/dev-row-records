@@ -330,12 +330,11 @@ router.get("/favorites", auth, async (req, res) => {
       {
         model: Album,
       },
-      // {
-      //   model: Merch,
-      // },
+      {
+        model: Merch,
+      },
     ]
     });
-    // console.log(data);
     const favorites = data.map((value) => {
       return value.get({ plain: true });
     });
@@ -350,7 +349,6 @@ router.get("/favorites", auth, async (req, res) => {
         console.warn(`No associated data for ${value}`);
       }
     });
-    console.log(viewData);
   
     res.status(200).render("favorites", { viewData });
   } catch (err) {

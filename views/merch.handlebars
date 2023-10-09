@@ -3,7 +3,7 @@
     {{!-- SORTING CARDS --}}
     {{!-- Sort by Type --}}
 
-  <div class = "text-center justify-content-around">
+    <div class = "text-center justify-content-start">
      <div class="btn-group">
         <button class="btn btn-secondary dropdown-toggle bg-dark" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
             Sort by Type
@@ -29,7 +29,7 @@
     </div>
 
     {{!-- ALL MERCH SEPARATED BY TAG --}}
-    <div class = "row d-flex justify-content-around">
+    <div class = "row d-flex justify-content-start">
         {{#each tags as |tag|}}
             <h2 class="text-center mt-5 mb-4" style = "border-bottom: .2rem solid white">{{tag.tag_name}}</h2>
             {{#each tag.merches as |merch|}}
