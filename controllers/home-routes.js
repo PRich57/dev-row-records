@@ -16,6 +16,7 @@ const randomizeIndex = require("../utils/randomIndex")
 
 
 router.get("/", async (req, res) => {
+  
   let dataArtists = await Artist.findAll();
   let dataAlbums = await Album.findAll();
  
@@ -26,12 +27,17 @@ router.get("/", async (req, res) => {
     return value.get({plain: true});
   })
   //favorites for star on cards
-  let dataFavorites = await Favorite.findAll({
+  let favorites = null;
+  // console.log(req.session.user)
+  if(req.session.user){
+     let dataFavorites = await Favorite.findAll({
     where: { user_id: req.session.user.id}
   });
-  let favorites = dataFavorites.map((value) => {
+  favorites = dataFavorites.map((value) => {
     return value.get({plain: true});
   })
+  }
+ 
  
   const fourRandomAlbums = await randomizeIndex(albums)
   const fourRandomArtists = await randomizeIndex(artists)
@@ -45,12 +51,16 @@ router.get("/artists", async (req, res) => {
 
   const { genre: genreQuery } = req.query;
   try {
-    let dataFavorites = await Favorite.findAll({
+    let favorites = null;
+    // console.log(req.session.user)
+    if(req.session.user){
+       let dataFavorites = await Favorite.findAll({
       where: { user_id: req.session.user.id}
     });
-    let favorites = dataFavorites.map((value) => {
+    favorites = dataFavorites.map((value) => {
       return value.get({plain: true});
     })
+    }
     let data;
     if (!genreQuery) {
       data = await Artist.findAll();
@@ -96,12 +106,16 @@ router.get("/albums", async (req, res) => {
     let artists = data.map((artist) => artist.get({ plain: true }));
     console.info(artists);
     //I want user data to keep yellow stars present upon reload
-    let dataFavorites = await Favorite.findAll({
+    let favorites = null;
+    // console.log(req.session.user)
+    if(req.session.user){
+       let dataFavorites = await Favorite.findAll({
       where: { user_id: req.session.user.id}
     });
-    let favorites = dataFavorites.map((value) => {
+    favorites = dataFavorites.map((value) => {
       return value.get({plain: true});
     })
+    }
     if (queryGenre) {
       // the mechanism for removing artists with no albums of the relevant genre is a bit hacky and there's almost certainly a more memory-efficient way to do it
       // that being said, this should work and that's all that matters to me at this exact moment
@@ -146,12 +160,16 @@ router.get("/artists/:id", async (req, res) => {
     });
     const artist = await data.get({ plain: true });
     console.log(artist);
-    let dataFavorites = await Favorite.findAll({
+    let favorites = null;
+    // console.log(req.session.user)
+    if(req.session.user){
+       let dataFavorites = await Favorite.findAll({
       where: { user_id: req.session.user.id}
     });
-    let favorites = dataFavorites.map((value) => {
+    favorites = dataFavorites.map((value) => {
       return value.get({plain: true});
     })
+    }
     res.status(200).render("singleArtist", {artist, favorites});
   } catch (err) {
     res.status(500).json(err);
@@ -194,12 +212,16 @@ router.get("/merch", async (req, res) => {
   try {
     let data;
     //ensure yellow stars populate if already added to faves
-    let dataFavorites = await Favorite.findAll({
+    let favorites = null;
+    // console.log(req.session.user)
+    if(req.session.user){
+       let dataFavorites = await Favorite.findAll({
       where: { user_id: req.session.user.id}
     });
-    let favorites = dataFavorites.map((value) => {
+    favorites = dataFavorites.map((value) => {
       return value.get({plain: true});
     })
+    }
     const dataTags = await Tag.findAll({
       include: [
         {

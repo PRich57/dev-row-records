@@ -236,7 +236,7 @@ $(".card-favorite-button").click(async function () {
   let buttonId = $(this).attr("id");
   console.log(buttonId)
   let dataType = $(this).attr("data-type");
-  if ($(this).attr("fill") === "white"){
+  if ($(this).attr("fill") !== "yellow"){
     const addFavSuccess = await addToFavorite(buttonId, dataType)
     console.log(`line 225 addFavSuccess in nav.js: ${addFavSuccess}`)
     if(addFavSuccess){
