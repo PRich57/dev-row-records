@@ -175,6 +175,12 @@ canvas {
   color: rgb(112, 112, 112);
 }
 
+.favorites {
+  padding-top: 5rem;
+  padding-bottom: 1rem;
+
+}
+
 .single-artist-title {
   font-size: 7rem;
   text-align: center;
