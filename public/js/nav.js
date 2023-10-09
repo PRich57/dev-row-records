@@ -14,6 +14,8 @@ const footerAllAlbumsLi = $("#footer-get-albums-li");
 const footerStoreLi = $("#footer-get-store-li");
 const footerFavoriteLi = $("#footer-get-favorite-li");
 
+const backToStore = $("#back-to-store");
+
 
 //FUNCTIONS
 //go home page (controllers/home-routes.js)
@@ -218,6 +220,9 @@ footerAllArtistsLi.on("click", "#footer-get-artists", getAllArtists);
 footerAllAlbumsLi.on("click", "#footer-get-albums", getAllMusic);
 footerStoreLi.on("click", "#footer-get-store", getStore);
 footerFavoriteLi.on("click", "#footer-get-favorite", getFavorite);
+
+// Back to store
+backToStore.on("click", "#back-to-store", getStore);
 
 //get single artist from All Artist page - event listener
 $(".get-single-artist").click(function () {
