@@ -220,6 +220,7 @@ footerFavoriteLi.on("click", "#footer-get-favorite", getFavorite);
 
 //get single artist from All Artist page - event listener
 $(".get-single-artist").click(function () {
+  console.log("hello")
   let id = $(this).attr("id");
   getSingleArtist(id);
 });
