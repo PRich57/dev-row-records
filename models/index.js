@@ -30,6 +30,16 @@ Favorite.belongsTo(Artist, {
   foreignKey: "artist_id",
 });
 
+// Merch hasMany Favorite
+Merch.hasMany(Favorite, {
+  foreignKey: "merch_id",
+});
+
+// Favorite belongsTo Merch
+Favorite.belongsTo(Merch, {
+  foreignKey: "merch_id",
+});
+
 // Genre belongsToMany Artist through ArtistGenre
 Genre.belongsToMany(Artist, {
   through: ArtistGenre,

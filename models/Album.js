@@ -7,17 +7,17 @@ Album.init(
   {
     id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       primaryKey: true,
       autoIncrement: true,
     },
     album_name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     artist_id: {
       type: DataTypes.INTEGER,
-      allowNull: false,
+      allowNull: true,
       references: {
         model: "artist",
         key: "id",

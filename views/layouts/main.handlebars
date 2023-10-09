@@ -2,10 +2,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {{! particles.js }}
-    <script src="particles.js"></script>
     <!-- Favicon -->
-    <link rel="icon" type="icon" href="../Assets/DRR-logo.png" />
+    <link rel="icon" type="icon" href="../Assets/Misc_Photos/DRR-logo.png" />
     <!-- Reset CSS -->
     <link rel="stylesheet" href="../css/reset.css" />
     <!-- jquery UI LINK -->
@@ -13,6 +11,7 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
+   
     <!-- bootstrap link -->
     <link
       rel="stylesheet"
@@ -35,15 +34,7 @@
     <title>Dev Row Records </title>
   </head>
   <body>
-    {{#if isLoggedIn}}
-      <!-- Signout Button -->
-      <button
-        id="signout-button"
-        class="signout-btn"
-        style="position: absolute; top: 10px; right: 10px;"
-      >Sign Out</button>
-    {{/if}}
-
+   
     <!-- LOGIN MODAL -->
     <div
       class="modal fade"
@@ -243,14 +234,16 @@
     </div>
 
     {{! BODY }}
+    {{! BODY }}
     <main style="position: relative; height:100%; width:100%;">
       <div class="count-particles" id="particles-js"> </div>
 
       <!-- NAV BAR -->
+      <!-- NAV BAR -->
       <nav
-        class="headerContainer navbar navbar-expand-lg navbar-dark bg-dark"
+        class="headerContainer navbar navbar-expand-lg navbar-dark bg-dark fullScreenImageNav"
         id="navbar"
-        style="border-bottom: .2rem solid red"
+        style="border-bottom: .2rem solid rgb(145, 77, 74);"
       >
         <div class="container-fluid">
           <a class="navbar-brand text-uppercase" id="Main_Title"><h1
@@ -294,20 +287,32 @@
                   id="header-get-store"
                 >Store</a>
               </li>
-              <li class="nav-item">
-                <a
+              {{#if isLoggedIn}}
+
+                <li class="nav-item" id="header-get-favorite-li">
+                  <a
+                    class="nav-link Home_Link text-uppercase"
+                    id="header-get-favorite"
+                  >Favorites</a>
+                </li>
+                <!-- Signout Button -->
+                <li class="nav-item"><a
+                  id="signout-button"
+                  class="nav-link Home_Link text-uppercase signout-button"
+                >Sign Out</a></li>
+              {{else}}
+                <!-- Login and Signup Links/Buttons -->
+                <li class="nav-item"><a
                   class="nav-link Home_Link text-uppercase"
                   data-bs-target="#login-modal"
                   data-bs-toggle="modal"
-                >Login</a>
-              </li>
-              <li class="nav-item">
-                <a
+                >Login</a></li>
+                <li class="nav-item"><a
                   class="nav-link Home_Link text-uppercase"
                   data-bs-target="#signup-modal"
                   data-bs-toggle="modal"
-                >Sign-Up</a>
-              </li>
+                >Sign-Up</a></li>
+              {{/if}}
             </ul>
           </div>
         </div>
@@ -316,7 +321,7 @@
       {{{body}}}
       <!-- FOOTER -->
       <!-- FOOTER -->
-      <div class="container-fluid" id="footer-div">
+      <div class="container-fluid bg-dark" id="footer-div">
         <footer
           class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4"
         >
@@ -328,10 +333,9 @@
           >
             <img
               class="bi me-2 footer-image"
-              src="../Assets/DRR-logo.png"
+              src="../Assets/Misc_Photos/DRR-logo.png"
               alt="band-logo"
             />
-            <!-- <svg class="bi me-2" width="40" height="32"></svg> -->
           </a>
 
           <ul
@@ -353,17 +357,33 @@
             <li id="footer-get-store-li" class="nav-item"><a
                 id="footer-get-store"
                 class="nav-link px-2 text-muted"
-              >Store</a></li>
-            <li class="nav-item"><a
-                class="nav-link px-2 text-muted"
-                data-bs-target="#login-modal"
-                data-bs-toggle="modal"
-              >Login</a></li>
-            <li class="nav-item"><a
-                class="nav-link px-2 text-muted"
-                data-bs-target="#signup-modal"
-                data-bs-toggle="modal"
-              >Sign-Up</a></li>
+              >Store</a>
+            </li>
+            {{#if isLoggedIn}}
+
+              <li class="nav-item" id="footer-get-favorite-li">
+                <a
+                  class="nav-link px-2 text-muted"
+                  id="footer-get-favorite"
+                >Favorites</a>
+              </li>
+              <!-- Signout Button -->
+              <li class="nav-item"><a
+                  id="signout-button"
+                  class="nav-link px-2 text-muted signout-button"
+                >Sign Out</a></li>
+            {{else}}
+              <li class="nav-item"><a
+                  class="nav-link px-2 text-muted"
+                  data-bs-target="#login-modal"
+                  data-bs-toggle="modal"
+                >Login</a></li>
+              <li class="nav-item"><a
+                  class="nav-link px-2 text-muted"
+                  data-bs-target="#signup-modal"
+                  data-bs-toggle="modal"
+                >Sign-Up</a></li>
+            {{/if}}
           </ul>
         </footer>
       </div>
@@ -375,6 +395,7 @@
 
     <!-- jquery UI script -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   
     <!-- bootstrap script -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -385,10 +406,17 @@
       src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
     ></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- personal JS script -->
     <script src="../js/nav.js"></script>
     <script src="../js/login.js"></script>
     <script src="../js/particle.js"></script>
+    {{!-- <script type="text/javascript">
+      handlebars.registerHelper("calculation", function(input) {
+        return input * 5;
+        });
+</script> --}}
 
   </body>
 </html>

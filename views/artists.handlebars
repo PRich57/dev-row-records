@@ -1,5 +1,4 @@
 <!-- BODY -->
-
 <!-- ALL ARTISTS SECTION -->
 <div class="container-fluid px-5">
 
@@ -8,20 +7,22 @@
     </div>
     
     
-    <div class = "row d-flex justify-content-around" id = "artist-div-row">
+    <div class = "row d-flex justify-content-start my-5" id = "artist-div-row">
       {{#each artists as |artist|}}
-      <div class = "col-xl-3 col-lg-6 col-12 d-flex align-items-center justify-content-center p-3">
-        <div class="card cardEvent card-shade bg-dark" style="width: 18rem;"  id = "{{id}}">
-          <img src="{{filename}}" class="card-img-top img-fluid" alt="image of {{artist_name}}" style = "height: 15rem" id = "artistIndex">
+      <div class = "cardEvent col-xl-3 col-lg-6 col-12 d-flex align-items-center justify-content-center my-5 p-3">
+        <div class="card artist-card card-shade bg-dark get-single-artist" datatype = "artist" id = "{{id}}">
+          <img src="{{filename}}" class="card-img-top img-fluid" alt="image of {{artist_name}}" style = id = "artistIndex">
           <div class="card-body d-flex justify-content-center">
             <h5 class="card-title">{{artist_name}}</h5>
           </div>
         </div>
+        <button type="button" class="btn btn-dark" style = "position: relative; bottom: -185px; right: 47px">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill= {{#if ../favorites}}{{#calculation artist.id ../favorites "artist_id"}}{{/calculation}}{{else}}"white"{{/if}} class="bi bi-star-fill card-favorite-button" viewBox="0 0 16 16" data-type = "artist_id"  id = {{id}}>
+                  <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z">
+                  </path>
+                </svg>
+        </button>
       </div>
     {{/each}}
   </div>
-
-    
-
-
 </div>
