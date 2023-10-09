@@ -4,7 +4,7 @@
     </div>
     {{!-- SORTING CARDS --}}
     {{!-- Sort by Type --}}
-    <div class = "text-center justify-content-around">
+    <div class = "text-center my-4">
      <div class="btn-group">
         <button class="btn btn-secondary dropdown-toggle bg-dark" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
             Sort by Type
@@ -33,11 +33,11 @@
     <div class = "row d-flex justify-content-center">
             <h2 class="text-center mt-5 mb-4" style = "border-bottom: .2rem solid white">{{name}}</h2>
             {{#each oneArtistPlain.merches as |merch|}}
-                <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3">
+                <div class = "col-xxl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3">
                     <div class="card card-shade album-card bg-dark" style="width: 18rem; height: 100%">
                         <img src="{{merch.filename}}" class="card-img-top" alt="Image of {{merch.merch_name}}">
                         <div class="card-body d-flex justify-content-center flex-column" style = "position: relative">
-                            <h5 class="card-title">{{merch.merch_name}}</h5>
+                            <h5 class="card-title text-center">{{merch.merch_name}}</h5>
                             <h6 class = "card-subtitle">{{merch.price}}</h6>
                              <button type="button" class="btn btn-dark" style = "position: absolute; right: 0px; bottom: 0px" data-bs-toggle="tooltip" data-bs-placement="left" data-bs-title="Tooltip on left"> 
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-star-fill card-favorite-button" viewBox="0 0 16 16" data-type = "merch_id"  id = {{merch.id}}>
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                 </div>
-             {{/each}}
+            {{/each}}
     </div>
 </div>
     
