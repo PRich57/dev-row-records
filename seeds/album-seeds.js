@@ -51,13 +51,13 @@ const albumData = [
     },
     {
       artist_id: 3, 
-      album_name: "Lonely Liam",
-      filename: "../Assets/Album_Photos/lonely_liam.avif"
+      album_name: "Liam At Twilight",
+      filename: "../Assets/Album_Photos/liam_at_twilight.avif"
     },
     {
       artist_id: 3, 
-      album_name: "The Boy: Christmas Hits",
-      filename: "../Assets/Album_Photos/the_boys_christmas_hits.avif"
+      album_name: "Liam's: Christmas Hits",
+      filename: "../Assets/Album_Photos/christmas_hits.avif"
     },
     {
       artist_id: 3, 
