@@ -11,13 +11,7 @@ const tagData = [
     tag_name: "Hat",
   },
   {
-    tag_name: "12-inch Vinyl",
-  },
-  {
-    tag_name: "7-inch Vinyl",
-  },
-  {
-    tag_name: "CD",
+    tag_name: "Music Mediums",
   },
   {
     tag_name: "Sticker",
