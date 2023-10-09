@@ -3,17 +3,17 @@
 <!-- ALL ALBUMS SECTION -->
 
 <div class="container-fluid mx-0">
-  <div class="row mt-5 mb-2 justify-content-around">
+  <div class="row mt-4 justify-content-around">
     <h1 class="text-center title-page">ALBUMS</h1>
   </div>
 
-  <div class="row d-flex col-lg-12 col-md-9 pb-5 mt-2">
 
     {{#each artists as |artist|}}
       <h2 class="text-center border-bottom">{{artist_name}}</h2>
+  <div class="row d-flex col-lg-12 col-md-9 my-4 justify-content-center">
       {{#each albums as |album|}}
       <div
-        class="cardEvent col-xl-3 col-lg-6 col-12 d-flex align-items-center justify-content-center p-3 pb-5 mb-4"
+        class="cardEvent col-xl-3 col-lg-6 col-12 d-flex align-items-center justify-content-center mb-5"
       >
         <div class="card card-shade album-card bg-dark get-single-artist" id="{{artist.id}}">
           <img
@@ -35,7 +35,7 @@
         
       </div>
     {{/each}}
+  </div>
     {{/each}}
 
-  </div>
 </div>

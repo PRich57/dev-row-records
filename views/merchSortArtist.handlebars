@@ -1,8 +1,10 @@
-<div class="container-fluid mx-0 p-5">
-<h1 class = "title-page border-bottom text-center mb-5">MERCHANDISE</h1>
+<div class="container-fluid mx-0">
+    <div class="row mt-4 justify-content-around">
+        <h1 class = "title-page text-center mb-5">MERCHANDISE</h1>
+    </div>
     {{!-- SORTING CARDS --}}
     {{!-- Sort by Type --}}
-    <div class = "text-center justify-content-start">
+    <div class = "text-center justify-content-around">
      <div class="btn-group">
         <button class="btn btn-secondary dropdown-toggle bg-dark" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
             Sort by Type
@@ -28,7 +30,7 @@
     </div>
 
     {{!-- MERCH FILTERED TO ONE ARTIST --}}
-    <div class = "row d-flex justify-content-start">
+    <div class = "row d-flex justify-content-center">
             <h2 class="text-center mt-5 mb-4" style = "border-bottom: .2rem solid white">{{name}}</h2>
             {{#each oneArtistPlain.merches as |merch|}}
                 <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3">
