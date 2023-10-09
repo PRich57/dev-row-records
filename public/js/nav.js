@@ -4,7 +4,7 @@ const allArtistsAnchor = $("#get-all-artists");
 const allArtistsLi = $("#get-all-artists-li");
 const getHomeLi = $("#get-home-li");
 const allMusicLi = $("#get-all-music-li");
-const getStoreLi = $("#header-get-store-li");
+const getStoreLi = $(".header-get-store-li");
 const getFavoriteLi = $("#header-get-favorite-li");
 
 //footer
@@ -45,7 +45,6 @@ const getAllArtists = async (event) => {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
-
     if (response.ok) {
       window.location.replace("/artists");
     }
@@ -77,7 +76,7 @@ const getStore = async (event) => {
   try {
     event.preventDefault();
     event.stopPropagation();
-    console.log("hello");
+    // console.log("hello");
     const response = await fetch("/merch", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -95,7 +94,6 @@ const getSingleArtist = async (event) => {
   try {
     // event.preventDefault();
     // event.stopPropagation();
-
     const response = await fetch(`/artists/${event}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },

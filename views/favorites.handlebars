@@ -1,24 +1,24 @@
-
+{{!-- Favorites Section --}}
 <div class="container-fluid flex-column d-flex">
-  <div class="row mt-5 mb-2 justify-content-center">
+  <div class="row mt-4">
     <h1 class="text-center title-page">Favorites</h1>
   </div>
     <div>
-    <h2 class="favorite-artists border-bottom text-center my-5">Artists:</h2>
+    <h2 class="favorite-artists border-bottom text-center">Artists:</h2>
     <section class="d-flex flex-wrap flex-row justify-content-start my-5">
       {{#each viewData.artists as |artist|}}
       {{> favorite-artists}}
       {{/each}}
 </div>
 <div>
-    <h2 class="favorite-albums border-bottom text-center my-5">Albums:</h2>
+    <h2 class="favorite-albums border-bottom text-center">Albums:</h2>
     <section class="d-flex flex-wrap flex-row justify-content-start my-5">
       {{#each viewData.albums as |album|}}
       {{> favorite-albums}}
       {{/each}}
 </div>
 <div>
-    <h2 class="favorite-merch border-bottom text-center my-5">Merch:</h2>
+    <h2 class="favorite-merch border-bottom text-center">Merch:</h2>
     <section class="d-flex flex-wrap flex-row justify-content-start my-5">
       {{#each viewData.merch as |merch|}}
       {{> favorite-merch}}
