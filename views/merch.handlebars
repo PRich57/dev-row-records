@@ -1,9 +1,11 @@
-<div class="container-fluid mx-0 p-5">
-    <h1 class = "title-page text-center mb-5">MERCHANDISE</h1>
+<div class="container-fluid mx-0">
+    <div class="row mt-4 justify-content-around">
+        <h1 class = "title-page text-center">MERCHANDISE</h1>
+    </div>
     {{!-- SORTING CARDS --}}
     {{!-- Sort by Type --}}
 
-    <div class = "text-center justify-content-start">
+    <div class = "text-center justify-content-center">
      <div class="btn-group">
         <button class="btn btn-secondary dropdown-toggle bg-dark" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
             Sort by Type
@@ -34,7 +36,7 @@
             <h2 class="text-center mt-5 mb-4" style = "border-bottom: .2rem solid white">{{tag.tag_name}}</h2>
             {{#each tag.merches as |merch|}}
                 <div class = "col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3">
-                    <div class="card card-shade album-card bg-dark">
+                    <div class="card card-shade album-card bg-dark my-3">
                         <img src="{{merch.filename}}" class="card-img-top" alt="Image of {{merch.merch_name}}">
                         <div class="card-body d-flex justify-content-center flex-column" style = "position: relative">
                             <h5 class="card-title text-center">{{merch.merch_name}}</h5>
