@@ -31,17 +31,17 @@
 }
 
 .artist-card img {
-  height: 15rem;
+  height: 20rem;
 }
 .album-card img {
-  height: 15rem;
+  height: 20rem;
 }
 .album-card {
-  width: 19rem;
+  width: 25rem;
 }
 
 .artist-card {
-  width: 19rem;
+  width: 25rem;
 }
 
 .card {
@@ -54,7 +54,7 @@
   cursor: pointer;
 }
 .card-shade {
-  box-shadow: 0px 0px 20px 1px rgb(126, 126, 126);
+  box-shadow: 0px 0px 20px 1px rgb(92, 92, 92);
   color: white;
 }
 .card-title {
@@ -175,12 +175,6 @@ canvas {
   color: rgb(112, 112, 112);
 }
 
-.favorites {
-  padding-top: 5rem;
-  padding-bottom: 1rem;
-
-}
-
 .single-artist-title {
   font-size: 7rem;
   text-align: center;
@@ -189,6 +183,7 @@ canvas {
 .footer-image {
   width: 80px;
 }
+
 @media (width<550px) {
   .title-page {
     font-size: 4rem;
@@ -209,6 +204,7 @@ canvas {
     font-size: 1rem;
   }
 }
+
 @media (width<360px) {
   .title-page {
     font-size: 2rem;
