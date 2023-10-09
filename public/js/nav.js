@@ -1,18 +1,18 @@
 //VARIABLES
 //header
-var allArtistsAnchor = $("#get-all-artists");
-var allArtistsLi = $("#get-all-artists-li");
-var getHomeLi = $("#get-home-li");
-var allMusicLi = $("#get-all-music-li");
-var getStoreLi = $("#header-get-store-li");
-var getFavoriteLi = $("#header-get-favorite-li");
+const allArtistsAnchor = $("#get-all-artists");
+const allArtistsLi = $("#get-all-artists-li");
+const getHomeLi = $("#get-home-li");
+const allMusicLi = $("#get-all-music-li");
+const getStoreLi = $("#header-get-store-li");
+const getFavoriteLi = $("#header-get-favorite-li");
 
 //footer
-var footerHomeLi = $("#footer-get-home-li");
-var footerAllArtistsLi = $("#footer-get-artists-li");
-var footerAllAlbumsLi = $("#footer-get-albums-li");
-var footerStoreLi = $("#footer-get-store-li");
-var footerFavoriteLi = $("#footer-get-favorite-li");
+const footerHomeLi = $("#footer-get-home-li");
+const footerAllArtistsLi = $("#footer-get-artists-li");
+const footerAllAlbumsLi = $("#footer-get-albums-li");
+const footerStoreLi = $("#footer-get-store-li");
+const footerFavoriteLi = $("#footer-get-favorite-li");
 
 
 //FUNCTIONS
@@ -194,6 +194,7 @@ const deleteFromFavorite = async (buttonId, dataType) => {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
+      window.location.reload();
       return true;
     } else {
       return false;
@@ -241,7 +242,7 @@ $(".card-favorite-button").click(async function () {
     console.log(`line 225 addFavSuccess in nav.js: ${addFavSuccess}`)
     if(addFavSuccess){
       $(this).attr("fill", "yellow");
-    }else {
+    } else {
       console.error("add favorite failed")
     }
   } else {

@@ -11,7 +11,7 @@
   cursor: pointer;
 }
 
-/* DEV ROW RECORDS in navr bar*/
+/* DEV ROW RECORDS in nav bar*/
 #Main_Title {
   font-weight: 900;
   font-size: 5rem;
@@ -224,12 +224,12 @@ canvas {
 }
 */
 .fullScreenImageNav {
-  height: 20%;
+  height: 15%;
 } 
 
 .coverImage {
   object-fit: cover;
-  height: 80%;
+  height: 85%;
   width: 100%;
   
 }
