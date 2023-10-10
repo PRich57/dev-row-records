@@ -24,7 +24,7 @@
         {{#each fourRandomArtists as |randomArtist|}}
         <div class = "cardEvent col-xxl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3 my-5" style = "position: relative">
           <div class="card artist-card card-shade bg-dark get-single-artist"  id="{{randomArtist.[0].id}}">
-            <img src="{{randomArtist.[0].filename}}" class="card-img-top img-fluid" alt="Image of {{randomArtist.[0].artist_name}}">
+            <img src="{{randomArtist.[0].filename}}" class="card-img-top custom-card-img" alt="Image of {{randomArtist.[0].artist_name}}">
             <div class="card-body d-flex justify-content-center"style = "position: relative">
               <h5 class="card-title text-center">{{randomArtist.[0].artist_name}}</h5>
                 <button type="button" class="btn btn-dark" style = "position: absolute; bottom: 0px; right: 0px" data-bs-toggle="Sign in to add to favorites!" data-bs-placement="left" data-bs-title="Tooltip on left"> 
