@@ -16,7 +16,6 @@ const footerFavoriteLi = $("#footer-get-favorite-li");
 
 const backToStore = $(".back-to-store");
 
-
 //FUNCTIONS
 //go home page (controllers/home-routes.js)
 const getHome = async (event) => {
@@ -142,9 +141,9 @@ const addToFavorite = async (buttonId, dataType) => {
     let postData = {
       album_id: null,
       artist_id: null,
-      merch_id: null
-    }
-    switch(dataType) {
+      merch_id: null,
+    };
+    switch (dataType) {
       case "album_id":
         postData.album_id = buttonId;
         break;
@@ -155,23 +154,27 @@ const addToFavorite = async (buttonId, dataType) => {
         postData.merch_id = buttonId;
         break;
     }
-    const response = await fetch('/api/favorite/', {
-      method: 'POST',
+    const response = await fetch("/api/favorite/", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(postData)
     })
     if (response.ok){
       return true
     } else {
-      return false
+      Swal.fire({
+        title: "Oops!",
+        text: "In order to add to favorites, you must be logged in.",
+        icon: "warning",
+        confirmButtonText: "Okay",
+      });
     }
-
   } catch (err) {
     console.error(err);
   }
-}
+};
 
 //function delete from favorites from star button
 const deleteFromFavorite = async (buttonId, dataType) => {
@@ -181,7 +184,7 @@ const deleteFromFavorite = async (buttonId, dataType) => {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      if (window.location.href === "http://localhost:3001/favorites") {
+      if (window.location.href === "https://dev-row-records-63d750921ea0.herokuapp.com/favorites" || "http://localhost:3001/favorites") {
         window.location.reload();
       }
       return true;
@@ -191,8 +194,7 @@ const deleteFromFavorite = async (buttonId, dataType) => {
   } catch (err) {
     console.error(err);
   }
-  
-}
+};
 //EVENT LISTENERS
 //header event listeners
 allArtistsLi.on("click", "#get-all-artists", getAllArtists);
@@ -238,11 +240,10 @@ $(".card-favorite-button").click(async function (event) {
     }
   } else {
     const deleteFavSuccess = await deleteFromFavorite(buttonId, dataType);
-    if(deleteFavSuccess){
+    if (deleteFavSuccess) {
       $(this).attr("fill", "white");
     } else {
       console.warn("delete favorite failed")
     }
   }
-})
-
+});
