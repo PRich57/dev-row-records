@@ -1,7 +1,7 @@
 const seedAlbum = require("./album-seeds");
 const seedArtist = require("./artist-seeds");
 const seedCategory = require("./category-seeds");
-const seedMerch = require("./merch-seeds");
+const {seedMerch, merchTagData} = require("./merch-seeds");
 const seedTag = require("./tag-seeds");
 const seedMerchTag = require("./merch-tag-seeds");
 const seedGenre = require("./genre-seeds");

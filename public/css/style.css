@@ -1,6 +1,5 @@
 #header-ul li:hover,
-#footer-nav-ul-1 li:hover,
-#footer-nav-ul-2 li:hover{
+#footer-nav-ul li:hover {
   cursor: pointer;
   color: rgb(163, 166, 169) !important;
   text-decoration: underline;
@@ -12,7 +11,7 @@
   cursor: pointer;
 }
 
-/* DEV ROW RECORDS in navr bar*/
+/* DEV ROW RECORDS in nav bar*/
 #Main_Title {
   font-weight: 900;
   font-size: 5rem;
@@ -31,22 +30,44 @@
   margin-top: 1.5rem;
 }
 
-.card {
+.artist-card img {
+  height: 20rem;
+ 
+}
+.album-card img {
+  height: 20rem;
+}
+.album-card {
+  width: 25rem;
+}
 
-  background-color: #aeb2b6;
-  color: black;
+.artist-card {
+  width: 25rem;
+}
+
+.card {
+  /* box-shadow: 3px 3px 4px 4px rgb(30, 30, 30);
+  background-color: rgb(44, 44, 44); */
+  color: white;
 }
 .cardEvent:hover {
   scale: 1.1;
   cursor: pointer;
 }
 .card-shade {
-  box-shadow: 0px 0px 20px 1px rgb(185, 184, 184);
+  box-shadow: 0px 0px 20px 1px rgb(92, 92, 92);
   color: white;
- 
 }
 .card-title {
   font-size: 1.5rem;
+  height: 3.1rem;
+  display: flex;
+  align-items: center;
+
+}
+.card-body {
+  display: flex; 
+  align-items: center;
 }
 /* ---- reset ---- */
 body {
@@ -62,7 +83,7 @@ body {
 }
 canvas {
   display: block;
-  vertical-align: bottom;
+  /* vertical-align: bottom; */
 }
 /* ---- particles.js container ---- */
 #particles-js {
@@ -78,25 +99,49 @@ canvas {
   z-index: -1;
 }
 #footer-div {
-  /* position: relative; */
-  /* border: 0.1rem solid pink; */
-  /* background-color: white; */
-  background-color: rgb(31, 32, 33);
- 
-  /* z-index: 1; */
+
+  font-size: 1.5rem;
 }
-footer {
-  font-size: 3rem;
+
+#signup-modal-content {
+  background-color: rgb(21, 21, 21) !important;
+  border-width: 1px;
+  border-color: rgb(144, 144, 144);
+  color: white;
+  font-size: 1rem;
 }
-.footer-nav-h2 {
-  font-size: 4rem;
+#login-modal-content {
+  background-color: rgb(21, 21, 21) !important;
+  border-width: 1px;
+  border-color: rgb(144, 144, 144);
+  color: white;
+  font-size: 1rem;
+}
+
+.form-control {
+  background-color: rgb(52, 52, 52);
+  color: white;
+}
+.form-control:focus {
+  background-color: black;
+  color: white;
+}
+.modal-footer {
+  border-top: 1px solid rgb(144, 144, 144);
+}
+.modal-header {
+  border-bottom: 1px solid rgb(144, 144, 144);
 }
 .z-class {
   position: absolute;
 }
 
+.dropdown-menu {
+  padding-bottom: 0;
+}
+
 .modal {
-  color: black
+  color: black;
 }
 
 .title-page {
@@ -104,12 +149,24 @@ footer {
 }
 
 .merch-sort-card {
+  flex-direction: row;
   color: white;
 }
-.merch-sort-ul, .merch-sort-li {
+
+.btn-group {
+  flex-direction: column;
+}
+
+.merch-sort-ul,
+.merch-sort-li {
   color: white;
-  border: .2rem solid white;
-  font-size: 1.5rem
+  border: 0.1rem solid white;
+  border-bottom: none;
+  font-size: 1.5rem;
+}
+
+.back-to-store {
+  list-style-type: none;
 }
 
 .merch-card-p {
@@ -123,7 +180,7 @@ footer {
 .merch-sort-li:hover {
   cursor: pointer;
   text-decoration: underline;
-  color:rgb(112, 112, 112)
+  /* color: rgb(112, 112, 112); */
 }
 
 .single-artist-title {
@@ -131,7 +188,11 @@ footer {
   text-align: center;
 }
 
-@media (width<550px){
+.footer-image {
+  width: 80px;
+}
+
+@media (width<550px) {
   .title-page {
     font-size: 4rem;
   }
@@ -143,7 +204,7 @@ footer {
   }
 }
 
-@media (width<360px){
+@media (width<360px) {
   .title-page {
     font-size: 3rem;
   }
@@ -151,9 +212,42 @@ footer {
     font-size: 1rem;
   }
 }
-@media (width<360px){
+
+@media (width<360px) {
   .title-page {
     font-size: 2rem;
   }
+}
 
+
+/* IF WE WANT A FULL SIZE IMAGE OF SCREEN AT HOME PAGE */
+
+/* first comment out the img and its parent div
+  second: uncomment out the items below */
+/* .fullScreenImageDiv {
+  background-image: url(../Assets/Misc_Photos/homepage-SMTB_BW.jpg); 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  height: 80vh;
+}
+*/
+.fullScreenImageNav {
+  height: 15%;
+} 
+
+.coverImage {
+  object-fit: cover;
+  height: 85%;
+  width: 100%;
+  
+}
+@media (width<1000px) {
+  .coverImage {
+    object-fit: revert;
+    width: revert;
+    height: revert;
+  }
+  .fullScreenImageNav {
+    height: revert;
+  }
 }

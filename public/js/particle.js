@@ -12,12 +12,12 @@ particlesJS("particles-js", {
       opacity: {
         value: 0.1763753266952075,
         random: true,
-        anim: { enable: true, speed: 1, opacity_min: 0, sync: false },
+        anim: { enable: true, speed: 0.2, opacity_min: 0, sync: false },
       },
       size: {
         value: 4,
         random: true,
-        anim: { enable: false, speed: 4, size_min: 0.3, sync: false },
+        anim: { enable: false, speed: 3, size_min: 0.3, sync: false },
       },
       line_linked: {
         enable: false,
@@ -56,7 +56,7 @@ particlesJS("particles-js", {
   });
   
   update = function () {
-   
+
     requestAnimationFrame(update);
   };
   requestAnimationFrame(update);
