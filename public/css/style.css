@@ -167,6 +167,11 @@ canvas {
   font-size: 1.5rem;
 }
 
+.custom-card-img {
+  width: 100%;
+  object-fit: cover;
+}
+
 .back-to-store {
   list-style-type: none;
 }
