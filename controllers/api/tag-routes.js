@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Tag } = require("../../models");
 
+// ADD TAG ROUTE
+//http://localhost:3001/api/tag
 router.post("/", async (req, res) => {
   const { tag_name } = req.body;
   try {
@@ -15,6 +17,8 @@ router.post("/", async (req, res) => {
   }
 });
 
+// DELETE TAG ROUTE
+//http://localhost:3001/api/tag/{id}
 router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   try {

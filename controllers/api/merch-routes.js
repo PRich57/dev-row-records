@@ -2,6 +2,8 @@ const router = require('express').Router();
 const { Merch, MerchTag, Tag } = require("../../models");
 const { findArtistIDByName } = require("./helper");
 
+// ADD MERCH ROUTE
+//http://localhost:3001/api/merch
 router.post("/", async (req, res) => {
   const { merch_name, price, category_id, artist_name, tag } = req.body;
   try {
@@ -38,7 +40,8 @@ router.post("/", async (req, res) => {
   }
 });
 
-
+// DELETE MERCH ROUTE
+//http://localhost:3001/api/merch/{id}
 router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   try {

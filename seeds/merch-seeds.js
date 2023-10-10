@@ -1,26 +1,7 @@
-// const { Merch } = require("../models");
-
-// const merchData = [
-//   {
-//     merch_name: "Example Merch 1",
-//     price: 10.99,
-//     filename: '../Assets/sample-merch.PNG',
-//     category_id: 1,
-//     artist_id: 1,
-
-//   },
-//   // ... Add more Merchdata as needed
-// ];
-
-// const seedMerch = async () => {
-//   await Merch.bulkCreate(merchData);
-// };
-
-// module.exports = seedMerch;
-
-// // DONE //
-
+// require in Merch Model
 const { Merch } = require("../models");
+
+// seed data to iterate through on bulk create
 let modelMerchTemplate = [
   {
     merch_name: "Relaxed Fit",
@@ -134,10 +115,10 @@ let modelMerchTemplate = [
   },
 ];
 
+// FOR LOOP: put data into comparable format of merch model
 let merchData = [];
 let merchTagData = [];
 let merchIdCounter = 1;
-
 let artistsNames = ["Mateo And The Black Crows","DJ Nicky","Liam the Kid","The Sound of Kellogg","Passion Pete", "Cholo Goth",]
 
 artistsNames.forEach((artist, index) => {
@@ -156,6 +137,7 @@ artistsNames.forEach((artist, index) => {
   });
 });
 
+// SEED
 const seedMerch = async () => {
   await Merch.bulkCreate(merchData);
 };

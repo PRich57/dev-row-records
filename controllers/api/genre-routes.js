@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { Genre } = require("../../models");
 
+// ADD GENRE ROUTE
+//http://localhost:3001/api/genre
 router.post("/", async (req, res) => {
   const { genre_name } = req.body;
   try {
@@ -15,6 +17,8 @@ router.post("/", async (req, res) => {
   }
 });
 
+// DELETE GENRE ROUTE
+//http://localhost:3001/api/genre
 router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   try {

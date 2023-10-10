@@ -1,5 +1,6 @@
 const { Artist } = require('../../models');
 
+//FIND ARTIST ID BY ARTIST NAME
 async function findArtistIDByName(artist_name) {
   try {
     const artist = await Artist.findOne({

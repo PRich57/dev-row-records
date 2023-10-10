@@ -1,6 +1,8 @@
 const router = require("express").Router();
 const { Category } = require("../../models");
 
+// CREATE CATEGORY ROUTE
+//http://localhost:3001/api/category/
 router.post("/", async (req, res) => {
   const { category_name } = req.body;
   try {
@@ -15,6 +17,8 @@ router.post("/", async (req, res) => {
   }
 });
 
+// DELETE CATEGORY ROUTE
+//http://localhost:3001/api/category/{id}
 router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   try {

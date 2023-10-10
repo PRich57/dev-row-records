@@ -7,17 +7,20 @@ const signupUsernameInput = $("#signup-username-input");
 const signupPasswordInput = $("#signup-password-input");
 const signupEmailInput = $("#signup-email-input");
 
+// LOGIN FUNCTION
 const loginHandler = async (event) => {
   event.preventDefault();
   event.stopPropagation();
 
+  // grab the user input from form
   const username = await loginUsernameInput.val();
   const password = await loginPasswordInput.val();
   const login = {
     user_name: username,
     password: password,
   };
-  const response = await fetch("/api/user/login", {
+  // Send a POST request to the server
+    const response = await fetch("/api/user/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -39,10 +42,11 @@ const loginHandler = async (event) => {
   }
 };
 
+// SIGN UP FUNCTION
 const signupHandler = async (event) => {
   event.preventDefault();
   event.stopPropagation();
-
+  //grab user input from form
   const username = await signupUsernameInput.val();
   const password = await signupPasswordInput.val();
   const email = await signupEmailInput.val();
@@ -76,8 +80,7 @@ const signupHandler = async (event) => {
       });
     } else {
       const responseData = await response.json();
-      // alert(`Signup failed: ${responseData.message}`);
-      Swal.fire("Error", `Sign Up Failed: ${responseData.message}`, "error");
+     Swal.fire("Error", `Sign Up Failed: ${responseData.message}`, "error");
     }
   } catch (error) {
     Swal.fire("Error", `Sign Up Failed: ${responseData.message}`, "error");
@@ -87,8 +90,10 @@ const signupHandler = async (event) => {
 modalLoginSubmitDiv.on("click", "#modal-login-submit", loginHandler);
 modalSignupSubmitDiv.on("click", "#modal-signup-submit", signupHandler);
 
+// LOG OUT FUNCTION
 const signoutHandler = async (event) => {
   event.preventDefault();
+  // post request to server
   try {
     const response = await fetch("/api/user/logout", {
       method: "POST",
@@ -98,6 +103,7 @@ const signoutHandler = async (event) => {
     });
 
     if (response.ok) {
+      // modal fire
       Swal.fire({
         position: "top-end",
         icon: "success",
@@ -116,6 +122,6 @@ const signoutHandler = async (event) => {
   }
 };
 
-// Adding event listener to the signout button
+// Add event listener to the signout button
 $(".signout-button").on("click", signoutHandler);
 $("#footer-signout").on("click", signoutHandler);

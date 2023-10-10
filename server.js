@@ -1,3 +1,4 @@
+// Require Packages
 const path = require("path");
 const express = require("express");
 const session = require("express-session");
@@ -24,8 +25,8 @@ const sess = {
   }),
 };
 
+// MIDDLEWARE
 app.use(session(sess));
-
 const hbs = exphbs.create({});
 
 // helper function for handlebars: If the id === userId value then display yellow star
@@ -45,7 +46,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(setLoginStatus);
-
 app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
