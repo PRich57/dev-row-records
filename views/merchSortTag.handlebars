@@ -6,9 +6,12 @@
     <div class = "text-center my-4">
     {{!-- Back to store --}}
         <div class="btn-group">
+            <a href="/merch">
             <button class="btn btn-secondary bg-dark back-to-store" type="button">
-                <li class="back-to-store">Back to Store</li>
+                <li class="back-to-store">Back to Store
+                </li>
             </button>
+            </a>
         </div>
     {{!-- Sort by Type --}}
         <div class="btn-group">
@@ -17,7 +20,9 @@
             </button>
             <ul class="dropdown-menu">
                 {{#each tags as |tag|}}
-                    <li class="dropdown-item sort-list-link merch-sort-li bg-dark" id="{{tag.tag_name}}">{{tag.tag_name}}</li>
+                    <a  class = "dropdown-item sort-list-link merch-sort-li bg-dark" href="/merch/?tag={{tag.tag_name}}">
+                    {{tag.tag_name}}
+                    </a>
                 {{/each}}
             </ul>
         </div>
@@ -29,7 +34,8 @@
                 </button>
                 <ul class="dropdown-menu">
                     {{#each dataArtistsPlain as |artist|}}
-                        <li class="dropdown-item sort-list-link merch-sort-li bg-dark" id="{{artist_name}}">{{artist_name}}</li>
+                        <a href="/merch/?tag={{artist_name}}" class="dropdown-item sort-list-link merch-sort-li bg-dark" id="{{artist_name}}">{{artist_name}}
+                    </a>
                     {{/each}}
                 </ul>
             </div>

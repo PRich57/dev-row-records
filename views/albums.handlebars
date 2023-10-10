@@ -15,7 +15,8 @@
       <div
         class="col-xxl-3 col-md-6 col-12 d-flex align-items-center justify-content-center mb-5"
       >
-        <div class="cardEvent card card-shade album-card bg-dark get-single-artist" id="{{artist.id}}">
+      <a href="/artists/{{artist.id}}">
+      <div class="cardEvent card card-shade album-card bg-dark get-single-artist" id="{{artist.id}}">
           <img
             src="{{album.filename}}"
             class="card-img-top img-fluid"
@@ -33,7 +34,7 @@
             </button>
           </div>
         </div>
-        
+        </a>
       </div>
     {{/each}}
   </div>

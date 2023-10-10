@@ -44,7 +44,9 @@
 .artist-card {
   width: 25rem;
 }
-
+.sortAnchor {
+  
+}
 .card {
   /* box-shadow: 3px 3px 4px 4px rgb(30, 30, 30);
   background-color: rgb(44, 44, 44); */
