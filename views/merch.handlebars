@@ -12,7 +12,9 @@
             </button>
             <ul class="dropdown-menu bg-dark">
                 {{#each tags as |tag|}}
-                    <li class="dropdown-item sort-list-link merch-sort-li bg-dark" id="{{tag.tag_name}}">{{tag.tag_name}}</li>
+                    <a  class = "dropdown-item sort-list-link merch-sort-li bg-dark" href="/merch/?tag={{tag.tag_name}}">
+                    {{tag.tag_name}}
+                    </a>
                 {{/each}}
             </ul>
         </div>
@@ -24,7 +26,8 @@
             </button>
             <ul class="dropdown-menu bg-dark">
                 {{#each dataArtistsPlain as |artist|}}
-                    <li class="dropdown-item sort-list-link merch-sort-li bg-dark" id="{{artist_name}}">{{artist_name}}</li>
+                    <a href="/merch/?tag={{artist_name}}" class="dropdown-item sort-list-link merch-sort-li bg-dark" id="{{artist_name}}">{{artist_name}}
+                    </a>
                 {{/each}}
             </ul>
         </div>

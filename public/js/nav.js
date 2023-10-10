@@ -1,140 +1,3 @@
-//VARIABLES
-//header
-const allArtistsAnchor = $("#get-all-artists");
-const allArtistsLi = $("#get-all-artists-li");
-const getHomeLi = $("#get-home-li");
-const allMusicLi = $("#get-all-music-li");
-const getStoreLi = $(".header-get-store-li");
-const getFavoriteLi = $("#header-get-favorite-li");
-
-//footer
-const footerHomeLi = $("#footer-get-home-li");
-const footerAllArtistsLi = $("#footer-get-artists-li");
-const footerAllAlbumsLi = $("#footer-get-albums-li");
-const footerStoreLi = $("#footer-get-store-li");
-const footerFavoriteLi = $("#footer-get-favorite-li");
-
-const backToStore = $(".back-to-store");
-
-//FUNCTIONS
-//go home page (controllers/home-routes.js)
-const getHome = async (event) => {
-  try {
-    event.preventDefault();
-    event.stopPropagation();
-    const response = await fetch("/", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-    if (response.ok) {
-      window.location.replace("/");
-    }
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-//go to artists page (controllers/home-routes.js)
-const getAllArtists = async (event) => {
-  try {
-    event.preventDefault();
-    event.stopPropagation();
-    const response = await fetch("/artists", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-    if (response.ok) {
-      window.location.replace("/artists");
-    }
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-//go to music/albums page (controllers/home-routes.js)
-const getAllMusic = async (event) => {
-  try {
-    event.preventDefault();
-    event.stopPropagation();
-    const response = await fetch("/albums", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-    if (response.ok) {
-      window.location.replace("/albums");
-    }
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-//go to store/merch page (controllers/home-routes.js)
-const getStore = async (event) => {
-  try {
-    event.preventDefault();
-    event.stopPropagation();
-    const response = await fetch("/merch", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-    if (response.ok) {
-      window.location.replace("/merch");
-    }
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-//go to single artist page
-const getSingleArtist = async (event) => {
-  try {
-    // event.preventDefault();
-    // event.stopPropagation();
-    const response = await fetch(`/artists/${event}`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-    if (response.ok) {
-      window.location.replace(`/artists/${event}`);
-    }
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-//sort the merch on merch page
-const sortMerch = async (sortidLi) => {
-  try {
-    const response = await fetch(`/merch/?tag=${sortidLi}`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-    if (response.ok) {
-      window.location.replace(`/merch/?tag=${sortidLi}`);
-    }
-  } catch (err) {
-    console.error(err);
-  }
-};
-
-// go to favorites page (controllers/home-routes.js)
-const getFavorite = async (event) => {
-  try {
-    event.preventDefault();
-    event.stopPropagation();
-    const response = await fetch("/favorites", {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-
-    if (response.ok) {
-      window.location.replace("/favorites");
-    }
-  } catch (err) {
-    console.error(err);
-  }
-};
-
 //adding to favorites from star button
 const addToFavorite = async (buttonId, dataType) => {
   try {
@@ -183,6 +46,7 @@ const deleteFromFavorite = async (buttonId, dataType) => {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     });
+
     if (response.ok) {
       if (
         window.location.href ===
@@ -199,35 +63,6 @@ const deleteFromFavorite = async (buttonId, dataType) => {
     console.error(err);
   }
 };
-//EVENT LISTENERS
-//header event listeners
-allArtistsLi.on("click", "#get-all-artists", getAllArtists);
-getHomeLi.on("click", "#get-home", getHome);
-allMusicLi.on("click", "#get-all-music", getAllMusic);
-getStoreLi.on("click", "#header-get-store", getStore);
-getFavoriteLi.on("click", "#header-get-favorite", getFavorite);
-
-//footer event listeners
-footerHomeLi.on("click", "#footer-get-home", getHome);
-footerAllArtistsLi.on("click", "#footer-get-artists", getAllArtists);
-footerAllAlbumsLi.on("click", "#footer-get-albums", getAllMusic);
-footerStoreLi.on("click", "#footer-get-store", getStore);
-footerFavoriteLi.on("click", "#footer-get-favorite", getFavorite);
-
-// Back to store
-backToStore.on("click", ".back-to-store", getStore);
-
-//get single artist from All Artist page - event listener
-$(".get-single-artist").click(function () {
-  let id = $(this).attr("id");
-  getSingleArtist(id);
-});
-
-//sorting list event listener
-$(".sort-list-link").click(function () {
-  let sortidLi = $(this).attr("id");
-  sortMerch(sortidLi);
-});
 
 //favorite add event listener
 $(".card-favorite-button").click(async function (event) {
