@@ -7,10 +7,9 @@ async function findArtistIDByName(artist_name) {
         artist_name,
       },
     });
-    console.log(artist);
     return artist.id;
   } catch (err) {
-    console.warn(err);
+    console.error(err);
     throw new Error(err);
   }
 }

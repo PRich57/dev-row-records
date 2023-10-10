@@ -42,7 +42,7 @@
       {{#each artist.merches as |merch|}}
      <div class = "col-xxl-3 col-md-6 col-12 d-flex align-items-center justify-content-center mb-5">
         <div class="card card-shade album-card bg-dark my-3">
-          <img src="{{merch.filename}}" class="card-img-top img-fluid" alt="Image of {{merch.merch_name}}" style="object-fit: cover;">
+          <img src="{{merch.filename}}" class="card-img-top custom-card-img" alt="Image of {{merch.merch_name}}">
           <div class="card-body d-flex justify-content-center flex-column" style = "position: relative">
             <h5 class="card-title text-center">{{merch.merch_name}}</h5>
             <h6 class = "card-subtitle text-center">${{merch.price}}</h6>

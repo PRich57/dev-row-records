@@ -110,12 +110,12 @@ const albumData = [
     {
       artist_id: 6,
       album_name: "Young Gods",
-      filename: "../Assets/Album_Photos/young_gods.png"
+      filename: "../Assets/Album_Photos/young_gods.PNG"
     },
     {
       artist_id: 6,
       album_name: "Black Leather",
-      filename: "../Assets/Album_Photos/black_leather.png",
+      filename: "../Assets/Album_Photos/black_leather.PNG",
     },
     {
       artist_id: 6, 

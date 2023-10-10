@@ -458,20 +458,12 @@ let merchData = [];
 let merchTagData = [];
 let tagIdCounter = 1;
 merchIdCounter = 1;
-// for (var key in modelMerch){
-//   console.log(modelMerch[key])
-// }
-let artistsNames = [
-  "Mateo And The Black Crows",
-  "DJ Nicky",
-  "Liam the Kid",
-  "The Sound of Kellogg",
-  "Passion Pete",
-  "Cholo Goth",
-];
-for (let artist_id = 1; artist_id < 7; artist_id++) {
-  for (var key in modelMerch) {
-    for (let i = 0; i < modelMerch[key].length; i++) {
+
+let artistsNames = ["Mateo And The Black Crows","DJ Nicky","Liam the Kid","The Sound of Kellogg","Passion Pete", "Cholo Goth",]
+for (let artist_id = 1; artist_id<7; artist_id++)
+{
+  for( var key in modelMerch) {
+    for (let i = 0 ; i<modelMerch[key].length; i++){
       let temp = {
         merch_name:
           artistsNames[artist_id - 1] + ": " + modelMerch[key][i].name,
@@ -492,8 +484,6 @@ for (let artist_id = 1; artist_id < 7; artist_id++) {
   }
   tagIdCounter = 1;
 }
-console.log(merchData);
-console.log(merchTagData);
 const seedMerch = async () => {
   await Merch.bulkCreate(merchData);
 };

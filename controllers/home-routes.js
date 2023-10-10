@@ -28,14 +28,14 @@ router.get("/", async (req, res) => {
   })
   //favorites for star on cards
   let favorites = null;
-  // console.log(req.session.user)
+  
   if(req.session.user){
-     let dataFavorites = await Favorite.findAll({
-    where: { user_id: req.session.user.id}
-  });
-  favorites = dataFavorites.map((value) => {
-    return value.get({plain: true});
-  })
+    let dataFavorites = await Favorite.findAll({
+      where: { user_id: req.session.user.id}
+    });
+    favorites = dataFavorites.map((value) => {
+      return value.get({plain: true});
+    })
   }
  
  
@@ -51,7 +51,7 @@ router.get("/artists", async (req, res) => {
   const { genre: genreQuery } = req.query;
   try {
     let favorites = null;
-    // console.log(req.session.user)
+    
     if(req.session.user){
        let dataFavorites = await Favorite.findAll({
       where: { user_id: req.session.user.id}
@@ -72,7 +72,6 @@ router.get("/artists", async (req, res) => {
           attributes: ["id", "artist_name", "filename"],
         },
       });
-      console.info(dataGenre);
       data = dataGenre.artists;
     }
     const artists = data.map((value) => {
@@ -80,7 +79,7 @@ router.get("/artists", async (req, res) => {
     });
     res.status(200).render("artists", {favorites, artists});
   } catch (err) {
-    console.warn(err);
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -103,12 +102,11 @@ router.get("/albums", async (req, res) => {
       },
     });
     let artists = data.map((artist) => artist.get({ plain: true }));
-    console.info(artists);
     //I want user data to keep yellow stars present upon reload
     let favorites = null;
-    // console.log(req.session.user)
+    
     if(req.session.user){
-       let dataFavorites = await Favorite.findAll({
+      let dataFavorites = await Favorite.findAll({
       where: { user_id: req.session.user.id}
     });
     favorites = dataFavorites.map((value) => {
@@ -134,9 +132,8 @@ router.get("/albums", async (req, res) => {
       artists = artistsTemp;
     }
     res.status(200).render("albums", { artists, favorites });
-    // res.status(206).json(artists);
   } catch (err) {
-    console.warn(err);
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -158,9 +155,8 @@ router.get("/artists/:id", async (req, res) => {
       ],
     });
     const artist = await data.get({ plain: true });
-    console.log(artist);
     let favorites = null;
-    // console.log(req.session.user)
+    
     if(req.session.user){
        let dataFavorites = await Favorite.findAll({
       where: { user_id: req.session.user.id}
@@ -184,7 +180,7 @@ router.get("/music", async (req, res) => {
     });
     res.status(200).render("albums", { albums });
   } catch (err) {
-    console.warn(err);
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -200,7 +196,7 @@ router.get("/music/:id", async (req, res) => {
     const album = data.get({ plain: true });
     res.status(200).render("singleAlbum", album);
   } catch (err) {
-    console.warn(err);
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -212,7 +208,6 @@ router.get("/merch", async (req, res) => {
     let data;
     //ensure yellow stars populate if already added to faves
     let favorites = null;
-    // console.log(req.session.user)
     if(req.session.user){
        let dataFavorites = await Favorite.findAll({
       where: { user_id: req.session.user.id}
@@ -286,7 +281,7 @@ router.get("/merch", async (req, res) => {
       res.status(200).render("merch", { tags, dataArtistsPlain, favorites });
     }
   } catch (err) {
-    console.warn(err);
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -303,7 +298,7 @@ router.get("/merch/:id", async (req, res) => {
     const merch = data.get({ plain: true });
     res.status(200).render("singleMerch", merch);
   } catch (err) {
-    console.warn(err);
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -348,10 +343,9 @@ router.get("/favorites", auth, async (req, res) => {
         console.warn(`No associated data for ${value}`);
       }
     });
-    console.log(viewData)
     res.status(200).render("favorites", { viewData });
   } catch (err) {
-    console.warn(err);
+    console.error(err);
     res.status(500).json({
       message: "Bad things happen to good people",
       err,

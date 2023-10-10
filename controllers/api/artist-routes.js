@@ -17,7 +17,6 @@ router.post("/", async (req, res) => {
         }
       }
     }
-    console.info(allGenreID);
     const data = await Artist.create({ artist_name });
     if (!data) {
       res.status(400).json({ message: "Failed to create artist" });
@@ -38,7 +37,7 @@ router.post("/", async (req, res) => {
       artist,
     });
   } catch (err) {
-    console.warn(err);
+    console.error(err);
     res.status(500).json(err);
   }
 })
@@ -46,7 +45,6 @@ router.post("/", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    console.info(id);
     const data = await Artist.destroy({ where: { id } });
     if (!data) {
       res.status(404).json({
