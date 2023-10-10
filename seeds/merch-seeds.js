@@ -127,7 +127,7 @@ artistsNames.forEach((artist, index) => {
     merchData.push({
       merch_name: `${artist} ${item.merch_name}`,
       price: item.price,
-      filename: item.filename.replace("1", artist_id),
+      filename: item.filename.replace("_1", "_" + artist_id),
       artist_id,
     });
     merchTagData.push({

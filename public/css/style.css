@@ -33,7 +33,85 @@ a{
   margin-top: 1.5rem;
 }
 
-/* MODALS */
+.artist-card img {
+  height: 20rem;
+}
+
+.album-card img {
+  height: 20rem;
+}
+
+.album-card {
+  width: 25rem;
+}
+
+.artist-card {
+  width: 25rem;
+}
+
+.card {
+  
+  color: white;
+}
+
+.cardEvent:hover {
+  scale: 1.02;
+  cursor: pointer;
+}
+
+.card-shade {
+  box-shadow: 0px 0px 20px 1px rgb(92, 92, 92);
+  color: white;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  height: 3.1rem;
+  display: flex;
+  align-items: center;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+}
+
+/* ---- reset ---- */
+body {
+  margin: 0;
+  font: normal 75% Arial, Helvetica, sans-serif;
+}
+
+/* Custom Font*/
+body {
+  font-family: "Bebas Neue", sans-serif;
+  background-color: rgb(31, 32, 33);
+  color: white;
+}
+
+canvas {
+  display: block;
+  /* vertical-align: bottom; */
+}
+
+/* ---- particles.js container ---- */
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  /* border: 0.5rem solid yellow; */
+  background-color: black;
+  background-image: url("");
+  background-repeat: repeat;
+  background-size: cover;
+  /* background-position: 50% 50%; */
+  z-index: -1;
+}
+
+#footer-div {
+  font-size: 1.5rem;
+}
+
 #signup-modal-content {
   background-color: rgb(21, 21, 21) !important;
   border-width: 1px;
@@ -41,6 +119,7 @@ a{
   color: white;
   font-size: 1rem;
 }
+
 #login-modal-content {
   background-color: rgb(21, 21, 21) !important;
   border-width: 1px;
@@ -75,42 +154,10 @@ a{
   color: black;
 }
 
-/* BODY  */
-/* ---- Particles JS ---- */
-#particles-js {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background-color: black;
-  background-image: url("");
-  background-repeat: repeat;
-  background-size: cover;
-  z-index: -1;
+a {
+  text-decoration: none
 }
 
-/* ---- reset ---- */
-body {
-  margin: 0;
-  font: normal 75% Arial, Helvetica, sans-serif;
-}
-
-/* Custom Font*/
-body {
-  font-family: "Bebas Neue", sans-serif;
-  background-color: rgb(31, 32, 33);
-  color: white;
-}
-
-canvas {
-  display: block;
-}
-
-#footer-div {
-
-  font-size: 1.5rem;
-}
-
-/* HOMEPAGE */
 .title-page {
   font-size: 6rem;
 }
@@ -223,11 +270,25 @@ canvas {
   width: 80px;
 }
 
-/* MEDIA QUERIES */
+@media (width<550px) {
+  .title-page {
+    font-size: 4rem;
+  }
+
+  footer {
+    font-size: 1.5rem;
+  }
+
+  .footer-nav-h2 {
+    font-size: 1.5rem;
+  }
+}
+
 @media (width<360px) {
   .title-page {
     font-size: 3rem;
   }
+
   .footer-nav-h2 {
     font-size: 1rem;
   }
@@ -239,16 +300,14 @@ canvas {
   }
 }
 
-@media (width<550px) {
-  .title-page {
-    font-size: 4rem;
-  }
-  footer {
-    font-size: 1.5rem;
-  }
-  .footer-nav-h2 {
-    font-size: 1.5rem;
-  }
+.fullScreenImageNav {
+  height: 15%;
+}
+
+.coverImage {
+  object-fit: cover;
+  height: 85%;
+  width: 100%;
 }
 
 @media (width<1000px) {
@@ -257,6 +316,7 @@ canvas {
     width: revert;
     height: revert;
   }
+
   .fullScreenImageNav {
     height: revert;
   }

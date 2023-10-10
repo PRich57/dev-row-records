@@ -25,7 +25,8 @@ const artistData = [
     artist_name: "Cholo Goth",
     filename: "../Assets/Artist_Photos/CholoGoth.png"
   },
- ];
+
+];
 
 const seedArtist = () => Artist.bulkCreate(artistData);
 
