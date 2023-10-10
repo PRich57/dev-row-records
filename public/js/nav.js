@@ -1,4 +1,4 @@
-//adding to favorites from star button
+//ADD TO FAVORITES: star button
 const addToFavorite = async (buttonId, dataType) => {
   try {
     let postData = {
@@ -6,6 +6,7 @@ const addToFavorite = async (buttonId, dataType) => {
       artist_id: null,
       merch_id: null,
     };
+    // pending what type of card it is
     switch (dataType) {
       case "album_id":
         postData.album_id = buttonId;
@@ -17,6 +18,7 @@ const addToFavorite = async (buttonId, dataType) => {
         postData.merch_id = buttonId;
         break;
     }
+    // post request to server
     const response = await fetch("/api/favorite/", {
       method: "POST",
       headers: {
@@ -27,6 +29,7 @@ const addToFavorite = async (buttonId, dataType) => {
     if (response.ok) {
       return true;
     } else {
+      // modal fires
       Swal.fire({
         title: "Oops!",
         text: "In order to add to favorites, you must be logged in.",
@@ -39,7 +42,7 @@ const addToFavorite = async (buttonId, dataType) => {
   }
 };
 
-//function delete from favorites from star button
+//DELETE FROM FAVORITES FUNCTION: star button
 const deleteFromFavorite = async (buttonId, dataType) => {
   try {
     const response = await fetch(`/api/favorite/${buttonId}?type=${dataType}`, {
@@ -49,6 +52,7 @@ const deleteFromFavorite = async (buttonId, dataType) => {
 
     if (response.ok) {
       if (
+        // only reload screen if we're in favorites page
         window.location.href ===
           "https://dev-row-records-63d750921ea0.herokuapp.com/favorites" ||
         window.location.href === "http://localhost:3001/favorites"
@@ -68,8 +72,10 @@ const deleteFromFavorite = async (buttonId, dataType) => {
 $(".card-favorite-button").click(async function (event) {
   event.stopPropagation();
   event.preventDefault();
+  // in handlebars we store the type of card as the i.d.
   let buttonId = $(this).attr("id");
   let dataType = $(this).attr("data-type");
+  // changes color of star on card
   if ($(this).attr("fill") !== "yellow") {
     const addFavSuccess = await addToFavorite(buttonId, dataType);
     if (addFavSuccess) {

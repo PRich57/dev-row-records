@@ -1,3 +1,4 @@
+// Randomize featured albums and artists on homepage.handlebars
 const randomizeIndex = async (arrayInput) => {
     let randomFourIndexes = [];
     for (let x = 0; x<4; x++){

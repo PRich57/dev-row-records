@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const { Favorite } = require("../../models");
 
-//http/localhost:3001/api/favorite/
+// ADD FAVORITE ROUTE
+//http://localhost:3001/api/favorite/
 router.post("/", (req, res) => {
   const { album_id, artist_id, merch_id } = req.body;
   const { id: user_id } = req.session.user;
@@ -27,7 +28,9 @@ router.post("/", (req, res) => {
   }
 });
 
-// /api/favorite/id?type=album_id
+
+// DELETE FAVORITE ROUTE
+//http://localhost:3001/api/favorite/id?type=album_id
 router.delete("/:id", async (req, res) => {
   const type = req.query.type;
   const reqInfo = {

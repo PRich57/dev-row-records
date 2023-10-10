@@ -1,7 +1,8 @@
 const router = require("express").Router();
 const { User } = require("../../models");
 
-// TODO: CREATE USER route
+// TODO: CREATE USER ROUTE
+//http://localhost:3001/api/user/
 router.post("/", async (req, res) => {
   const {
     user_name,
@@ -30,7 +31,8 @@ router.post("/", async (req, res) => {
   }
 });
 
-// api/user/login
+//LOGIN ROUTE
+//http://localhost:3001/api/user/login
 router.post("/login", async (req, res) => {
   const { user_name, password } = req.body;
   try {
@@ -65,7 +67,8 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// TODO: LOGOUT route
+// TODO: LOGOUT ROUTE
+//http://localhost:3001/api/user/logout
 router.post("/logout", async (req, res) => {
   if (!req.session.loggedIn) {
     res.status(404).json({
@@ -80,6 +83,8 @@ router.post("/logout", async (req, res) => {
   });
 });
 
+// DELETE ROUTE
+//http://localhost:3001/api/user/{id}
 router.delete("/user/:id", async (req, res) => {
   try {
     const deletedUser = await User.destroy({

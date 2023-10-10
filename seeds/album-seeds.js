@@ -43,7 +43,7 @@ const albumData = [
       album_name: "Spooky",
       filename: "../Assets/Album_Photos/spooky_season.avif"
     },
-    //Liam the Boy
+    //Liam the Kid
     {
       artist_id: 3, 
       album_name: "I Am Liam",
@@ -132,64 +132,7 @@ const albumData = [
       album_name: "Cursed Be Thy Blessings",
       filename: "../Assets/Album_Photos/cursed_be_thy_blessings.PNG",
     },
-  // Closed Tear Albums //
-  // {
-  //   artist_id: 7,
-  //   album_name: "Lie Awake",
-  //   filename: "../Assets/Album_Photos/lie_awake.PNG"
-  // },
-  // {
-  //   artist_id: 7,
-  //   album_name: "Nada Es Para Siempre",
-  //   filename: "../Assets/Album_Photos/nada_es_para_siempra.PNG"
-  // },
-  // {
-  //   artist_id: 7,
-  //   album_name: "Time",
-  //   filename: "../Assets/Album_Photos/time.PNG"
-  // },
-  // {
-  //   artist_id: 7,
-  //   album_name: "Tired",
-  //   filename: "../Assets/Album_Photos/tired.PNG" 
-  // },
-  // Dave Albums //
-  // {
-  //   artist_id: 8,
-  //   album_name: "Thirteen Hundred (EP - 2017)",
-  //   filename: "../Assets/Album_Photos/george-strait.jpg"
-  // },
-  // {
-  //   artist_id: 8,
-  //   album_name: "Lucky Seven (EP - 2018)",
-  //   filename: "../Assets/Album_Photos/gorillaz.jpg"
-  // },
-  // {
-  //   artist_id: 8,
-  //   album_name: "Never Better (2020)",
-  //   filename: "../Assets/Album_Photos/led_zeppelin.png"
-  // },
-  // {
-  //   artist_id: 8,
-  //   album_name: "Millstone (Single - 2020)",
-  //   filename: "../Assets/Album_Photos/led_zeppelin.png"
-  // },
-  // {
-  //   artist_id: 8,
-  //   album_name: "Hindsight (Single - 2022)",
-  //   filename: "../Assets/Album_Photos/led_zeppelin.png"
-  // },
-  // {
-  //   artist_id: 8,
-  //   album_name: "Elegy (Single - 2023)",
-  //   filename: "../Assets/Album_Photos/led_zeppelin.png"
-  // },
-  // Demon Compass
-
-  //Provoker
-
-  
-];
+  ];
 
 const seedAlbum = async () => {
   await Album.bulkCreate(albumData);

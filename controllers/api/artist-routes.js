@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const { Artist, Genre, ArtistGenre } = require("../../models");
 
+
+// CREATE ALBUM ROUTE
+//http://localhost:3001/api/artist
 router.post("/", async (req, res) => {
   // genre can either be a string or an array of strings
   const { artist_name, genre } = req.body;
@@ -42,6 +45,8 @@ router.post("/", async (req, res) => {
   }
 })
 
+// DELETE ALBUM ROUTE
+//http://localhost:3001/api/artist/{id}
 router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   try {

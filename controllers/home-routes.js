@@ -12,8 +12,10 @@ const {
 const router = require("express").Router();
 const auth = require("../utils/withAuth");
 const { Op } = require("sequelize");
-const randomizeIndex = require("../utils/randomIndex");
+const randomizeIndex = require("../utils/randomIndex")
 
+// HOME PAGE
+// http://localhost:3001/
 router.get("/", async (req, res) => {
   let dataArtists = await Artist.findAll();
   let dataAlbums = await Album.findAll();
@@ -43,6 +45,8 @@ router.get("/", async (req, res) => {
     .render("homepage", { fourRandomAlbums, fourRandomArtists, favorites });
 });
 
+// ALL ARTISTS PAGE
+//http://localhost:3001/artist
 router.get("/artists", async (req, res) => {
   // TODO: pull data from models and send to view.
   // this should work but I don't really have a great way of testing it at the moment.
@@ -83,6 +87,8 @@ router.get("/artists", async (req, res) => {
   }
 });
 
+// GET ALL ALBUMS
+// http://localhost:3001/albums
 router.get("/albums", async (req, res) => {
   const any = { [Op.not]: null };
   const ALLOW_NO_GENRE_ENTRIES = false;
@@ -137,6 +143,8 @@ router.get("/albums", async (req, res) => {
   }
 });
 
+// GET SINGLE ARTIST PAGE
+// http://localhost:3001/artist/{id}
 router.get("/artists/:id", async (req, res) => {
   // TODO: pull data from models and send to view.
   try {
@@ -170,6 +178,7 @@ router.get("/artists/:id", async (req, res) => {
   }
 });
 
+//UNUSED ROUTE RIGHT NOW
 router.get("/music", async (req, res) => {
   // TODO: pull data from models and send to view.
   try {
@@ -184,6 +193,7 @@ router.get("/music", async (req, res) => {
   }
 });
 
+//UNUSED ROUTE RIGHT NOW
 router.get("/music/:id", async (req, res) => {
   // TODO: pull data from models and send to view.
   try {
@@ -200,6 +210,10 @@ router.get("/music/:id", async (req, res) => {
   }
 });
 
+//GET TO STORE PAGE
+//http://localhost:3001/merch
+//http://localhost:3001/merch/?tag={{artist_name}}
+//http://localhost:3001/merch/?tag={{tag_name}}
 router.get("/merch", async (req, res) => {
   // TODO: pull data from models and send to view.
   try {
@@ -234,7 +248,9 @@ router.get("/merch", async (req, res) => {
     const dataArtistsPlain = dataArtist.map((value) => {
       return value.get({ plain: true });
     });
+    //SORT MERCH vs ALL MERCH
     if (req.query.tag) {
+      //sort merch
       const dataTag = await Tag.findOne({
         where: {
           tag_name: req.query.tag,
@@ -246,6 +262,7 @@ router.get("/merch", async (req, res) => {
         ],
       });
       let name = req.query.tag;
+      // Sort Merch By Tag (call at drop down menu)
       if (dataTag) {
         console.warn(dataTag);
         data = dataTag.merches;
@@ -260,6 +277,7 @@ router.get("/merch", async (req, res) => {
           favorites,
         });
       } else {
+        // Sort Merch by Artist (call at drop down menu)
         const oneArtist = await Artist.findOne({
           where: {
             artist_name: req.query.tag,
@@ -280,6 +298,7 @@ router.get("/merch", async (req, res) => {
         });
       }
     } else {
+      // all merch
       res.status(200).render("merch", { tags, dataArtistsPlain, favorites });
     }
   } catch (err) {
@@ -288,6 +307,7 @@ router.get("/merch", async (req, res) => {
   }
 });
 
+// UNUSED ROUTE
 //http:/website.dev/merch?tag=hoodie
 router.get("/merch/:id", async (req, res) => {
   // TODO: pull data from models and send to view.
@@ -305,6 +325,8 @@ router.get("/merch/:id", async (req, res) => {
   }
 });
 
+//GET TO FAVORITES PAGE
+//http://localhost:3001/favorites
 router.get("/favorites", auth, async (req, res) => {
   //TODO: pull favorites for the current user and send to view
   const viewData = {
