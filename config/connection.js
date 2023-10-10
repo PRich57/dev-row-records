@@ -1,7 +1,6 @@
 const Sequelize = require("sequelize");
 require("dotenv").config();
 
-// I don't know if there's an environment variable we'll eventually need to set this to for server-side hosting, but that would replace the "null" here
 PORT = 3306;
 
 const sequelize = process.env.JAWSDB_URL
@@ -13,7 +12,6 @@ const sequelize = process.env.JAWSDB_URL
       {
         host: "127.0.0.1",
         dialect: "mysql",
-        port: PORT,
       }
     );
 

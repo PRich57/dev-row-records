@@ -72,7 +72,7 @@
 
   The following video shows the application's design and functionality.
 
-  ![Video walkthrough of Dev Row Records](#)
+  ![Video walkthrough of Dev Row Records](./public/Assets/Misc_Photos/dev-row-records.gif)
 
 ## License
 

@@ -48,7 +48,6 @@ router.get("/artists", async (req, res) => {
   // TODO: pull data from models and send to view.
   // this should work but I don't really have a great way of testing it at the moment.
   // const any = { [Op.not]: null };
-  
   const { genre: genreQuery } = req.query;
   try {
     let favorites = null;
@@ -109,7 +108,7 @@ router.get("/albums", async (req, res) => {
     let favorites = null;
     // console.log(req.session.user)
     if(req.session.user){
-       let dataFavorites = await Favorite.findAll({
+      let dataFavorites = await Favorite.findAll({
       where: { user_id: req.session.user.id}
     });
     favorites = dataFavorites.map((value) => {
