@@ -194,7 +194,7 @@ const deleteFromFavorite = async (buttonId, dataType) => {
       headers: { "Content-Type": "application/json" },
     });
     if (response.ok) {
-      if (window.location.href === "http://localhost:3001/favorites") {
+      if (window.location.href === "https://dev-row-records-63d750921ea0.herokuapp.com/favorites" || "http://localhost:3001/favorites") {
         window.location.reload();
       }
       return true;
