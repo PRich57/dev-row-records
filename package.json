@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@popperjs/core": "^2.11.8",
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.1.7",
     "dotenv": "^8.2.0",

@@ -2,10 +2,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {{! particles.js }}
-    <script src="particles.js"></script>
     <!-- Favicon -->
-    <link rel="icon" type="icon" href="../Assets/DRR-logo.png" />
+    <link rel="icon" type="icon" href="../Assets/Misc_Photos/DRR-logo.png" />
     <!-- Reset CSS -->
     <link rel="stylesheet" href="../css/reset.css" />
     <!-- jquery UI LINK -->
@@ -13,6 +11,7 @@
       rel="stylesheet"
       href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
     />
+   
     <!-- bootstrap link -->
     <link
       rel="stylesheet"
@@ -35,15 +34,7 @@
     <title>Dev Row Records </title>
   </head>
   <body>
-    {{#if isLoggedIn}}
-      <!-- Signout Button -->
-      <button
-        id="signout-button"
-        class="signout-btn"
-        style="position: absolute; top: 10px; right: 10px;"
-      >Sign Out</button>
-    {{/if}}
-
+   
     <!-- LOGIN MODAL -->
     <div
       class="modal fade"
@@ -55,12 +46,12 @@
       aria-hidden="true"
     >
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" id="login-modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="login-modal-message">Login</h1>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close btn-close-white"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
@@ -69,22 +60,24 @@
             <form>
               <div class="mb-3">
                 <label
-                  for="message-text"
+                  for="loginUsernameInput"
                   class="col-form-label"
                 >Username:</label>
                 <input
                   type="username"
                   class="form-control"
                   id="loginUsernameInput"
+                  placeholder="username"
                 />
                 <label
-                  for="message-text"
+                  for="loginPasswordInput"
                   class="col-form-label"
                 >Password:</label>
                 <input
                   type="password"
                   class="form-control"
                   id="loginPasswordInput"
+                  placeholder="password"
                 />
               </div>
             </form>
@@ -117,12 +110,12 @@
       aria-hidden="true"
     >
       <div class="modal-dialog">
-        <div class="modal-content">
+        <div class="modal-content" id="signup-modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="signup-modal-message">Sign Up Here</h1>
             <button
               type="button"
-              class="btn-close"
+              class="btn-close btn-close-white"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
@@ -130,33 +123,34 @@
           <div class="modal-body">
             <form>
               <div class="mb-3">
-                <label for="message-text" class="col-form-label">Email:</label>
+                <label for="signup-email-input" class="col-form-label">Email:</label>
                 <input
-                  type="email"
+                  type="signup-email-input"
                   class="form-control"
                   id="signup-email-input"
                   placeholder="example@gmail.com"
                 />
                 <label
-                  for="message-text"
+                  for="signup-username-input"
                   class="col-form-label"
                 >Username:</label>
                 <input
                   type="username"
                   class="form-control"
                   id="signup-username-input"
-                  placeholder="jdoe23"
+                  placeholder="username"
                 />
                 <label
-                  for="message-text"
+                  for="signup-password-input"
                   class="col-form-label"
                 >Password:</label>
                 <input
                   type="password"
                   class="form-control"
                   id="signup-password-input"
-                  placeholder="passw0rd_17"
+                  placeholder="password"
                 />
+                <label>Minimum Requirements: 8 characters, 1 uppercase letter, 1 lowercase letter, 1 number</label>
               </div>
             </form>
           </div>
@@ -177,7 +171,7 @@
       </div>
     </div>
 
-{{!-- SIGNUP FAIL MODAL --}}
+    {{! SIGNUP FAIL MODAL }}
     <div
       class="modal fade"
       id="signupFail-modal"
@@ -208,7 +202,7 @@
         </div>
       </div>
     </div>
-{{!-- SIGNUP LOGIN SUCCESS MODAL --}}
+    {{! SIGNUP LOGIN SUCCESS MODAL }}
     <div
       class="modal fade"
       id="signupSuccess-modal"
@@ -240,16 +234,17 @@
       </div>
     </div>
 
-
-   {{!-- BODY --}}
+    {{! BODY }}
+    {{! BODY }}
     <main style="position: relative; height:100%; width:100%;">
       <div class="count-particles" id="particles-js"> </div>
 
-       <!-- NAV BAR -->
+      <!-- NAV BAR -->
+      <!-- NAV BAR -->
       <nav
-        class="headerContainer navbar navbar-expand-lg navbar-dark bg-dark"
+        class="headerContainer navbar navbar-expand-lg navbar-dark bg-dark fullScreenImageNav"
         id="navbar"
-        style = "border-bottom: .2rem solid red"
+        style="border-bottom: .2rem solid rgb(145, 77, 74);"
       >
         <div class="container-fluid">
           <a class="navbar-brand text-uppercase" id="Main_Title"><h1
@@ -287,26 +282,38 @@
                   id="get-all-music"
                 >Albums</a>
               </li>
-              <li class="nav-item" id="header-get-store-li">
+              <li class="nav-item header-get-store-li" id="header-get-store-li">
                 <a
                   class="nav-link Home_Link text-uppercase"
                   id="header-get-store"
                 >Store</a>
               </li>
-              <li class="nav-item">
-                <a
+              {{#if isLoggedIn}}
+
+                <li class="nav-item" id="header-get-favorite-li">
+                  <a
+                    class="nav-link Home_Link text-uppercase"
+                    id="header-get-favorite"
+                  >Favorites</a>
+                </li>
+                <!-- Signout Button -->
+                <li class="nav-item"><a
+                  id="signout-button"
+                  class="nav-link Home_Link text-uppercase signout-button"
+                >Sign Out</a></li>
+              {{else}}
+                <!-- Login and Signup Links/Buttons -->
+                <li class="nav-item"><a
                   class="nav-link Home_Link text-uppercase"
                   data-bs-target="#login-modal"
                   data-bs-toggle="modal"
-                >Login</a>
-              </li>
-              <li class="nav-item">
-                <a
+                >Login</a></li>
+                <li class="nav-item"><a
                   class="nav-link Home_Link text-uppercase"
                   data-bs-target="#signup-modal"
                   data-bs-toggle="modal"
-                >Sign-Up</a>
-              </li>
+                >Sign-Up</a></li>
+              {{/if}}
             </ul>
           </div>
         </div>
@@ -314,28 +321,28 @@
 
       {{{body}}}
       <!-- FOOTER -->
-      <div class="container-fluid" id="footer-div">
+      <!-- FOOTER -->
+      <div class="container-fluid bg-dark" id="footer-div">
         <footer
-          class=" row d-flex align-items-center justify-content-around py-3 my-4 px-4"
+          class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4"
         >
-          <div class = "d-flex flex-column col-6 align-items-center"> 
-             <img
-                class="img-fluid"
-                src="../Assets/DRR-logo.png"
-                alt="band-logo"
-                
-              />
-            <p>© 2023 Dev Row Records, Inc</p>
-          </div>
-          <div class = "d-flex flex-column col-6">
-            <div class = "row p-4 ">
-              <h2 class = "text-center border-bottom footer-nav-h2">Navigation</h2>
-            </div>
-            <div class = "row">
-              <div class = "col-md-6 col-12">
-                <ul
-            class="nav flex-column text-center"
-            id="footer-nav-ul-1">
+          <p class="col-md-4 mb-0 text-muted">© 2023 Dev Row Records, Inc</p>
+
+          <a
+            href="/"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none"
+          >
+            <img
+              class="bi me-2 footer-image"
+              src="../Assets/Misc_Photos/DRR-logo.png"
+              alt="band-logo"
+            />
+          </a>
+
+          <ul
+            class="nav col-md-4 justify-content-end mx-auto"
+            id="footer-nav-ul"
+          >
             <li id="footer-get-home-li" class="nav-item"><a
                 id="footer-get-home"
                 class="nav-link px-2 text-muted"
@@ -348,31 +355,37 @@
                 id="footer-get-albums"
                 class="nav-link px-2 text-muted"
               >Albums</a></li>
-          </ul>
-              </div>
-              <div class = "col-md-6 col-12">
-                <ul
-            class="nav flex-column text-center"
-            id="footer-nav-ul-2">
             <li id="footer-get-store-li" class="nav-item"><a
                 id="footer-get-store"
                 class="nav-link px-2 text-muted"
-              >Store</a></li>
-            <li class="nav-item"><a
-                class="nav-link px-2 text-muted"
-                data-bs-target="#login-modal"
-                data-bs-toggle="modal"
-              >Login</a></li>
-            <li class="nav-item"><a
-                class="nav-link px-2 text-muted"
-                data-bs-target="#signup-modal"
-                data-bs-toggle="modal"
-              >Sign-Up</a></li>
+              >Store</a>
+            </li>
+            {{#if isLoggedIn}}
+
+              <li class="nav-item" id="footer-get-favorite-li">
+                <a
+                  class="nav-link px-2 text-muted"
+                  id="footer-get-favorite"
+                >Favorites</a>
+              </li>
+              <!-- Signout Button -->
+              <li class="nav-item"><a
+                  id="signout-button"
+                  class="nav-link px-2 text-muted signout-button"
+                >Sign Out</a></li>
+            {{else}}
+              <li class="nav-item"><a
+                  class="nav-link px-2 text-muted"
+                  data-bs-target="#login-modal"
+                  data-bs-toggle="modal"
+                >Login</a></li>
+              <li class="nav-item"><a
+                  class="nav-link px-2 text-muted"
+                  data-bs-target="#signup-modal"
+                  data-bs-toggle="modal"
+                >Sign-Up</a></li>
+            {{/if}}
           </ul>
-              </div>
-            </div>
-          </div>
-          
         </footer>
       </div>
     </main>
@@ -383,6 +396,7 @@
 
     <!-- jquery UI script -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   
     <!-- bootstrap script -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
@@ -393,10 +407,17 @@
       src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"
     ></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <!-- personal JS script -->
     <script src="../js/nav.js"></script>
     <script src="../js/login.js"></script>
     <script src="../js/particle.js"></script>
+    {{!-- <script type="text/javascript">
+      handlebars.registerHelper("calculation", function(input) {
+        return input * 5;
+        });
+</script> --}}
 
   </body>
 </html>
