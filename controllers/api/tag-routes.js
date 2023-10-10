@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
       data,
     });
   } catch (err) {
-    console.warn(err);
+    console.error(err);
     res.status(500).json(err);
   }
 });
@@ -18,7 +18,6 @@ router.post("/", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   try {
-    console.info(id);
     const data = await Tag.destroy({ where: { id } });
     if (!data) {
       res.status(404).json({

@@ -6,7 +6,6 @@ const modalSignupSubmitDiv = $("#modal-signup-submit-div");
 const signupUsernameInput = $("#signup-username-input");
 const signupPasswordInput = $("#signup-password-input");
 const signupEmailInput = $("#signup-email-input");
-console.log("");
 
 const loginHandler = async (event) => {
   event.preventDefault();
@@ -18,8 +17,6 @@ const loginHandler = async (event) => {
     user_name: username,
     password: password,
   };
-  console.log(username);
-  console.log(password);
   const response = await fetch("/api/user/login", {
     method: "POST",
     headers: {
@@ -38,7 +35,6 @@ const loginHandler = async (event) => {
       },
     });
   } else {
-    console.log(response);
     Swal.fire("Error", "Login Failed", "error");
   }
 };
