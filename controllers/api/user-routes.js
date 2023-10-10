@@ -97,7 +97,7 @@ router.delete("/user/:id", async (req, res) => {
       deletedUser,
     });
   } catch (err) {
-    console.warn(err);
+    console.error(err);
     res.status(500).json({
       message: "I wish I hadn't done this whole 'write messages for my errors' thing",
       err,

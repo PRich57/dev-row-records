@@ -14,10 +14,9 @@ router.post("/", (req, res) => {
       merch_id,
     });
     if (!data) {
-      console.warn("\033[91mFailed to Establish Favorite\033[0m");
+      console.warn("Failed to Establish Favorite");
       res.status(404).json({ message: "Failed to establish favorite" });
     }
-    console.log("\033[32mSuccessfully established favorite\033[0m")
     res.status(200).json({
       message: "Successfully established favorite",
       data,
@@ -38,14 +37,13 @@ router.delete("/:id", async (req, res) => {
   try {
     const data = await Favorite.destroy({ where: reqInfo });
     if (!data) {
-      console.warn(console.log("\033[91mFavorites record with the following info could not be found when attempting to destroy it:\033[0m"), reqInfo);
+      console.warn("Favorites record with the following info could not be found when attempting to destroy it", reqInfo);
       res.status(404).json({
         message: "Could not find Favorite to delete",
         reqInfo,
       });
       return;
     }
-    console.log("\033[32mSuccessfully Removed Favorite\033[0m")
     res.status(204).json({
       message: "Successfully removed favorite",
       data,
