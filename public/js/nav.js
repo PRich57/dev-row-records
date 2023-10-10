@@ -23,17 +23,15 @@ const getHome = async (event) => {
   try {
     event.preventDefault();
     event.stopPropagation();
-    console.log("hello");
     const response = await fetch("/", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
-    console.log(response);
     if (response.ok) {
       window.location.replace("/");
     }
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -42,7 +40,6 @@ const getAllArtists = async (event) => {
   try {
     event.preventDefault();
     event.stopPropagation();
-    console.log("hello");
     const response = await fetch("/artists", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -51,7 +48,7 @@ const getAllArtists = async (event) => {
       window.location.replace("/artists");
     }
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -60,7 +57,6 @@ const getAllMusic = async (event) => {
   try {
     event.preventDefault();
     event.stopPropagation();
-    console.log("hello");
     const response = await fetch("/albums", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -69,7 +65,7 @@ const getAllMusic = async (event) => {
       window.location.replace("/albums");
     }
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -78,7 +74,6 @@ const getStore = async (event) => {
   try {
     event.preventDefault();
     event.stopPropagation();
-    console.log("hello");
     const response = await fetch("/merch", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -87,7 +82,7 @@ const getStore = async (event) => {
       window.location.replace("/merch");
     }
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -100,20 +95,17 @@ const getSingleArtist = async (event) => {
       method: "GET",
       headers: { "Content-Type": "application/json" },
     });
-    console.log(event);
     if (response.ok) {
       window.location.replace(`/artists/${event}`);
-      console.log(id);
     }
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
 //sort the merch on merch page
 const sortMerch = async (sortidLi) => {
   try {
-    console.log("event listener");
     const response = await fetch(`/merch/?tag=${sortidLi}`, {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -122,7 +114,7 @@ const sortMerch = async (sortidLi) => {
       window.location.replace(`/merch/?tag=${sortidLi}`);
     }
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -131,7 +123,6 @@ const getFavorite = async (event) => {
   try {
     event.preventDefault();
     event.stopPropagation();
-    console.log("hello");
     const response = await fetch("/favorites", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -141,7 +132,7 @@ const getFavorite = async (event) => {
       window.location.replace("/favorites");
     }
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 };
 
@@ -172,8 +163,6 @@ const addToFavorite = async (buttonId, dataType) => {
       body: JSON.stringify(postData)
     })
     if (response.ok){
-      console.log(`This button works: card id - ${buttonId}`)
-      console.log(`the type is ${dataType}`)
       return true
     } else {
       return false
@@ -187,8 +176,6 @@ const addToFavorite = async (buttonId, dataType) => {
 //function delete from favorites from star button
 const deleteFromFavorite = async (buttonId, dataType) => {
   try {
-    console.log(buttonId);
-    console.log(dataType)
     const response = await fetch(`/api/favorite/${buttonId}?type=${dataType}`, {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
@@ -202,7 +189,7 @@ const deleteFromFavorite = async (buttonId, dataType) => {
       return false;
     }
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
   
 }
@@ -226,7 +213,6 @@ backToStore.on("click", ".back-to-store", getStore);
 
 //get single artist from All Artist page - event listener
 $(".get-single-artist").click(function () {
-  console.log("hello")
   let id = $(this).attr("id");
   getSingleArtist(id);
 });
@@ -242,22 +228,20 @@ $(".card-favorite-button").click(async function (event) {
   event.stopPropagation();
   event.preventDefault();
   let buttonId = $(this).attr("id");
-  console.log(buttonId)
   let dataType = $(this).attr("data-type");
   if ($(this).attr("fill") !== "yellow"){
     const addFavSuccess = await addToFavorite(buttonId, dataType)
-    console.log(`line 225 addFavSuccess in nav.js: ${addFavSuccess}`)
     if(addFavSuccess){
       $(this).attr("fill", "yellow");
     } else {
-      console.error("add favorite failed")
+      console.warn("add favorite failed")
     }
   } else {
     const deleteFavSuccess = await deleteFromFavorite(buttonId, dataType);
     if(deleteFavSuccess){
       $(this).attr("fill", "white");
     } else {
-      console.error("delete favorite failed")
+      console.warn("delete favorite failed")
     }
   }
 })
