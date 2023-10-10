@@ -1,7 +1,7 @@
 {{!-- Favorite Artists --}}
 <div class = "favorite-item cardEvent col-xxl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3">
   <div class="card card-shade album-card bg-dark my-3 get-single-artist" id="{{artist.id}}">
-    <img src="{{artist.filename}}" class="card-img-top" alt="Image of {{artist.artist_name}}">
+    <img src="{{artist.filename}}" class="card-img-top" alt="Image of {{artist.artist_name}}" style="object-fit: cover;">
     <div class="card-body d-flex justify-content-center" style = "position: relative">
       <h5 class="card-title text-center">{{artist.artist_name}}</h5>
       <button type="button" class="btn btn-dark" style = "position: absolute; right: 0px; bottom: 0px">
