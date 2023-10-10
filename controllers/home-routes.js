@@ -108,7 +108,7 @@ router.get("/albums", async (req, res) => {
     let favorites = null;
     // console.log(req.session.user)
     if(req.session.user){
-       let dataFavorites = await Favorite.findAll({
+      let dataFavorites = await Favorite.findAll({
       where: { user_id: req.session.user.id}
     });
     favorites = dataFavorites.map((value) => {
