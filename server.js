@@ -31,24 +31,22 @@ const hbs = exphbs.create({});
 // helper function for handlebars: If the id === userId value then display yellow star
   hbs.handlebars.registerHelper("calculation", function(value1, favorites, typeId) {
     for (let x = 0; x<favorites.length; x++){
-       if (value1 == favorites[x][typeId]) {
-      return "yellow"
+      if (value1 == favorites[x][typeId]) {
+        return "yellow"
       }
     }
       return "white"
-     });
+    });
 
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 app.use(setLoginStatus);
 
 app.use(routes);
-
-// Change back to false before launch
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log("Now listening"));
