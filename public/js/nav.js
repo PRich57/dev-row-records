@@ -14,7 +14,7 @@ const footerAllAlbumsLi = $("#footer-get-albums-li");
 const footerStoreLi = $("#footer-get-store-li");
 const footerFavoriteLi = $("#footer-get-favorite-li");
 
-const backToStore = $("#back-to-store");
+const backToStore = $(".back-to-store");
 
 
 //FUNCTIONS
@@ -78,7 +78,7 @@ const getStore = async (event) => {
   try {
     event.preventDefault();
     event.stopPropagation();
-    // console.log("hello");
+    console.log("hello");
     const response = await fetch("/merch", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
@@ -222,7 +222,7 @@ footerStoreLi.on("click", "#footer-get-store", getStore);
 footerFavoriteLi.on("click", "#footer-get-favorite", getFavorite);
 
 // Back to store
-backToStore.on("click", "#back-to-store", getStore);
+backToStore.on("click", ".back-to-store", getStore);
 
 //get single artist from All Artist page - event listener
 $(".get-single-artist").click(function () {
