@@ -23,6 +23,7 @@
 const { Merch } = require("../models");
 let modelMerch = {
   shirt: [ 
+    
     {
       //aritst 1
       merch_name: "Relaxed Fit",
@@ -457,9 +458,12 @@ for (let artist_id = 1; artist_id<7; artist_id++)
 {
   for( var key in modelMerch) {
     for (let i = 0 ; i<modelMerch[key].length; i++){
+        let split = modelMerch[key].length/6
+        let whichArtist = 0
+        if (whichArtist)
       let temp = {
         merch_name:
-          artistsNames[artist_id - 1] + ": " + modelMerch[key][i].name,
+          artistsNames[whichArtist] + ": " + modelMerch[key][i].name,
         price: modelMerch[key][i].price,
         filename: modelMerch[key][i].filename,
         category_id: 1,
