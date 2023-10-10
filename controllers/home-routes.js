@@ -12,36 +12,35 @@ const {
 const router = require("express").Router();
 const auth = require("../utils/withAuth");
 const { Op } = require("sequelize");
-const randomizeIndex = require("../utils/randomIndex")
-
+const randomizeIndex = require("../utils/randomIndex");
 
 router.get("/", async (req, res) => {
-  
   let dataArtists = await Artist.findAll();
   let dataAlbums = await Album.findAll();
- 
+
   let artists = dataArtists.map((value) => {
-    return value.get({plain: true});
-  })
+    return value.get({ plain: true });
+  });
   let albums = dataAlbums.map((value) => {
-    return value.get({plain: true});
-  })
+    return value.get({ plain: true });
+  });
   //favorites for star on cards
   let favorites = null;
-  
-  if(req.session.user){
+
+  if (req.session.user) {
     let dataFavorites = await Favorite.findAll({
-      where: { user_id: req.session.user.id}
+      where: { user_id: req.session.user.id },
     });
     favorites = dataFavorites.map((value) => {
-      return value.get({plain: true});
-    })
+      return value.get({ plain: true });
+    });
   }
- 
- 
-  const fourRandomAlbums = await randomizeIndex(albums)
-  const fourRandomArtists = await randomizeIndex(artists)
-  res.status(200).render("homepage", {fourRandomAlbums, fourRandomArtists, favorites});
+
+  const fourRandomAlbums = await randomizeIndex(albums);
+  const fourRandomArtists = await randomizeIndex(artists);
+  res
+    .status(200)
+    .render("homepage", { fourRandomAlbums, fourRandomArtists, favorites });
 });
 
 router.get("/artists", async (req, res) => {
@@ -51,14 +50,14 @@ router.get("/artists", async (req, res) => {
   const { genre: genreQuery } = req.query;
   try {
     let favorites = null;
-    
-    if(req.session.user){
-       let dataFavorites = await Favorite.findAll({
-      where: { user_id: req.session.user.id}
-    });
-    favorites = dataFavorites.map((value) => {
-      return value.get({plain: true});
-    })
+
+    if (req.session.user) {
+      let dataFavorites = await Favorite.findAll({
+        where: { user_id: req.session.user.id },
+      });
+      favorites = dataFavorites.map((value) => {
+        return value.get({ plain: true });
+      });
     }
     let data;
     if (!genreQuery) {
@@ -77,7 +76,7 @@ router.get("/artists", async (req, res) => {
     const artists = data.map((value) => {
       return value.get({ plain: true });
     });
-    res.status(200).render("artists", {favorites, artists});
+    res.status(200).render("artists", { favorites, artists });
   } catch (err) {
     console.error(err);
     res.status(500).json(err);
@@ -104,14 +103,14 @@ router.get("/albums", async (req, res) => {
     let artists = data.map((artist) => artist.get({ plain: true }));
     //I want user data to keep yellow stars present upon reload
     let favorites = null;
-    
-    if(req.session.user){
+
+    if (req.session.user) {
       let dataFavorites = await Favorite.findAll({
-      where: { user_id: req.session.user.id}
-    });
-    favorites = dataFavorites.map((value) => {
-      return value.get({plain: true});
-    })
+        where: { user_id: req.session.user.id },
+      });
+      favorites = dataFavorites.map((value) => {
+        return value.get({ plain: true });
+      });
     }
     if (queryGenre) {
       // the mechanism for removing artists with no albums of the relevant genre is a bit hacky and there's almost certainly a more memory-efficient way to do it
@@ -156,16 +155,16 @@ router.get("/artists/:id", async (req, res) => {
     });
     const artist = await data.get({ plain: true });
     let favorites = null;
-    
-    if(req.session.user){
-       let dataFavorites = await Favorite.findAll({
-      where: { user_id: req.session.user.id}
-    });
-    favorites = dataFavorites.map((value) => {
-      return value.get({plain: true});
-    })
+
+    if (req.session.user) {
+      let dataFavorites = await Favorite.findAll({
+        where: { user_id: req.session.user.id },
+      });
+      favorites = dataFavorites.map((value) => {
+        return value.get({ plain: true });
+      });
     }
-    res.status(200).render("singleArtist", {artist, favorites});
+    res.status(200).render("singleArtist", { artist, favorites });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -201,20 +200,19 @@ router.get("/music/:id", async (req, res) => {
   }
 });
 
-
 router.get("/merch", async (req, res) => {
   // TODO: pull data from models and send to view.
   try {
     let data;
     //ensure yellow stars populate if already added to faves
     let favorites = null;
-    if(req.session.user){
-       let dataFavorites = await Favorite.findAll({
-      where: { user_id: req.session.user.id}
-    });
-    favorites = dataFavorites.map((value) => {
-      return value.get({plain: true});
-    })
+    if (req.session.user) {
+      let dataFavorites = await Favorite.findAll({
+        where: { user_id: req.session.user.id },
+      });
+      favorites = dataFavorites.map((value) => {
+        return value.get({ plain: true });
+      });
     }
     const dataTags = await Tag.findAll({
       include: [
@@ -254,9 +252,13 @@ router.get("/merch", async (req, res) => {
         const merch = data.map((value) => {
           return value.get({ plain: true });
         });
-        res
-          .status(200)
-          .render("merchSortTag", { merch, name, tags, dataArtistsPlain, favorites });
+        res.status(200).render("merchSortTag", {
+          merch,
+          name,
+          tags,
+          dataArtistsPlain,
+          favorites,
+        });
       } else {
         const oneArtist = await Artist.findOne({
           where: {
@@ -274,7 +276,7 @@ router.get("/merch", async (req, res) => {
           tags,
           oneArtistPlain,
           dataArtistsPlain,
-          favorites
+          favorites,
         });
       }
     } else {
@@ -319,15 +321,15 @@ router.get("/favorites", auth, async (req, res) => {
       },
       include: [
         {
-        model: Artist,
-      },
-      {
-        model: Album,
-      },
-      {
-        model: Merch,
-      },
-    ]
+          model: Artist,
+        },
+        {
+          model: Album,
+        },
+        {
+          model: Merch,
+        },
+      ],
     });
     const favorites = data.map((value) => {
       return value.get({ plain: true });

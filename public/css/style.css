@@ -32,11 +32,12 @@
 
 .artist-card img {
   height: 20rem;
- 
 }
+
 .album-card img {
   height: 20rem;
 }
+
 .album-card {
   width: 25rem;
 }
@@ -49,25 +50,29 @@
   
   color: white;
 }
+
 .cardEvent:hover {
   scale: 1.02;
   cursor: pointer;
 }
+
 .card-shade {
   box-shadow: 0px 0px 20px 1px rgb(92, 92, 92);
   color: white;
 }
+
 .card-title {
   font-size: 1.5rem;
   height: 3.1rem;
   display: flex;
   align-items: center;
-
 }
+
 .card-body {
-  display: flex; 
+  display: flex;
   align-items: center;
 }
+
 /* ---- reset ---- */
 body {
   margin: 0;
@@ -80,10 +85,12 @@ body {
   background-color: rgb(31, 32, 33);
   color: white;
 }
+
 canvas {
   display: block;
   /* vertical-align: bottom; */
 }
+
 /* ---- particles.js container ---- */
 #particles-js {
   position: fixed;
@@ -97,8 +104,8 @@ canvas {
   /* background-position: 50% 50%; */
   z-index: -1;
 }
-#footer-div {
 
+#footer-div {
   font-size: 1.5rem;
 }
 
@@ -109,6 +116,7 @@ canvas {
   color: white;
   font-size: 1rem;
 }
+
 #login-modal-content {
   background-color: rgb(21, 21, 21) !important;
   border-width: 1px;
@@ -121,16 +129,20 @@ canvas {
   background-color: rgb(52, 52, 52);
   color: white;
 }
+
 .form-control:focus {
   background-color: black;
   color: white;
 }
+
 .modal-footer {
   border-top: 1px solid rgb(144, 144, 144);
 }
+
 .modal-header {
   border-bottom: 1px solid rgb(144, 144, 144);
 }
+
 .z-class {
   position: absolute;
 }
@@ -142,9 +154,11 @@ canvas {
 .modal {
   color: black;
 }
-a{
+
+a {
   text-decoration: none
 }
+
 .title-page {
   font-size: 6rem;
 }
@@ -202,9 +216,11 @@ a{
   .title-page {
     font-size: 4rem;
   }
+
   footer {
     font-size: 1.5rem;
   }
+
   .footer-nav-h2 {
     font-size: 1.5rem;
   }
@@ -214,6 +230,7 @@ a{
   .title-page {
     font-size: 3rem;
   }
+
   .footer-nav-h2 {
     font-size: 1rem;
   }
@@ -225,34 +242,23 @@ a{
   }
 }
 
-
-/* IF WE WANT A FULL SIZE IMAGE OF SCREEN AT HOME PAGE */
-
-/* first comment out the img and its parent div
-  second: uncomment out the items below */
-/* .fullScreenImageDiv {
-  background-image: url(../Assets/Misc_Photos/homepage-SMTB_BW.jpg); 
-  background-size: cover; 
-  background-repeat: no-repeat; 
-  height: 80vh;
-}
-*/
 .fullScreenImageNav {
   height: 15%;
-} 
+}
 
 .coverImage {
   object-fit: cover;
   height: 85%;
   width: 100%;
-  
 }
+
 @media (width<1000px) {
   .coverImage {
     object-fit: revert;
     width: revert;
     height: revert;
   }
+
   .fullScreenImageNav {
     height: revert;
   }

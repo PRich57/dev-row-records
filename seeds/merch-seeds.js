@@ -1,26 +1,5 @@
-// const { Merch } = require("../models");
-
-// const merchData = [
-//   {
-//     merch_name: "Example Merch 1",
-//     price: 10.99,
-//     filename: '../Assets/sample-merch.PNG',
-//     category_id: 1,
-//     artist_id: 1,
-
-//   },
-//   // ... Add more Merchdata as needed
-// ];
-
-// const seedMerch = async () => {
-//   await Merch.bulkCreate(merchData);
-// };
-
-// module.exports = seedMerch;
-
-// // DONE //
-
 const { Merch } = require("../models");
+
 let modelMerchTemplate = [
   {
     merch_name: "Relaxed Fit",
@@ -146,7 +125,7 @@ artistsNames.forEach((artist, index) => {
     merchData.push({
       merch_name: `${artist} ${item.merch_name}`,
       price: item.price,
-      filename: item.filename.replace("1", artist_id),
+      filename: item.filename.replace("_1", "_" + artist_id),
       artist_id,
     });
     merchTagData.push({

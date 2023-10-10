@@ -25,23 +25,7 @@ const artistData = [
     artist_name: "Cholo Goth",
     filename: "../Assets/Artist_Photos/CholoGoth.png"
   },
-  // {
-  //   artist_name: "Closed Tear",
-  //   filename: "../Assets/Artist_Photos/ClosedTear.jpg"
-  // },
-  // {
-  //   artist_name: "Dave",
-  //   filename: "../Assets/Artist_Photos/Dave.JPG"
-  // },
-  //  {
-  //   artist_name: "Demon Compass",
-  //   filename: "../Assets/Artist_Photos/DemonCompass.png"
-  // },
-  // {
-  //   artist_name: "Provoker",
-  //   filename: "../Assets/Artist_Photos/Provoker.JPG"
-  // },
-  
+
 ];
 
 const seedArtist = () => Artist.bulkCreate(artistData);
