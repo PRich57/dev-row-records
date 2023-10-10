@@ -19,7 +19,7 @@
             <button class="btn btn-secondary dropdown-toggle bg-dark my-4" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
                 Sort by Type
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu bg-dark">
                 {{#each tags as |tag|}}
                 <a  class = "dropdown-item sort-list-link merch-sort-li bg-dark" href="/merch/?tag={{tag.tag_name}}">
                     {{tag.tag_name}}
@@ -33,7 +33,7 @@
             <button class="btn btn-secondary dropdown-toggle bg-dark my-4" type="button" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
                 Sort by Artist
             </button>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu bg-dark">
                 {{#each dataArtistsPlain as |artist|}}
                 <a href="/merch/?tag={{artist_name}}" class="dropdown-item sort-list-link merch-sort-li bg-dark" id="{{artist_name}}">{{artist_name}}
                     </a>

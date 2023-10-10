@@ -44,12 +44,9 @@
 .artist-card {
   width: 25rem;
 }
-.sortAnchor {
-  
-}
+
 .card {
-  /* box-shadow: 3px 3px 4px 4px rgb(30, 30, 30);
-  background-color: rgb(44, 44, 44); */
+  
   color: white;
 }
 .cardEvent:hover {
@@ -145,7 +142,9 @@ canvas {
 .modal {
   color: black;
 }
-
+a{
+  text-decoration: none
+}
 .title-page {
   font-size: 6rem;
 }
@@ -163,7 +162,7 @@ canvas {
 .merch-sort-li {
   color: white;
   border: 0.1rem solid white;
-  border-bottom: none;
+  /* border-bottom: none; */
   font-size: 1.5rem;
 }
 

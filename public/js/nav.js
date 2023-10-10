@@ -1,4 +1,3 @@
-
 //adding to favorites from star button
 const addToFavorite = async (buttonId, dataType) => {
   try {
@@ -23,10 +22,10 @@ const addToFavorite = async (buttonId, dataType) => {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify(postData)
-    })
-    if (response.ok){
-      return true
+      body: JSON.stringify(postData),
+    });
+    if (response.ok) {
+      return true;
     } else {
       Swal.fire({
         title: "Oops!",
@@ -47,9 +46,13 @@ const deleteFromFavorite = async (buttonId, dataType) => {
       method: "DELETE",
       headers: { "Content-Type": "application/json" },
     });
+
     if (response.ok) {
-      if (window.location.href === "https://dev-row-records-63d750921ea0.herokuapp.com/favorites" || window.location.href === "http://localhost:3001/favorites") {
-      if (window.location.href === "https://dev-row-records-63d750921ea0.herokuapp.com/favorites" || window.location.href === "http://localhost:3001/favorites") {
+      if (
+        window.location.href ===
+          "https://dev-row-records-63d750921ea0.herokuapp.com/favorites" ||
+        window.location.href === "http://localhost:3001/favorites"
+      ) {
         window.location.reload();
       }
       return true;
@@ -59,8 +62,7 @@ const deleteFromFavorite = async (buttonId, dataType) => {
   } catch (err) {
     console.error(err);
   }
-  
-}
+};
 
 //favorite add event listener
 $(".card-favorite-button").click(async function (event) {
@@ -68,19 +70,19 @@ $(".card-favorite-button").click(async function (event) {
   event.preventDefault();
   let buttonId = $(this).attr("id");
   let dataType = $(this).attr("data-type");
-  if ($(this).attr("fill") !== "yellow"){
-    const addFavSuccess = await addToFavorite(buttonId, dataType)
-    if(addFavSuccess){
+  if ($(this).attr("fill") !== "yellow") {
+    const addFavSuccess = await addToFavorite(buttonId, dataType);
+    if (addFavSuccess) {
       $(this).attr("fill", "yellow");
     } else {
-      console.warn("add favorite failed")
+      console.warn("add favorite failed");
     }
   } else {
     const deleteFavSuccess = await deleteFromFavorite(buttonId, dataType);
     if (deleteFavSuccess) {
       $(this).attr("fill", "white");
     } else {
-      console.warn("delete favorite failed")
+      console.warn("delete favorite failed");
     }
   }
 });

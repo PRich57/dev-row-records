@@ -25,148 +25,127 @@ let modelMerch = {
   shirt: [
     {
       //aritst 1
-      name: "Relaxed Fit",
+      merch_name: "Relaxed Fit",
       price: 20.99,
       filename: "../Assets/Merch_Photos/Tees/RelaxedFit/RelaxedFit_1.png",
     },
     {
-      name: "Slim Fit",
+      merch_name: "Slim Fit",
       price: 23.99,
       filename: "../Assets/Merch_Photos/Tees/SlimFit/SlimFit_1.png",
     },
     {
-      name: "Chest Logo",
+      merch_name: "Chest Logo",
       price: 25.99,
       filename: "../Assets/Merch_Photos/Tees/ChestLogo/Chest_1.png",
     },
     {
-      name: "Exercise Fit",
+      merch_name: "Exercise Fit",
       price: 29.99,
       filename: "../Assets/Merch_Photos/Tees/ExerciseFit/ExerciseFit_1.png",
     },
     {
       //aritst 2
-      name: "Relaxed Fit",
+      merch_name: "Relaxed Fit",
       price: 20.99,
       filename: "../Assets/Merch_Photos/Tees/RelaxedFit/RelaxedFit_2.png",
     },
     {
-      name: "Slim Fit",
+      merch_name: "Slim Fit",
       price: 23.99,
       filename: "../Assets/Merch_Photos/Tees/SlimFit/SlimFit_2.png",
     },
     {
-      name: "Chest Logo",
+      merch_name: "Chest Logo",
       price: 25.99,
       filename: "../Assets/Merch_Photos/Tees/ChestLogo/Chest_2.png",
     },
     {
-      name: "Exercise Fit",
-      price: 29.99,
-      filename: "../Assets/Merch_Photos/Tees/ExerciseFit/ExerciseFit_2.png",
-    },
-    {
-      //aritst 1
-      name: "Relaxed Fit",
-      price: 20.99,
-      filename: "../Assets/Merch_Photos/Tees/RelaxedFit/RelaxedFit_2.png",
-    },
-    {
-      name: "Slim Fit",
-      price: 23.99,
-      filename: "../Assets/Merch_Photos/Tees/SlimFit/SlimFit_2.png",
-    },
-    {
-      name: "Chest Logo",
-      price: 25.99,
-      filename: "../Assets/Merch_Photos/Tees/ChestLogo/Chest_2.png",
-    },
-    {
-      name: "Exercise Fit",
+      merch_name: "Exercise Fit",
       price: 29.99,
       filename: "../Assets/Merch_Photos/Tees/ExerciseFit/ExerciseFit_2.png",
     },
     {
       //aritst 3
-      name: "Relaxed Fit",
+      merch_name: "Relaxed Fit",
       price: 20.99,
       filename: "../Assets/Merch_Photos/Tees/RelaxedFit/RelaxedFit_3.png",
     },
     {
-      name: "Slim Fit",
+      merch_name: "Slim Fit",
       price: 23.99,
       filename: "../Assets/Merch_Photos/Tees/SlimFit/SlimFit_3.png",
     },
     {
-      name: "Chest Logo",
+      merch_name: "Chest Logo",
       price: 25.99,
       filename: "../Assets/Merch_Photos/Tees/ChestLogo/Chest_3.png",
     },
     {
-      name: "Exercise Fit",
+      merch_name: "Exercise Fit",
       price: 29.99,
       filename: "../Assets/Merch_Photos/Tees/ExerciseFit/ExerciseFit_3.png",
     },
     {
       //aritst 4
-      name: "Relaxed Fit",
+      merch_name: "Relaxed Fit",
       price: 20.99,
       filename: "../Assets/Merch_Photos/Tees/RelaxedFit/RelaxedFit_4.png",
     },
     {
-      name: "Slim Fit",
+      merch_name: "Slim Fit",
       price: 23.99,
       filename: "../Assets/Merch_Photos/Tees/SlimFit/SlimFit_4.png",
     },
     {
-      name: "Chest Logo",
+      merch_name: "Chest Logo",
       price: 25.99,
       filename: "../Assets/Merch_Photos/Tees/ChestLogo/Chest_4.png",
     },
     {
-      name: "Exercise Fit",
+      merch_name: "Exercise Fit",
       price: 29.99,
       filename: "../Assets/Merch_Photos/Tees/ExerciseFit/ExerciseFit_4.png",
     },
     {
       //aritst 5
-      name: "Relaxed Fit",
+      merch_name: "Relaxed Fit",
       price: 20.99,
       filename: "../Assets/Merch_Photos/Tees/RelaxedFit/RelaxedFit_5.png",
     },
     {
-      name: "Slim Fit",
+      merch_name: "Slim Fit",
       price: 23.99,
       filename: "../Assets/Merch_Photos/Tees/SlimFit/SlimFit_5.png",
     },
     {
-      name: "Chest Logo",
+      merch_name: "Chest Logo",
       price: 25.99,
       filename: "../Assets/Merch_Photos/Tees/ChestLogo/Chest_5.png",
     },
     {
-      name: "Exercise Fit",
+      merch_name: "Exercise Fit",
       price: 29.99,
       filename: "../Assets/Merch_Photos/Tees/ExerciseFit/ExerciseFit_5.png",
     },
     {
       //aritst 6
-      name: "Relaxed Fit",
+      merch_name: "Relaxed Fit",
       price: 20.99,
       filename: "../Assets/Merch_Photos/Tees/RelaxedFit/RelaxedFit_6.png",
     },
     {
-      name: "Slim Fit",
+      merch_name: "Slim Fit",
       price: 23.99,
       filename: "../Assets/Merch_Photos/Tees/SlimFit/SlimFit_6.png",
     },
     {
-      name: "Chest Logo",
+      merch_name: "Chest Logo",
       price: 25.99,
       filename: "../Assets/Merch_Photos/Tees/ChestLogo/Chest_6.png",
     },
     {
-      name: "Exercise Fit",
+      merch_name: "Exercise Fit",
       price: 29.99,
       filename: "../Assets/Merch_Photos/Tees/ExerciseFit/ExerciseFit_6.png",
     },
@@ -174,108 +153,108 @@ let modelMerch = {
   hoodie: [
     {
       //artist 1
-      name: "Hoodie Back",
+      merch_name: "Hoodie Back",
       price: 40.99,
       filename: "../Assets/Merch_Photos/Hoodies/HoodieBack/HoodieBack_1.png",
     },
     {
-      name: "Hoodie Front-H",
+      merch_name: "Hoodie Front-H",
       price: 40.99,
       filename:
         "../Assets/Merch_Photos/Hoodies/HoodieFrontH/HoodieFrontH_1.png",
     },
     {
-      name: "Hoodie Front-V",
+      merch_name: "Hoodie Front-V",
       price: 55.99,
       filename:
         "../Assets/Merch_Photos/Hoodies/HoodieFrontV/HoodieFrontV_1.png",
     },
     {
       //artist 2
-      name: "Hoodie Back",
+      merch_name: "Hoodie Back",
       price: 40.99,
       filename: "../Assets/Merch_Photos/Hoodies/HoodieBack/HoodieBack_2.png",
     },
     {
-      name: "Hoodie Front-H",
+      merch_name: "Hoodie Front-H",
       price: 40.99,
       filename:
         "../Assets/Merch_Photos/Hoodies/HoodieFrontH/HoodieFrontH_2.png",
     },
     {
-      name: "Hoodie Front-V",
+      merch_name: "Hoodie Front-V",
       price: 55.99,
       filename:
         "../Assets/Merch_Photos/Hoodies/HoodieFrontV/HoodieFrontV_2.png",
     },
     {
       //artist 3
-      name: "Hoodie Back",
+      merch_name: "Hoodie Back",
       price: 40.99,
       filename: "../Assets/Merch_Photos/Hoodies/HoodieBack/HoodieBack_3.png",
     },
     {
-      name: "Hoodie Front-H",
+      merch_name: "Hoodie Front-H",
       price: 40.99,
       filename:
         "../Assets/Merch_Photos/Hoodies/HoodieFrontH/HoodieFrontH_3.png",
     },
     {
-      name: "Hoodie Front-V",
+      merch_name: "Hoodie Front-V",
       price: 55.99,
       filename:
         "../Assets/Merch_Photos/Hoodies/HoodieFrontV/HoodieFrontV_3.png",
     },
     {
       //artist 4
-      name: "Hoodie Back",
+      merch_name: "Hoodie Back",
       price: 40.99,
       filename: "../Assets/Merch_Photos/Hoodies/HoodieBack/HoodieBack_4.png",
     },
     {
-      name: "Hoodie Front-H",
+      merch_name: "Hoodie Front-H",
       price: 40.99,
       filename:
         "../Assets/Merch_Photos/Hoodies/HoodieFrontH/HoodieFrontH_4.png",
     },
     {
-      name: "Hoodie Front-V",
+      merch_name: "Hoodie Front-V",
       price: 55.99,
       filename:
         "../Assets/Merch_Photos/Hoodies/HoodieFrontV/HoodieFrontV_4.png",
     },
     {
       //artist 5
-      name: "Hoodie Back",
+      merch_name: "Hoodie Back",
       price: 40.99,
       filename: "../Assets/Merch_Photos/Hoodies/HoodieBack/HoodieBack_5.png",
     },
     {
-      name: "Hoodie Front-H",
+      merch_name: "Hoodie Front-H",
       price: 40.99,
       filename:
         "../Assets/Merch_Photos/Hoodies/HoodieFrontH/HoodieFrontH_5.png",
     },
     {
-      name: "Hoodie Front-V",
+      merch_name: "Hoodie Front-V",
       price: 55.99,
       filename:
         "../Assets/Merch_Photos/Hoodies/HoodieFrontV/HoodieFrontV_5.png",
     },
     {
       //artist 6
-      name: "Hoodie Back",
+      merch_name: "Hoodie Back",
       price: 40.99,
       filename: "../Assets/Merch_Photos/Hoodies/HoodieBack/HoodieBack_6.png",
     },
     {
-      name: "Hoodie Front-H",
+      merch_name: "Hoodie Front-H",
       price: 40.99,
       filename:
         "../Assets/Merch_Photos/Hoodies/HoodieFrontH/HoodieFrontH_6.png",
     },
     {
-      name: "Hoodie Front-V",
+      merch_name: "Hoodie Front-V",
       price: 55.99,
       filename:
         "../Assets/Merch_Photos/Hoodies/HoodieFrontV/HoodieFrontV_6.png",
@@ -284,171 +263,171 @@ let modelMerch = {
   hat: [
     {
       //artist 1
-      name: "Sun Hat",
+      merch_name: "Sun Hat",
       price: 12.99,
       filename: "../Assets/Merch_Photos/Hats/SunHat/Sunhat_1.png",
     },
     {
-      name: "Beanie",
+      merch_name: "Beanie",
       price: 9.99,
       filename: "../Assets/Merch_Photos/Hats/Beanie/Beanie_1.png",
     },
     {
-      name: "Fashion",
+      merch_name: "Fashion",
       price: 19.99,
       filename: "../Assets/Merch_Photos/Hats/Fashion/Fashion_1.png",
     },
     {
-      name: "Baseball Cap",
+      merch_name: "Baseball Cap",
       price: 9.99,
       filename: "../Assets/Merch_Photos/Hats/Baseball/Baseball_1.png",
     },
     {
       //artist 2
-      name: "Sun Hat",
+      merch_name: "Sun Hat",
       price: 12.99,
       filename: "../Assets/Merch_Photos/Hats/SunHat/Sunhat_2.png",
     },
     {
-      name: "Beanie",
+      merch_name: "Beanie",
       price: 9.99,
       filename: "../Assets/Merch_Photos/Hats/Beanie/Beanie_2.png",
     },
     {
-      name: "Fashion",
+      merch_name: "Fashion",
       price: 19.99,
       filename: "../Assets/Merch_Photos/Hats/Fashion/Fashion_2.png",
     },
     {
-      name: "Baseball Cap",
+      merch_name: "Baseball Cap",
       price: 9.99,
       filename: "../Assets/Merch_Photos/Hats/Baseball/Baseball_2.png",
     },
     {
       //artist 3
-      name: "Sun Hat",
+      merch_name: "Sun Hat",
       price: 12.99,
       filename: "../Assets/Merch_Photos/Hats/SunHat/Sunhat_3.png",
     },
     {
-      name: "Beanie",
+      merch_name: "Beanie",
       price: 9.99,
       filename: "../Assets/Merch_Photos/Hats/Beanie/Beanie_3.png",
     },
     {
-      name: "Fashion",
+      merch_name: "Fashion",
       price: 19.99,
       filename: "../Assets/Merch_Photos/Hats/Fashion/Fashion_3.png",
     },
     {
-      name: "Baseball Cap",
+      merch_name: "Baseball Cap",
       price: 9.99,
       filename: "../Assets/Merch_Photos/Hats/Baseball/Baseball_3.png",
     },
     {
       //artist 4
-      name: "Sun Hat",
+      merch_name: "Sun Hat",
       price: 12.99,
       filename: "../Assets/Merch_Photos/Hats/SunHat/Sunhat_4.png",
     },
     {
-      name: "Beanie",
+      merch_name: "Beanie",
       price: 9.99,
       filename: "../Assets/Merch_Photos/Hats/Beanie/Beanie_4.png",
     },
     {
-      name: "Fashion",
+      merch_name: "Fashion",
       price: 19.99,
       filename: "../Assets/Merch_Photos/Hats/Fashion/Fashion_4.png",
     },
     {
-      name: "Baseball Cap",
+      merch_name: "Baseball Cap",
       price: 9.99,
       filename: "../Assets/Merch_Photos/Hats/Baseball/Baseball_4.png",
     },
     {
       //artist 5
-      name: "Sun Hat",
+      merch_name: "Sun Hat",
       price: 12.99,
       filename: "../Assets/Merch_Photos/Hats/SunHat/Sunhat_5.png",
     },
     {
-      name: "Beanie",
+      merch_name: "Beanie",
       price: 9.99,
       filename: "../Assets/Merch_Photos/Hats/Beanie/Beanie_5.png",
     },
     {
-      name: "Fashion",
+      merch_name: "Fashion",
       price: 19.99,
       filename: "../Assets/Merch_Photos/Hats/Fashion/Fashion_5.png",
     },
     {
-      name: "Baseball Cap",
+      merch_name: "Baseball Cap",
       price: 9.99,
-      filename: "../Assets/Merch_Photos/Hats/Baseball/Baseball_1.png",
+      filename: "../Assets/Merch_Photos/Hats/Baseball/Baseball_5.png",
     },
     {
       //artist 6
-      name: "Sun Hat",
+      merch_name: "Sun Hat",
       price: 12.99,
       filename: "../Assets/Merch_Photos/Hats/SunHat/Sunhat_6.png",
     },
     {
-      name: "Beanie",
+      merch_name: "Beanie",
       price: 9.99,
       filename: "../Assets/Merch_Photos/Hats/Beanie/Beanie_6.png",
     },
     {
-      name: "Fashion",
+      merch_name: "Fashion",
       price: 19.99,
       filename: "../Assets/Merch_Photos/Hats/Fashion/Fashion_6.png",
     },
     {
-      name: "Baseball Cap",
+      merch_name: "Baseball Cap",
       price: 9.99,
       filename: "../Assets/Merch_Photos/Hats/Baseball/Baseball_6.png",
     },
   ],
   medium: [
     {
-      name: "7 Inch Vinyl",
+      merch_name: "7 Inch Vinyl",
       price: 19.99,
       filename: "../Assets/Merch_Photos/7inch-vinyl.avif",
     },
     {
-      name: "12 Inch Vinyl",
+      merch_name: "12 Inch Vinyl",
       price: 25.99,
       filename: "../Assets/Merch_Photos/12inch-vinyl.avif",
     },
     {
-      name: "CD",
+      merch_name: "CD",
       price: 15.99,
       filename: "../Assets/Merch_Photos/cd.avif",
     },
     {
-      name: "Cassette",
+      merch_name: "Cassette",
       price: 9.99,
       filename: "../Assets/Merch_Photos/cassete.avif",
     },
   ],
   sticker: [
     {
-      name: "Laptop Decals",
+      merch_name: "Laptop Decals",
       price: 2.99,
       filename: "../Assets/Merch_Photos/laptop-decals.avif",
     },
     {
-      name: "Bumper Sticker",
+      merch_name: "Bumper Sticker",
       price: 5.99,
       filename: "../Assets/Merch_Photos/bumper-stickers.avif",
     },
     {
-      name: "CD",
+      merch_name: "CD",
       price: 15.99,
       filename: "../Assets/Merch_Photos/cd.avif",
     },
     {
-      name: "Fake Tattoo",
+      merch_name: "Fake Tattoo",
       price: 1.99,
       filename: "../Assets/Merch_Photos/fake-tattoos.avif",
     },
@@ -460,6 +439,13 @@ let tagIdCounter = 1;
 merchIdCounter = 1;
 
 let artistsNames = ["Mateo And The Black Crows","DJ Nicky","Liam the Kid","The Sound of Kellogg","Passion Pete", "Cholo Goth",]
+for (let artist_id = 1; artist_id<7; artist_id++) {
+
+}
+
+
+
+
 for (let artist_id = 1; artist_id<7; artist_id++)
 {
   for( var key in modelMerch) {
