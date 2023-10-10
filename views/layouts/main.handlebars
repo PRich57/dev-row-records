@@ -267,25 +267,27 @@
           >
             <ul class="navbar-nav" id="header-ul">
               <li class="nav-item active" id="get-home-li">
-                <a class="nav-link Home_Link text-uppercase" id="get-home">Home
+                <a class="nav-link Home_Link text-uppercase" href = "/">Home
                   <span class="sr-only"></span></a>
               </li>
-              <li class="nav-item" id="get-all-artists-li">
-                <a
+              {{!-- <li class="nav-item" id="get-all-artists-li"> --}}
+                <li class="nav-item">
+                <a href = "/artists"
+                  
                   class="nav-link Home_Link text-uppercase"
-                  id="get-all-artists"
+                  {{!-- id="get-all-artists" --}}
                 >Artists</a>
               </li>
               <li class="nav-item" id="get-all-music-li">
                 <a
                   class="nav-link Home_Link text-uppercase"
-                  id="get-all-music"
+                  href = "/albums"
                 >Albums</a>
               </li>
               <li class="nav-item header-get-store-li" id="header-get-store-li">
                 <a
                   class="nav-link Home_Link text-uppercase"
-                  id="header-get-store"
+                  href = "/merch"
                 >Store</a>
               </li>
               {{#if isLoggedIn}}
@@ -293,7 +295,7 @@
                 <li class="nav-item" id="header-get-favorite-li">
                   <a
                     class="nav-link Home_Link text-uppercase"
-                    id="header-get-favorite"
+                    href = "/favorites"
                   >Favorites</a>
                 </li>
                 <!-- Signout Button -->
@@ -344,19 +346,19 @@
             id="footer-nav-ul"
           >
             <li id="footer-get-home-li" class="nav-item"><a
-                id="footer-get-home"
+                href = "/"
                 class="nav-link px-2 text-muted"
               >Home</a></li>
             <li id="footer-get-artists-li" class="nav-item"><a
-                id="footer-get-artists"
+                href = "/artists"
                 class="nav-link px-2 text-muted"
               >Artists</a></li>
             <li id="footer-get-albums-li" class="nav-item"><a
-                id="footer-get-albums"
+                href = "/albums"
                 class="nav-link px-2 text-muted"
               >Albums</a></li>
             <li id="footer-get-store-li" class="nav-item"><a
-                id="footer-get-store"
+                href = "/merch"
                 class="nav-link px-2 text-muted"
               >Store</a>
             </li>
@@ -413,11 +415,6 @@
     <script src="../js/nav.js"></script>
     <script src="../js/login.js"></script>
     <script src="../js/particle.js"></script>
-    {{!-- <script type="text/javascript">
-      handlebars.registerHelper("calculation", function(input) {
-        return input * 5;
-        });
-</script> --}}
 
   </body>
 </html>
