@@ -137,7 +137,7 @@ merchIdCounter = 1;
 // for (var key in modelMerch){
 //   console.log(modelMerch[key])
 // }
-let artistsNames = ["Mateo & The Black Crows","DJ Nicky","Liam the Boy","The Sound of Kellogg","Passion Pete", "Cholo Goth",]
+let artistsNames = ["Mateo And The Black Crows","DJ Nicky","Liam the Kid","The Sound of Kellogg","Passion Pete", "Cholo Goth",]
 for (let artist_id = 1; artist_id<7; artist_id++)
 {
   for( var key in modelMerch) {
