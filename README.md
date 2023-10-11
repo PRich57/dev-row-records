@@ -6,7 +6,7 @@
 
   Welcome to the Dev Row Records online music platform, where you can discover and support the talented artists represented by our record label. This platform provides an interactive and engaging experience for users to explore artists, albums, merchandise, and more.
 
-  To visit Dev Row Records click [here.](#)
+  To visit Dev Row Records click [here.](https://dev-row-records-63d750921ea0.herokuapp.com/)
 
 ## Table of Contents
 
