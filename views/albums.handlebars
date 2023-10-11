@@ -1,6 +1,6 @@
 <!-- ALL ALBUMS SECTION -->
 
-<div class="container-fluid mx-0 p-5">
+<div class="container-fluid mx-0 p-4">
   <div class="row mt-4 justify-content-around">
     <h1 class="text-center title-page">ALBUMS</h1>
   </div>
@@ -11,7 +11,7 @@
       <div class="row d-flex justify-content-around">
       {{#each albums as |album|}}
     
-      <a href="/artists/{{artist.id}}" class="col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center p-3">
+      <a href="/artists/{{artist.id}}" class="col-xl-3 col-md-6 col-12 d-flex align-items-center justify-content-center mb-5">
       <div class="cardEvent card card-shade album-card bg-dark get-single-artist" id="{{artist.id}}">
           <img
             src="{{album.filename}}"
