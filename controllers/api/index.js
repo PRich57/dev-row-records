@@ -17,9 +17,4 @@ router.use("/tag", tag);
 router.use("/category", category);
 router.use("/favorite", favorite);
 
-// This route is deprecated and will only ever return a 400 status in the future.
-// It is probably in our best interests to remove it once we have a chance to ensure nothing is using it.
-const dev = require("./dev-routes");
-router.use("/dev", dev);
-
 module.exports = router;
